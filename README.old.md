@@ -1,2 +1,0 @@
-# Thomasc.tech
- React Version
