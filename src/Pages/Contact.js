@@ -1,10 +1,9 @@
 import React from 'react';
-import PageTemplate from '../Components/Template'
 
 function ContactPage(props) {
     return (
         <div>
-            <PageTemplate highLight='3' {...props} />
+            <h1>Contact</h1>
         </div>
     )
 }

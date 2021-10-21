@@ -1,10 +1,12 @@
 import React from 'react';
-import PageTemplate from '../Components/Template'
 
 function HomePage(props) {
+    let headerHeight = document.getElementsByClassName('HeaderBar')
+    if (headerHeight && headerHeight[0] && headerHeight[0].offsetHeight) headerHeight = headerHeight[0].offsetHeight
+    else headerHeight = 68
     return (
-        <div>
-            <PageTemplate highLight='0' {...props} />
+        <div style={{ position: 'absolute', top: `${headerHeight}px`, width: '100vw' }}>
+            <h1>Home Page</h1>
         </div>
     )
 }

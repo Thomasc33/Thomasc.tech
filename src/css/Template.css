@@ -1,14 +1,70 @@
-.Header {
+.HeaderBar {
     position: absolute;
     top: 0;
     left: 0;
     display: flex;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
     width: 100vw;
+    background-color: #10101095;
+    color: white;
 }
 
-.Header * {
-    padding: 1rem;
+.TitleArea h1 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .1em;
+    font-weight: 300;
+    overflow: visible;
+    white-space: nowrap;
+    width: 15rem;
+}
+
+.NavigationIcons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.ConnectionIcons {
+    display: flex;
+    justify-content: right;
+    flex-wrap: nowrap;
+    width: 15rem;
+}
+
+.HeaderBar * {
+    margin: .25rem;
     text-decoration: none;
-    size: 1.5rem
+    size: 2rem
+}
+
+.HeaderIcon {
+    border-radius: 5px 20px 5px;
+    padding: .25rem;
+    cursor: pointer;
+    transition: ease-in-out .2s;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.HeaderIcon * {
+    transition: ease-in-out .3s;
+}
+
+.HeaderIcon:hover {
+    transition: ease-in-out .3s;
+    background-color: #aa00ff;
+}
+
+.HeaderIcon:hover * {
+    transition: ease-in-out .3s;
+    fill: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .TitleArea {
+        display: none
+    }
 }

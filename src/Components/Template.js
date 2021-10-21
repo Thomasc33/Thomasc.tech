@@ -1,10 +1,12 @@
+/* eslint-disable eqeqeq */
 import React from 'react'
-import { Link } from 'react-router-dom';
 import ParticlesElement from './Particles';
 import HomeIcon from '@material-ui/icons/Home'
 import CodeIcon from '@material-ui/icons/Code';
 import PersonIcon from '@material-ui/icons/Person';
 import MailIcon from '@material-ui/icons/Mail';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import '../css/Template.css';
 
 function PageTemplate(props) {
@@ -13,15 +15,29 @@ function PageTemplate(props) {
     return (
         <div className="App">
             <ParticlesElement color={accent} />
-            <div className='Header'>
-                <div><Link className='Link' to='/' style={{ color: props.highLight === "0" ? accent : 'white' }}><HomeIcon /></Link></div>
-                <div><Link to='/projects' style={{ color: props.highLight === "1" ? accent : 'white' }}><CodeIcon /></Link></div>
-                <div><Link to='/about' style={{ color: props.highLight === "2" ? accent : 'white' }}><PersonIcon /></Link></div>
-                <div><Link to='/contact' style={{ color: props.highLight === "3" ? accent : 'white' }}><MailIcon /></Link></div>
+            <div className='HeaderBar'>
+                <div className='TitleArea'>
+                    <h1>{props.title ? props.title : document.title ? document.title : 'Thomas'}</h1>
+                </div>
+                <div className='NavigationIcons'>
+                    <div className='HeaderIcon' onClick={e => { props.setPage(0) }}><HomeIcon style={{ fill: props.Page == '0' ? accent : 'white' }} /></div>
+                    <div className='HeaderIcon' onClick={e => { props.setPage(1) }}><CodeIcon style={{ fill: props.Page == '1' ? accent : 'white' }} /></div>
+                    <div className='HeaderIcon' onClick={e => { props.setPage(2) }}><PersonIcon style={{ fill: props.Page == '2' ? accent : 'white' }} /></div>
+                    <div className='HeaderIcon' onClick={e => { props.setPage(3) }}><MailIcon style={{ fill: props.Page == '3' ? accent : 'white' }} /></div>
+                </div>
+                <div className='ConnectionIcons'>
+                    <div className='HeaderIcon'><a href='https://github.com/Tcarr9442' target="_blank" rel="noreferrer" style={{ color: 'white' }}><GitHubIcon /></a></div>
+                    <div className='HeaderIcon'><a href='https://www.linkedin.com/in/thomasc33/' target="_blank" rel="noreferrer" style={{ color: 'white' }}><LinkedInIcon /></a></div>
+                </div>
             </div>
         </div>
     )
 }
 
 export default PageTemplate
-//
+/*
+<div className='HeaderIcon'><Link className='Link' to='/' style={{ color: props.highLight === "0" ? accent : 'white' }}><HomeIcon /></Link></div>
+                    <div className='HeaderIcon'><Link to='/projects' style={{ color: props.highLight === "1" ? accent : 'white' }}><CodeIcon /></Link></div>
+                    <div className='HeaderIcon'><Link to='/about' style={{ color: props.highLight === "2" ? accent : 'white' }}><PersonIcon /></Link></div>
+                    <div className='HeaderIcon'><Link to='/contact' style={{ color: props.highLight === "3" ? accent : 'white' }}><MailIcon /></Link></div>
+*/
