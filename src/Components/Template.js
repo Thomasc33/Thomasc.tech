@@ -35,9 +35,3 @@ function PageTemplate(props) {
 }
 
 export default PageTemplate
-/*
-<div className='HeaderIcon'><Link className='Link' to='/' style={{ color: props.highLight === "0" ? accent : 'white' }}><HomeIcon /></Link></div>
-                    <div className='HeaderIcon'><Link to='/projects' style={{ color: props.highLight === "1" ? accent : 'white' }}><CodeIcon /></Link></div>
-                    <div className='HeaderIcon'><Link to='/about' style={{ color: props.highLight === "2" ? accent : 'white' }}><PersonIcon /></Link></div>
-                    <div className='HeaderIcon'><Link to='/contact' style={{ color: props.highLight === "3" ? accent : 'white' }}><MailIcon /></Link></div>
-*/

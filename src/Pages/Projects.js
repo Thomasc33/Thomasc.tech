@@ -1,9 +1,12 @@
 import React from 'react';
 
 function ProjectPage(props) {
+    let headerHeight = document.getElementsByClassName('HeaderBar')
+    if (headerHeight && headerHeight[0] && headerHeight[0].offsetHeight) headerHeight = headerHeight[0].offsetHeight
+    else headerHeight = 68
     return (
-        <div>
-            <h1>Projects</h1>
+        <div style={{ position: 'absolute', top: `${headerHeight}px`, width: '100vw', color: 'white' }}>
+            <h1>Projects Page</h1>
         </div>
     )
 }

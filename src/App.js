@@ -5,6 +5,7 @@ import ContactPage from './Pages/Contact';
 import React, { useState } from 'react'
 import PageTemplate from './Components/Template'
 import './App.css'
+import './css/Info.css';
 
 
 function App(props) {
@@ -28,11 +29,3 @@ function App(props) {
 }
 
 export default App;
-
-
-/* <BrowserRouter>
-      <Route exact path="/projects" render={props => <ProjectPage {...props} />} />
-      <Route exact path="/contact" render={props => <ContactPage {...props} />} />
-      <Route exact path="/about" render={props => <AboutPage {...props} />} />
-      <Route exact path="/" render={props => <HomePage {...props} />} />
-    </BrowserRouter > */
