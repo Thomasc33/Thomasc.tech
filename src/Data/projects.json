@@ -1,0 +1,238 @@
+[
+    {
+        "title": "ViBot",
+        "subtitle": "Discord Bot",
+        "timeframe": "Spring 2020 - Current",
+        "organization": "Personal Project",
+        "links": [],
+        "langauge_framework": [
+            {
+                "label": "Node.js",
+                "stars": 5
+            },
+            {
+                "label": "Discord.js",
+                "stars": 5
+            },
+            {
+                "label": "MySQL",
+                "stars": 4
+            },
+            {
+                "label": "Machine Learning",
+                "stars": 3
+            },
+            {
+                "label": "Tensorflow.js",
+                "stars": 3
+            },
+            {
+                "label": "Google Cloud",
+                "stars": 3
+            },
+            {
+                "label": "Web-Scraping",
+                "stars": 3
+            },
+            {
+                "label": "Express",
+                "stars": 3
+            },
+            {
+                "label": "REST",
+                "stars": 2
+            },
+            {
+                "label": "AWS",
+                "stars": 1
+            }
+        ],
+        "description": "ViBot is a Discord bot used for organization of dungeon running in a video game called \"Realm of the Mad God\". The bot is used for managing who is allowed in to the server, moderation inside, and many more roles in the server. The bot has a REST API to interact with the webapp also mentioned here. It also has a basic machine learning model that determines whether or not a user is attempting to join on an alternate account or their main account. This was my first major project and is still being updated to this day."
+    },
+    {
+        "title": "ViBot.tech",
+        "subtitle": "Web App",
+        "timeframe": "Fall 2020",
+        "organization": "Personal Project",
+        "links": [
+            {
+                "href": "https://vibot.tech",
+                "icon": "Link"
+            }
+        ],
+        "langauge_framework": [
+            {
+                "label": "React.js",
+                "stars": 5
+            },
+            {
+                "label": "SSL",
+                "stars": 3
+            },
+            {
+                "label": "Discord OAuth2",
+                "stars": 2
+            },
+            {
+                "label": "Google Firebase",
+                "stars": 2
+            }
+        ],
+        "description": "A web interface that displays data and information from the other project of mine \"ViBot\". The backend was hosted on the same process as the bot and the website was hosted through Google Firebase."
+    },
+    {
+        "title": "Recycling Classification",
+        "subtitle": "Webapp + Machine Learning Model",
+        "timeframe": "Spring 2021",
+        "organization": "University of North Carolina at Charlotte",
+        "links": [
+            {
+                "href": "https://github.com/Tcarr9442/recycling-classification",
+                "icon": "GitHub"
+            },
+            {
+                "href": "https://recycling-classification-6db68.web.app/",
+                "icon": "Link"
+            }
+        ],
+        "langauge_framework": [
+            {
+                "label": "Python",
+                "stars": 5
+            },
+            {
+                "label": "PyTorch",
+                "stars": 5
+            },
+            {
+                "label": "Computer Vision",
+                "stars": 5
+            },
+            {
+                "label": "Fast AI",
+                "stars": 4
+            },
+            {
+                "label": "Machine Learning",
+                "stars": 4
+            },
+            {
+                "label": "React.js",
+                "stars": 3
+            },
+            {
+                "label": "Google Firebase",
+                "stars": 1
+            }
+        ],
+        "description": "A computer vision model trained to determine the type of plastic resin based off of an image/video input. Created for ITCS 4152 (Computer Vision) as a group project."
+    },
+    {
+        "title": "Blue Bounty",
+        "subtitle": "Note Taking Webapp",
+        "timeframe": "Fall 2020",
+        "organization": "University of North Carolina at Charlotte",
+        "links": [
+            {
+                "href": "https://github.com/Ksolh/Blue-bounty",
+                "icon": "GitHub"
+            },
+            {
+                "href": "https://bluebounty-uncc.firebaseapp.com/",
+                "icon": "Link"
+            }
+        ],
+        "langauge_framework": [
+            {
+                "label": "React.js",
+                "stars": 5
+            },
+            {
+                "label": "Node.js",
+                "stars": 5
+            },
+            {
+                "label": "Express",
+                "stars": 4
+            },
+            {
+                "label": "MySQL",
+                "stars": 2
+            }
+        ],
+        "description": "A simple note taking app. Created for ITCS 3688 (Software Engineering) as a group project. Goal was to work with a team to create a note taking app. Project was assigned to be an HTML/CSS app with FLASK serving the HTML files, however, we got approval to use React.js with an Express.js backend."
+    },
+    {
+        "title": "Thomasc.tech",
+        "subtitle": "This Site!",
+        "timeframe": "Fall 2021",
+        "organization": "Personal Project",
+        "links": [
+            {
+                "href": "https://github.com/Tcarr9442/Thomasc.tech",
+                "icon": "GitHub"
+            },
+            {
+                "href": "https://thomasc.tech",
+                "icon": "Link"
+            }
+        ],
+        "langauge_framework": [
+            {
+                "label": "React.js",
+                "stars": 5
+            },
+            {
+                "label": "UI/UX Design",
+                "stars": 5
+            }
+        ],
+        "description": "My personal project portfolio website. Mixes my common design cue's together, but perfects my flaws from other projects."
+    },
+    {
+        "title": "Charlotte Research Connect",
+        "subtitle": "UNC Charlotte Research Webapp",
+        "timeframe": "Fall 2021",
+        "organization": "University of North Carolina at Charlotte",
+        "links": [
+            {
+                "href": "https://github.com/JokkerBang/Charlotte-Research-Connect",
+                "icon": "GitHub"
+            },
+            {
+                "href": "https://charlotte-research-connect.web.app/",
+                "icon": "Link"
+            }
+        ],
+        "langauge_framework": [
+            {
+                "label": "React.js",
+                "stars": 5
+            }
+        ],
+        "description": "Placeholder"
+    },
+    {
+        "title": "Asset Tracker",
+        "subtitle": "Asset Tracking Webapp",
+        "timeframe": "Fall 2021",
+        "organization": "Computer Pro's on Call",
+        "links": [
+            {
+                "href": "https://github.com/Tcarr9442/Asset-Tracking-Frontend",
+                "icon": "GitHub"
+            },
+            {
+                "href": "https://github.com/Tcarr9442/Asset-Tracking-Backend",
+                "icon": "GitHub"
+            }
+        ],
+        "langauge_framework": [
+            {
+                "label": "React.js",
+                "stars": 5
+            }
+        ],
+        "description": "Placeholder"
+    }
+]

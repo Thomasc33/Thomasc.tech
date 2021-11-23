@@ -1,0 +1,74 @@
+.ProjectsContainer {
+    position: absolute;
+    width: 100vw;
+    height: 92vh;
+    top: 8vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    overflow: scroll;
+}
+
+.ProjectsContainer * {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.Project {
+    background-color: #10101095;
+    border-radius: 2rem;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .1), 0 5px 10px -3px rgba(0, 0, 0, .13);
+    padding: 1rem;
+    margin: 1rem;
+    transition: ease-in-out 0.5s;
+    min-width: 10vw;
+    min-height: 10vh;
+    max-width: 600px;
+}
+
+.Project p {
+    text-align: left;
+}
+
+.Project * {
+    text-align: center;
+    padding: .5rem;
+}
+
+.Project .ProjectColumn {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.Project .ProjectColumn * {
+    margin: 0;
+    padding: 0;
+    color: #aa00ff;
+}
+
+.Project .ProjectColumn h3 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    color: white;
+}
+
+.Project .ProjectLinkContainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+}
+
+.Project .ProjectLink {
+    padding: 0;
+    cursor: pointer;
+}
+
+.Project .ProjectLink:hover * {
+    color: #aa00ff
+}

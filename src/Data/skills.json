@@ -1,0 +1,214 @@
+{
+    "languages": [
+        {
+            "label": "Node.js",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Java",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "C#",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Python",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "C++",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "C",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "PHP",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "HTML/CSS",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "SQL",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Typescript",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "VB.net",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "JSX",
+            "hint": "tooltip_placeholder"
+        }
+    ],
+    "frameworks": [
+        {
+            "label": "React.js",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Tensorflow.js",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "PyTorch",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Express",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "REST",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Discord.js",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "MySQL",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "SQL Server",
+            "hint": "tooltip_placeholder"
+        }
+    ],
+    "webServices": [
+        {
+            "label": "Google Cloud",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "AWS",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "GitHub",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Discord OAuth2.0",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Miscrosoft OAuth2.0",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Web-Scraping",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "SSL Certificates",
+            "hint": "tooltip_placeholder"
+        }
+    ],
+    "ide": [
+        {
+            "label": "VS Code",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Visual Studios",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "IntelliJ",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "NetBeans",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "PHP Storm",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "PyCharm",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Atom",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Notepad++",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "SSMS",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "IGEL UMS",
+            "hint": "tooltip_placeholder"
+        }
+    ],
+    "operatingSystems": [
+        {
+            "label": "Windows XP-11",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "MacOS",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Android 4+",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "iPadOS",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Ubuntu",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Ubuntu Server",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Linux Mint",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "lubuntu",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "IGEL",
+            "hint": "tooltip_placeholder"
+        }
+    ],
+    "misc": [
+        {
+            "label": "Machine Learning",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Audio Engineering",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Sound Systems",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Car Repairs",
+            "hint": "tooltip_placeholder"
+        }
+    ]
+}

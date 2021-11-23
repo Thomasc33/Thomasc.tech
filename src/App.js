@@ -2,9 +2,9 @@ import HomePage from './Pages/Home';
 import AboutPage from './Pages/About';
 import ProjectPage from './Pages/Projects';
 import ContactPage from './Pages/Contact';
-import React, { useState } from 'react'
-import PageTemplate from './Components/Template'
-import './App.css'
+import React, { useState } from 'react';
+import PageTemplate from './Components/Template';
+import './App.css';
 import './css/Info.css';
 
 
