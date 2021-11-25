@@ -1,5 +1,6 @@
 /* eslint-disable eqeqeq */
 import React from 'react'
+import { Link } from 'react-router-dom'
 import ParticlesElement from './Particles';
 import HomeIcon from '@material-ui/icons/Home'
 import CodeIcon from '@material-ui/icons/Code';
@@ -20,10 +21,10 @@ function PageTemplate(props) {
                     <h1>{props.title ? props.title : document.title ? document.title : 'Thomas'}</h1>
                 </div>
                 <div className='NavigationIcons'>
-                    <div className='HeaderIcon' onClick={e => { props.setPage(0) }}><HomeIcon style={{ fill: props.Page == '0' ? accent : 'white' }} /></div>
-                    <div className='HeaderIcon' onClick={e => { props.setPage(1) }}><CodeIcon style={{ fill: props.Page == '1' ? accent : 'white' }} /></div>
-                    <div className='HeaderIcon' onClick={e => { props.setPage(2) }}><PersonIcon style={{ fill: props.Page == '2' ? accent : 'white' }} /></div>
-                    <div className='HeaderIcon' onClick={e => { props.setPage(3) }}><MailIcon style={{ fill: props.Page == '3' ? accent : 'white' }} /></div>
+                    <div className='HeaderIcon' onClick={e => { props.setPage(0) }}><Link to='/'><HomeIcon style={{ fill: props.Page == '0' ? accent : 'white' }} /></Link></div>
+                    <div className='HeaderIcon' onClick={e => { props.setPage(1) }}><Link to='/projects'><CodeIcon style={{ fill: props.Page == '1' ? accent : 'white' }} /></Link></div>
+                    <div className='HeaderIcon' onClick={e => { props.setPage(2) }}><Link to='/about'><PersonIcon style={{ fill: props.Page == '2' ? accent : 'white' }} /></Link></div>
+                    <div className='HeaderIcon' onClick={e => { props.setPage(3) }}><Link to='/contact'><MailIcon style={{ fill: props.Page == '3' ? accent : 'white' }} /></Link></div>
                 </div>
                 <div className='ConnectionIcons'>
                     <div className='HeaderIcon'><a href='https://github.com/Tcarr9442' target="_blank" rel="noreferrer" style={{ color: 'white' }}><GitHubIcon /></a></div>
