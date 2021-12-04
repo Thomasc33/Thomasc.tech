@@ -5,9 +5,11 @@ function ContactPage(props) {
     if (headerHeight && headerHeight[0] && headerHeight[0].offsetHeight) headerHeight = headerHeight[0].offsetHeight
     else headerHeight = 68
     return (
-        <div style={{ position: 'absolute', top: `${headerHeight}px`, width: '100vw', color: 'white', textAlign: 'center', padding: '5rem' }}>
-            <h1>Contact Page is under construction</h1>
-        </div>
+        <div style={{ position: 'absolute', top: `${headerHeight}px`, width: '100vw', color: 'white', textAlign: 'center', padding: '5rem' }}><div className='InfoContainer'>
+            <h2>Email: Thomas@thomasc.tech</h2>
+            <div className='break' />
+            <h2>Phone: (704) 956-8017</h2>
+        </div></div>
     )
 }
 

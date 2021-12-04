@@ -6,11 +6,6 @@ function AboutPage(props) {
     else headerHeight = 68
     return (
         <div style={{ position: 'absolute', top: `${headerHeight}px`, width: '100vw', height: '92vh', color: 'white', overflow: 'scroll' }}> <div className='InfoContainer'>
-            <h1>Hi! I'm Thomas</h1>
-            <div className='break' />
-            <h3>I'm a Computer Science major with professional experience in full-stack web development and personal experience with software development and all things AI</h3>
-            <div className='break' />
-            <hr />
             <h2>Education</h2>
             <div className='break' />
             <h3>The University of North Carolina at Charlotte</h3>
