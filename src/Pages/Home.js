@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/Home.css'
 
 function HomePage(props) {
-    let headerHeight = document.getElementsByClassName('HeaderBar')
+    let headerHeight = document.getElementById('HeaderNavBar')
     if (headerHeight && headerHeight[0] && headerHeight[0].offsetHeight) headerHeight = headerHeight[0].offsetHeight
     else headerHeight = 68
     return (

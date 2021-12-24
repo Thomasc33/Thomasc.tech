@@ -1,7 +1,7 @@
 import React from 'react';
 const { languages, frameworks, webServices, ide, operatingSystems, misc } = require('../Data/skills.json')
 function AboutPage(props) {
-    let headerHeight = document.getElementsByClassName('HeaderBar')
+    let headerHeight = document.getElementById('HeaderNavBar')
     if (headerHeight && headerHeight[0] && headerHeight[0].offsetHeight) headerHeight = headerHeight[0].offsetHeight
     else headerHeight = 68
     return (
@@ -22,7 +22,7 @@ function AboutPage(props) {
             <p>Fall 2019 - Fall 2021</p>
             <div className='break' />
             <p>AI, Robotics, and Gaming</p>
-            <p>3.68 GPA</p>
+            <p>3.714 GPA</p>
             <hr />
             <h2>Technical Skills</h2>
             <div className='break' />

@@ -4,10 +4,17 @@ import StarIcon from '@material-ui/icons/Star';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkIcon from '@material-ui/icons/Link';
 import '../css/Projects.css'
+import useWindowDimensions from '../Components/useWindowDimensions';
 
 const projects = require('../Data/projects.json')
 
 function ProjectPage(props) {
+    let headerHeight = document.getElementById('HeaderNavBar')
+    if (headerHeight && headerHeight[0] && headerHeight[0].offsetHeight) headerHeight = headerHeight[0].offsetHeight
+    else headerHeight = 68
+
+    const {height, width} = useWindowDimensions()
+
     function renderProject(project) {
         return <div key={project.title} className='Project'>
             <h1>{project.title}</h1>
@@ -40,7 +47,7 @@ function ProjectPage(props) {
     }
 
     return (
-        <div className='ProjectsContainer'>
+        <div className='ProjectsContainer' style={{ top: headerHeight, height: height-headerHeight}}>
             {projects.map(m => renderProject(m))}
         </div>
     )

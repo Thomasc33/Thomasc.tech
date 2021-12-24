@@ -16,7 +16,7 @@ function PageTemplate(props) {
     return (
         <div className="App">
             <ParticlesElement color={accent} />
-            <div className='HeaderBar'>
+            <div className='HeaderBar' id='HeaderNavBar'>
                 <div className='TitleArea'>
                     <h1>{props.title ? props.title : document.title ? document.title : 'Thomas'}</h1>
                 </div>
