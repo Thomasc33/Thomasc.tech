@@ -30,7 +30,6 @@
     display: flex;
     justify-content: right;
     flex-wrap: nowrap;
-    width: 15rem;
 }
 
 .HeaderBar * {
@@ -40,7 +39,7 @@
 }
 
 .HeaderIcon {
-    border-radius: 5px 20px 5px;
+    border-radius: 5px;
     padding: .25rem;
     cursor: pointer;
     transition: ease-in-out .2s;

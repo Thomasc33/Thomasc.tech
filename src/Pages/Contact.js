@@ -8,7 +8,6 @@ function ContactPage(props) {
         <div style={{ position: 'absolute', top: `${headerHeight}px`, width: '100vw', color: 'white', textAlign: 'center', padding: '5rem' }}><div className='InfoContainer'>
             <h2>Email: Thomas@thomasc.tech</h2>
             <div className='break' />
-            <h2>Phone: (704) 956-8017</h2>
         </div></div>
     )
 }

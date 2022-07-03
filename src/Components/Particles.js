@@ -1,8 +1,10 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from 'react'
 import Particles from 'react-tsparticles'
+import { isMobile } from 'react-device-detect';
 
 export default (props) => {
+    if (isMobile) return <></>
     return (
         <Particles
             width='100vw'
