@@ -1,4 +1,62 @@
 {
+    "machineLearning": [
+        {
+            "label": "Multi-Layer Perceptron",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Binary/Multi Class Classification",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Linear/Logistic Regression",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Generative Adversarial Networks",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Natural Language Processing",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Computer Vision",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Reinforcement Learning",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Clustering",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Dimensionality Reduction",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Recurrent Neural Network",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Long Short Term Memory",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Bayesian Networks",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Informed Search",
+            "hint": "tooltip_placeholder"
+        },
+        {
+            "label": "Robotics Obstacle Avoidance",
+            "hint": "tooltip_placeholder"
+        }
+    ],
     "languages": [
         {
             "label": "Node.js",

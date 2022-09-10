@@ -1,5 +1,5 @@
 import React from 'react';
-const { languages, frameworks, webServices, ide, operatingSystems, misc } = require('../Data/skills.json')
+const { languages, frameworks, webServices, ide, operatingSystems, misc, machineLearning } = require('../Data/skills.json')
 function AboutPage(props) {
     let headerHeight = document.getElementById('HeaderNavBar')
     if (headerHeight && headerHeight[0] && headerHeight[0].offsetHeight) headerHeight = headerHeight[0].offsetHeight
@@ -12,12 +12,12 @@ function AboutPage(props) {
             <div className='break' />
             <span className='InlineText'>
                 <p className='Left' >M.S. Computer Science</p>
-                <p className='Right'>Spring 2022 - December 2022</p>
+                <p className='Right'>Spring 2022 - Fall 2022</p>
             </span>
             <div className='break' />
             <span className='InlineText'>
                 <p className='Left' >AI, Robotics, and Gaming</p>
-                <p className='Right'>3.6 GPA</p>
+                <p className='Right'>3.66 GPA</p>
             </span>
             <div className='break' style={{ padding: '1rem' }} />
             <h3>The University of North Carolina at Charlotte</h3>
@@ -33,6 +33,10 @@ function AboutPage(props) {
             </span>
             <hr />
             <h2>Technical Skills</h2>
+            <div className='break' />
+            <h3>Machine Learning Techniques / AI</h3>
+            <div className='break' />
+            {machineLearning.map(m => renderSkill(m))}
             <div className='break' />
             <h3>Languages</h3>
             <div className='break' />
