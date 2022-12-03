@@ -27,7 +27,7 @@ function PageTemplate(props) {
                     <div className='HeaderIcon' onClick={e => { props.setPage(3) }}><Link to='/contact'><MailIcon style={{ fill: props.Page == '3' ? accent : 'white' }} /></Link></div>
                 </div>
                 <div className='ConnectionIcons'>
-                    <div className='HeaderIcon'><a href='https://github.com/Tcarr9442' target="_blank" rel="noreferrer" style={{ color: 'white' }}><GitHubIcon /></a></div>
+                    <div className='HeaderIcon'><a href='https://github.com/thomasc33' target="_blank" rel="noreferrer" style={{ color: 'white' }}><GitHubIcon /></a></div>
                     <div className='HeaderIcon'><a href='https://www.linkedin.com/in/thomasc33/' target="_blank" rel="noreferrer" style={{ color: 'white' }}><LinkedInIcon /></a></div>
                 </div>
             </div>

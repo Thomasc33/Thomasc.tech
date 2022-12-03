@@ -11,13 +11,25 @@ function AboutPage(props) {
             <h3>The University of North Carolina at Charlotte</h3>
             <div className='break' />
             <span className='InlineText'>
+                <p className='Left' >Ph.D. Computer Science</p>
+                <p className='Right'>Spring 2023 - Present</p>
+            </span>
+            <div className='break' />
+            <span className='InlineText'>
+                <p className='Left' >Software and Information Systems</p>
+                <p className='Right'>Ethical Machine Learning</p>
+            </span>
+            <div className='break' style={{ padding: '1rem' }} />
+            <h3>The University of North Carolina at Charlotte</h3>
+            <div className='break' />
+            <span className='InlineText'>
                 <p className='Left' >M.S. Computer Science</p>
                 <p className='Right'>Spring 2022 - Fall 2022</p>
             </span>
             <div className='break' />
             <span className='InlineText'>
                 <p className='Left' >AI, Robotics, and Gaming</p>
-                <p className='Right'>3.66 GPA</p>
+                <p className='Right'>3.714 GPA</p>
             </span>
             <div className='break' style={{ padding: '1rem' }} />
             <h3>The University of North Carolina at Charlotte</h3>
@@ -64,7 +76,7 @@ function AboutPage(props) {
             <hr />
             <h2>Work History</h2>
             <div className='break' />
-            <h3>Might remove this</h3>
+            <h3>TBI</h3>
         </div></div>
     )
 }

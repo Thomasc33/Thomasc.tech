@@ -18,7 +18,7 @@ function HomePage(props) {
                 <div className='HomeInfo'>
                     <h1>Hi! I'm Thomas</h1>
                     <div className='break' />
-                    <h3>I'm a Masters Computer Science student concentrating in Artificial Intelligence</h3>
+                    <h3>I'm a Computer Science Ph.D. student currently researching Ethical Machine Learning but plan on working with Reinforcement Learning for my dissertation</h3>
                     <div className='break' />
                     <h3>I have professional experience in full-stack web development and personal/academic experience with software development</h3>
                     <div className='break' />
