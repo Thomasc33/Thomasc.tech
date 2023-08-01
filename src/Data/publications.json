@@ -1,0 +1,16 @@
+[
+    {
+        "title": "ViBot",
+        "subtitle": "Discord Bot",
+        "timeframe": "Spring 2020 - Current",
+        "organization": "Personal Project",
+        "links": [],
+        "langauge_framework": [
+            {
+                "label": "Woah",
+                "stars": 5
+            }
+        ],
+        "description": "Template"
+    }
+]
