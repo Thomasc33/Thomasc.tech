@@ -9,6 +9,7 @@ import PageTemplate from './Components/Template';
 import ParticlesElement from './Components/Particles';
 import './App.css';
 import './css/Info.css';
+const isUNCC = require('./isUNCC.json').isUNCC
 
 
 function App(props) {
@@ -18,11 +19,11 @@ function App(props) {
       <ParticlesElement />
       <PageTemplate {...props} Page={Page} setPage={setPage} />
       <Routes>
-        <Route exact path='/projects' element={<ProjectPage {...props} />} />
-        <Route exact path='/about' element={<AboutPage {...props} />} />
-        <Route exact path='/contact' element={<ContactPage {...props} />} />
-        <Route exact path='/publications' element={<PublicationsPage {...props} />} />
-        <Route exact path='/' element={<HomePage {...props} />} />
+        <Route exact path={`${isUNCC ? '/tcarr23' : ''}/projects`} element={<ProjectPage {...props} />} />
+        <Route exact path={`${isUNCC ? '/tcarr23' : ''}/about`} element={<AboutPage {...props} />} />
+        <Route exact path={`${isUNCC ? '/tcarr23' : ''}/contact`} element={<ContactPage {...props} />} />
+        <Route exact path={`${isUNCC ? '/tcarr23' : ''}/publications`} element={<PublicationsPage {...props} />} />
+        <Route exact path={`${isUNCC ? '/tcarr23' : ''}/`} element={<HomePage {...props} />} />
       </Routes>
     </BrowserRouter>
   );

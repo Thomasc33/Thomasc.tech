@@ -9,6 +9,8 @@ import MailIcon from '@material-ui/icons/Mail';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import '../css/Template.css';
+const isUNCC = require('../isUNCC.json').isUNCC
+
 
 function PageTemplate(props) {
     const accent = localStorage.getItem('accentColor') || '#aa00ff'
@@ -20,11 +22,11 @@ function PageTemplate(props) {
                     <h1>{props.title ? props.title : document.title ? document.title : 'Thomas'}</h1>
                 </div>
                 <div className='NavigationIcons'>
-                    <div className='HeaderIcon' onClick={e => { props.setPage(0) }}><Link to='/'><HomeIcon style={{ fill: props.Page == '0' ? accent : 'white' }} /></Link></div>
-                    <div className='HeaderIcon' onClick={e => { props.setPage(1) }}><Link to='/projects'><CodeIcon style={{ fill: props.Page == '1' ? accent : 'white' }} /></Link></div>
-                    <div className='HeaderIcon' onClick={e => { props.setPage(2) }}><Link to='/about'><PersonIcon style={{ fill: props.Page == '2' ? accent : 'white' }} /></Link></div>
-                    <div className='HeaderIcon' onClick={e => { props.setPage(3) }}><Link to='/publications'><ArticleIcon style={{ fill: props.Page == '3' ? accent : 'white' }} /></Link></div>
-                    <div className='HeaderIcon' onClick={e => { props.setPage(4) }}><Link to='/contact'><MailIcon style={{ fill: props.Page == '4' ? accent : 'white' }} /></Link></div>
+                    <div className='HeaderIcon' onClick={e => { props.setPage(0) }}><Link to={`${isUNCC ? '/tcarr23' : ''}/`}><HomeIcon style={{ fill: props.Page == '0' ? accent : 'white' }} /></Link></div>
+                    <div className='HeaderIcon' onClick={e => { props.setPage(1) }}><Link to={`${isUNCC ? '/tcarr23' : ''}/projects`}><CodeIcon style={{ fill: props.Page == '1' ? accent : 'white' }} /></Link></div>
+                    <div className='HeaderIcon' onClick={e => { props.setPage(2) }}><Link to={`${isUNCC ? '/tcarr23' : ''}/about`}><PersonIcon style={{ fill: props.Page == '2' ? accent : 'white' }} /></Link></div>
+                    <div className='HeaderIcon' onClick={e => { props.setPage(3) }}><Link to={`${isUNCC ? '/tcarr23' : ''}/publications`}><ArticleIcon style={{ fill: props.Page == '3' ? accent : 'white' }} /></Link></div>
+                    <div className='HeaderIcon' onClick={e => { props.setPage(4) }}><Link to={`${isUNCC ? '/tcarr23' : ''}/contact`}><MailIcon style={{ fill: props.Page == '4' ? accent : 'white' }} /></Link></div>
                 </div>
                 <div className='ConnectionIcons'>
                     <div className='HeaderIcon'><a href='https://github.com/thomasc33' target="_blank" rel="noreferrer" style={{ color: 'white' }}><GitHubIcon /></a></div>
