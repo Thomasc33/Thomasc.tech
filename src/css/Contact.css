@@ -1,0 +1,48 @@
+form {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    background-color: #10101095;
+    border-radius: 5px;
+}
+
+form * {
+    margin: 1rem;
+}
+
+form label {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .1em;
+    font-weight: 300;
+    overflow: visible;
+    white-space: nowrap;
+    width: 15rem;
+}
+
+form input[type="email"],
+form textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form .ValidationError {
+    color: #ff0000;
+    margin-bottom: 10px;
+}
+
+form button[type="submit"] {
+    display: block;
+    width: 93%;
+    padding: 10px;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 2rem;
+}
