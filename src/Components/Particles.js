@@ -5,11 +5,12 @@ import { isMobile } from 'react-device-detect';
 
 export default (props) => {
     if (isMobile) return <></>
+    const accent = localStorage.getItem('accentColor') || '#aa00ff'
     return (
         <Particles
             width='100vw'
             height='100vh'
-            style={{ overflow: 'hidden' }}
+            style={{ overflow: 'hidden', zIndex: '-1', position: 'absolute' }}
             options={{
                 background: {
                     color: {
@@ -36,7 +37,7 @@ export default (props) => {
                         value: 30,
                     },
                     color: {
-                        value: props.color
+                        value: accent
                     },
                     links: {
                         color: "#99AAB5",

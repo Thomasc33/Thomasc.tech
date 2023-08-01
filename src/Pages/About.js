@@ -5,7 +5,7 @@ function AboutPage(props) {
     if (headerHeight && headerHeight[0] && headerHeight[0].offsetHeight) headerHeight = headerHeight[0].offsetHeight
     else headerHeight = 68
     return (
-        <div style={{ position: 'absolute', top: `${headerHeight}px`, width: '100vw', height: '92vh', color: 'white', overflow: 'scroll' }}> <div className='InfoContainer'>
+        <div style={{ position: 'absolute', top: `${headerHeight}px`, width: '100vw', height: '94vh', color: 'white', overflow: 'scroll' }}> <div className='InfoContainer'>
             <h2>Education</h2>
             <div className='break' />
             <h3>The University of North Carolina at Charlotte</h3>
@@ -29,7 +29,7 @@ function AboutPage(props) {
             <div className='break' />
             <span className='InlineText'>
                 <p className='Left' >AI, Robotics, and Gaming</p>
-                <p className='Right'>3.714 GPA</p>
+                <p className='Right'>3.8 GPA</p>
             </span>
             <div className='break' style={{ padding: '1rem' }} />
             <h3>The University of North Carolina at Charlotte</h3>

@@ -1,14 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Work+Sans:300,400,700,900");
+
 * {
     padding: 0px;
     margin: 0px;
     font-family: 'Montserrat', sans-serif;
     -ms-overflow-style: none;
     overflow: hidden;
-}
-
-::-webkit-scrollbar {
-    display: none;
+    z-index: 1;
 }
 
 .App {
@@ -24,12 +22,6 @@
     color: white
 }
 
-* {
-    padding: 0px;
-    margin: 0px;
-    font-family: 'Montserrat', sans-serif;
-    -ms-overflow-style: none;
-}
 
 ::-webkit-scrollbar {
     display: none;

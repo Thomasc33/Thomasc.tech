@@ -13,7 +13,7 @@ function ProjectPage(props) {
     if (headerHeight && headerHeight[0] && headerHeight[0].offsetHeight) headerHeight = headerHeight[0].offsetHeight
     else headerHeight = 68
 
-    const {height, width} = useWindowDimensions()
+    const { height } = useWindowDimensions()
 
     function renderProject(project) {
         return <div key={project.title} className='Project'>
@@ -47,7 +47,7 @@ function ProjectPage(props) {
     }
 
     return (
-        <div className='ProjectsContainer' style={{ top: headerHeight, height: height-headerHeight}}>
+        <div className='ProjectsContainer' style={{ top: headerHeight, height: height - headerHeight }}>
             {projects.map(m => renderProject(m))}
         </div>
     )

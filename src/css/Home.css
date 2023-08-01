@@ -1,12 +1,12 @@
 .HomePage {
-    padding: 1rem;
+    padding: 5rem 0;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     overflow: scroll;
     height: auto;
-    position: absolute;
+    position: fixed;
     width: 100vw;
     justify-content: space-evenly;
     align-content: flex-start;
