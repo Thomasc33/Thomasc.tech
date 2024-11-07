@@ -14,6 +14,7 @@ const isUNCC = require('./isUNCC.json').isUNCC
 
 function App(props) {
   const [Page, setPage] = useState(0)
+  console.log('isUNCC', isUNCC)
   return (
     <BrowserRouter>
       <ParticlesElement />

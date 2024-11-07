@@ -1,84 +1,118 @@
 [
     {
+        "title": "Linkage Attack on Skeleton-based Motion Visualization",
+        "subtitle": "CIKM 2023 - Conference Paper",
+        "timeframe": "2023",
+        "organization": "University of North Carolina at Charlotte",
+        "links": [
+            { "href": "https://dl.acm.org/doi/10.1145/3583780.3615263", "icon": "Link" },
+            { "href": "https://github.com/Thomasc33/Linkage-Attack", "icon": "GitHub" }
+        ],
+        "langauge_framework": [
+            { "label": "Siamese Network", "stars": 5 },
+            { "label": "Deep Learning", "stars": 5 },
+            { "label": "Privacy", "stars": 4 },
+            { "label": "Skeleton Data", "stars": 4 },
+            { "label": "Motion Visualization", "stars": 4 },
+            { "label": "PII Extraction", "stars": 4 },
+            { "label": "Anonymization", "stars": 3 }
+        ],
+        "description": "This research introduces a novel linkage attack on skeleton-based motion visualization in VR, demonstrating how supposedly anonymous skeleton data can reveal personally identifiable information (PII). The model, Linkage Attack Neural Network (LAN), utilizes a Siamese network to match skeletons and expose linkages. This work highlights privacy risks in VR and proposes anonymization methods through motion retargeting to mitigate these risks."
+    },
+    {
+        "title": "Privacy-Centric Deep Motion Retargeting for Anonymization of Skeleton-Based Data",
+        "subtitle": "AAAI 2025 - Conference Paper",
+        "timeframe": "2025",
+        "organization": "University of North Carolina at Charlotte",
+        "links": [
+            { "href": "https://github.com/Thomasc33/Privacy-Retargeting", "icon": "GitHub" }
+        ],
+        "langauge_framework": [
+            { "label": "Deep Learning", "stars": 5 },
+            { "label": "Motion Retargeting", "stars": 5 },
+            { "label": "Privacy", "stars": 5 },
+            { "label": "Anonymization", "stars": 4 },
+            { "label": "Adversarial Learning", "stars": 4 },
+            { "label": "PII Protection", "stars": 4 },
+            { "label": "Virtual Reality", "stars": 3 }
+        ],
+        "description": "This study presents a Privacy-Centric Deep Motion Retargeting (PMR) model that anonymizes skeleton-based data by transferring user motion onto a dummy skeleton. Using adversarial learning, the model effectively mitigates PII in VR settings, protecting user identity while maintaining action recognition accuracy. PMR performs on par with state-of-the-art retargeting models and advances the development of privacy-preserving technologies in virtual environments."
+    },
+    {
+        "title": "Skeleton Motion Retargeting Through Masked Language Model Transformers",
+        "subtitle": "SIGKDD 2025 - Conference Paper",
+        "timeframe": "2025",
+        "organization": "University of North Carolina at Charlotte",
+        "links": [
+            { "href": "https://github.com/Thomasc33/Transformer-Retargeting", "icon": "GitHub" }
+        ],
+        "langauge_framework": [
+            { "label": "Transformers", "stars": 5 },
+            { "label": "Masked Language Models", "stars": 5 },
+            { "label": "Motion Retargeting", "stars": 4 },
+            { "label": "Privacy", "stars": 4 },
+            { "label": "Skeleton Data", "stars": 4 },
+            { "label": "Anonymization", "stars": 3 }
+        ],
+        "description": "This paper explores the use of masked language model transformers for motion retargeting in skeleton-based data, addressing privacy concerns in VR. The proposed model leverages transformer architectures to anonymize motion while preserving action recognition accuracy, enabling safe skeleton data usage in virtual and augmented reality applications."
+    },
+    {
+        "title": "Skeleton Privacy Preservation via Intelligent Noise and Masking Using Explanation",
+        "subtitle": "PAKDD 2025 - Conference Paper",
+        "timeframe": "2025",
+        "organization": "University of North Carolina at Charlotte",
+        "links": [
+            { "href": "https://github.com/Thomasc33/SGN", "icon": "GitHub" }
+        ],
+        "langauge_framework": [
+            { "label": "Privacy", "stars": 5 },
+            { "label": "Skeleton Data", "stars": 5 },
+            { "label": "Intelligent Noise Injection", "stars": 4 },
+            { "label": "Masking Techniques", "stars": 4 },
+            { "label": "Explainable AI", "stars": 4 },
+            { "label": "Anonymization", "stars": 3 }
+        ],
+        "description": "This research investigates methods of skeleton privacy preservation using intelligent noise injection and masking, supported by explainable AI techniques. Aimed at safeguarding PII in VR environments, this work provides a framework for anonymizing skeleton data without compromising data utility, contributing to privacy-first designs in machine learning and computer vision."
+    },
+    {
         "title": "ViBot",
         "subtitle": "Discord Bot",
-        "timeframe": "Spring 2020 - Current",
-        "organization": "Personal Project",
-        "links": [],
-        "langauge_framework": [
-            {
-                "label": "Node.js",
-                "stars": 5
-            },
-            {
-                "label": "Discord.js",
-                "stars": 5
-            },
-            {
-                "label": "MySQL",
-                "stars": 4
-            },
-            {
-                "label": "Machine Learning",
-                "stars": 3
-            },
-            {
-                "label": "Tensorflow.js",
-                "stars": 3
-            },
-            {
-                "label": "Google Cloud",
-                "stars": 3
-            },
-            {
-                "label": "Web-Scraping",
-                "stars": 3
-            },
-            {
-                "label": "Express",
-                "stars": 3
-            },
-            {
-                "label": "REST",
-                "stars": 2
-            },
-            {
-                "label": "AWS",
-                "stars": 1
-            }
+        "timeframe": "Spring 2020 - Spring 2024",
+        "organization": "ViBot (Startup)",
+        "links": [
+            { "href": "https://github.com/thomasc33/vibot", "icon": "GitHub" }
         ],
-        "description": "ViBot is a Discord bot used for organization of dungeon running in a video game called \"Realm of the Mad God\". The bot is used for managing who is allowed in to the server, moderation inside, and many more roles in the server. The bot has a REST API to interact with the webapp also mentioned here. It also has a basic machine learning model that determines whether or not a user is attempting to join on an alternate account or their main account. This was my first major project and is still being updated to this day."
+        "langauge_framework": [
+            { "label": "Node.js", "stars": 5 },
+            { "label": "Discord.js", "stars": 5 },
+            { "label": "MySQL", "stars": 4 },
+            { "label": "Machine Learning", "stars": 3 },
+            { "label": "Tensorflow.js", "stars": 3 },
+            { "label": "Google Cloud", "stars": 3 },
+            { "label": "Web-Scraping", "stars": 3 },
+            { "label": "Express", "stars": 3 },
+            { "label": "REST API", "stars": 2 },
+            { "label": "AWS", "stars": 1 },
+            { "label": "Natural Language Processing (NLP)", "stars": 3 },
+            { "label": "Real-time Analytics", "stars": 3 }
+        ],
+        "description": "ViBot is a comprehensive Discord bot for managing community organization and moderation in 'Realm of the Mad God'. Features include user authentication, moderation, and a REST API for external web app interaction. ViBot also includes a basic machine learning model for user account detection (alternate vs. main) and utilizes NLP and web scraping for dynamic data gathering. The project emphasizes skills in real-time analytics, cloud deployment, and backend integration with Google Cloud and AWS."
     },
     {
         "title": "ViBot.tech",
         "subtitle": "Web App",
         "timeframe": "Fall 2020",
-        "organization": "Personal Project",
-        "links": [
-            {
-                "href": "https://vibot.tech",
-                "icon": "Link"
-            }
-        ],
+        "organization": "ViBot (Startup)",
+        "links": [],
         "langauge_framework": [
-            {
-                "label": "React.js",
-                "stars": 5
-            },
-            {
-                "label": "SSL",
-                "stars": 3
-            },
-            {
-                "label": "Discord OAuth2",
-                "stars": 2
-            },
-            {
-                "label": "Google Firebase",
-                "stars": 2
-            }
+            { "label": "React.js", "stars": 5 },
+            { "label": "SSL", "stars": 3 },
+            { "label": "Discord OAuth2", "stars": 2 },
+            { "label": "Google Firebase", "stars": 2 },
+            { "label": "Responsive Design", "stars": 4 },
+            { "label": "API Integration", "stars": 3 }
         ],
-        "description": "A web interface that displays data and information from the other project of mine \"ViBot\". The backend was hosted on the same process as the bot and the website was hosted through Google Firebase."
+        "description": "A web-based interface for interacting with the ViBot project, showcasing data visualization and real-time server management. This web app integrates with Discord's OAuth2 for authentication and is hosted on Google Firebase. Built with a focus on responsive design, secure SSL implementation, and efficient API integration, ViBot.tech demonstrates strong skills in full-stack development and user authentication for web applications."
     },
     {
         "title": "Recycling Classification",
@@ -86,46 +120,21 @@
         "timeframe": "Spring 2021",
         "organization": "University of North Carolina at Charlotte",
         "links": [
-            {
-                "href": "https://github.com/thomasc33/recycling-classification",
-                "icon": "GitHub"
-            },
-            {
-                "href": "https://recycling-classification-6db68.web.app/",
-                "icon": "Link"
-            }
+            { "href": "https://github.com/thomasc33/recycling-classification", "icon": "GitHub" },
+            { "href": "https://recycling-classification-6db68.web.app/", "icon": "Link" }
         ],
         "langauge_framework": [
-            {
-                "label": "Python",
-                "stars": 5
-            },
-            {
-                "label": "PyTorch",
-                "stars": 5
-            },
-            {
-                "label": "Computer Vision",
-                "stars": 5
-            },
-            {
-                "label": "Fast AI",
-                "stars": 4
-            },
-            {
-                "label": "Machine Learning",
-                "stars": 4
-            },
-            {
-                "label": "React.js",
-                "stars": 3
-            },
-            {
-                "label": "Google Firebase",
-                "stars": 1
-            }
+            { "label": "Python", "stars": 5 },
+            { "label": "PyTorch", "stars": 5 },
+            { "label": "Computer Vision", "stars": 5 },
+            { "label": "Fast AI", "stars": 4 },
+            { "label": "Machine Learning", "stars": 4 },
+            { "label": "React.js", "stars": 3 },
+            { "label": "Google Firebase", "stars": 1 },
+            { "label": "Image Processing", "stars": 4 },
+            { "label": "Data Augmentation", "stars": 3 }
         ],
-        "description": "A computer vision model trained to determine the type of plastic resin based off of an image/video input. Created for ITCS 4152 (Computer Vision) as a group project."
+        "description": "A computer vision application for recycling classification based on image/video input, built using PyTorch and FastAI. The project utilizes image processing and data augmentation techniques to improve classification accuracy. Hosted on Google Firebase with a frontend in React.js, it integrates deep learning and web app deployment, demonstrating proficiency in applied AI, sustainability tech, and image recognition solutions."
     },
     {
         "title": "Blue Bounty",
@@ -133,61 +142,35 @@
         "timeframe": "Fall 2020",
         "organization": "University of North Carolina at Charlotte",
         "links": [
-            {
-                "href": "https://github.com/Ksolh/Blue-bounty",
-                "icon": "GitHub"
-            },
-            {
-                "href": "https://bluebounty-uncc.firebaseapp.com/",
-                "icon": "Link"
-            }
+            { "href": "https://github.com/Ksolh/Blue-bounty", "icon": "GitHub" },
+            { "href": "https://bluebounty-uncc.firebaseapp.com/", "icon": "Link" }
         ],
         "langauge_framework": [
-            {
-                "label": "React.js",
-                "stars": 5
-            },
-            {
-                "label": "Node.js",
-                "stars": 5
-            },
-            {
-                "label": "Express",
-                "stars": 4
-            },
-            {
-                "label": "MySQL",
-                "stars": 2
-            }
+            { "label": "React.js", "stars": 5 },
+            { "label": "Node.js", "stars": 5 },
+            { "label": "Express", "stars": 4 },
+            { "label": "MySQL", "stars": 2 },
+            { "label": "Team Collaboration", "stars": 3 },
+            { "label": "Agile Development", "stars": 4 }
         ],
-        "description": "A simple note taking app. Created for ITCS 3688 (Software Engineering) as a group project. Goal was to work with a team to create a note taking app. Project was assigned to be an HTML/CSS app with FLASK serving the HTML files, however, we got approval to use React.js with an Express.js backend."
+        "description": "Blue Bounty is a collaborative note-taking app designed in React.js and Node.js for group projects. Initially intended to be an HTML/CSS app, we expanded it to include an Express.js backend after gaining approval. The project highlights skills in team collaboration, Agile development, and full-stack web app deployment. It emphasizes efficient backend communication and user-friendly design."
     },
     {
         "title": "Thomasc.tech",
-        "subtitle": "This Site!",
+        "subtitle": "Personal Portfolio Website",
         "timeframe": "Fall 2021",
         "organization": "Personal Project",
         "links": [
-            {
-                "href": "https://github.com/thomasc33/Thomasc.tech",
-                "icon": "GitHub"
-            },
-            {
-                "href": "https://thomasc.tech",
-                "icon": "Link"
-            }
+            { "href": "https://github.com/thomasc33/Thomasc.tech", "icon": "GitHub" },
+            { "href": "https://thomasc.tech", "icon": "Link" }
         ],
         "langauge_framework": [
-            {
-                "label": "React.js",
-                "stars": 5
-            },
-            {
-                "label": "UI/UX Design",
-                "stars": 5
-            }
+            { "label": "React.js", "stars": 5 },
+            { "label": "UI/UX Design", "stars": 5 },
+            { "label": "Responsive Design", "stars": 4 },
+            { "label": "Frontend Development", "stars": 5 }
         ],
-        "description": "My personal project portfolio website. Mixes my common design cue's together, but perfects my flaws from other projects."
+        "description": "A personal portfolio website to showcase academic, professional, and personal projects. Built with React.js and designed with a focus on UI/UX and responsive design principles. Thomasc.tech demonstrates strengths in frontend development, web design, and creating user-centered experiences. It’s a platform for both self-promotion and learning advanced React techniques."
     },
     {
         "title": "Charlotte Research Connect",
@@ -195,34 +178,18 @@
         "timeframe": "Fall 2021",
         "organization": "University of North Carolina at Charlotte",
         "links": [
-            {
-                "href": "https://github.com/JokkerBang/Charlotte-Research-Connect",
-                "icon": "GitHub"
-            },
-            {
-                "href": "https://charlotte-research-connect.web.app/",
-                "icon": "Link"
-            }
+            { "href": "https://github.com/JokkerBang/Charlotte-Research-Connect", "icon": "GitHub" },
+            { "href": "https://charlotte-research-connect.web.app/", "icon": "Link" }
         ],
         "langauge_framework": [
-            {
-                "label": "React.js",
-                "stars": 5
-            },
-            {
-                "label": "MySQL",
-                "stars": 4
-            },
-            {
-                "label": "Express",
-                "stars": 4
-            },
-            {
-                "label": "Node.js",
-                "stars": 4
-            }
+            { "label": "React.js", "stars": 5 },
+            { "label": "MySQL", "stars": 4 },
+            { "label": "Express", "stars": 4 },
+            { "label": "Node.js", "stars": 4 },
+            { "label": "Data Visualization", "stars": 4 },
+            { "label": "REST API Integration", "stars": 3 }
         ],
-        "description": "A collection and visualization of UNC Charlotte's Research and Faculty. Created for my capstone project in ITCS 4155 (Adv. Software Engineering)."
+        "description": "Charlotte Research Connect is a web application that visualizes and organizes research data for UNC Charlotte's faculty. Developed using React.js, MySQL, and Express, it provides an accessible interface for exploring research projects. Emphasis on data visualization, REST API integration, and full-stack development, showcasing skills in database management and academic data presentation."
     },
     {
         "title": "C-Track",
@@ -230,45 +197,20 @@
         "timeframe": "Summer 2021 - Fall 2022",
         "organization": "MDCentric",
         "links": [
-            {
-                "href": "https://github.com/thomasc33/Asset-Tracking-Frontend",
-                "icon": "GitHub"
-            },
-            {
-                "href": "https://github.com/thomasc33/Asset-Tracking-Backend",
-                "icon": "GitHub"
-            }
+            { "href": "https://github.com/thomasc33/Asset-Tracking-Frontend", "icon": "GitHub" },
+            { "href": "https://github.com/thomasc33/Asset-Tracking-Backend", "icon": "GitHub" }
         ],
         "langauge_framework": [
-            {
-                "label": "React.js",
-                "stars": 5
-            },
-            {
-                "label": "Express",
-                "stars": 5
-            },
-            {
-                "label": "MS SQL Server",
-                "stars": 5
-            },
-            {
-                "label": "Node.js",
-                "stars": 4
-            },
-            {
-                "label": "Microsoft OAuth",
-                "stars": 3
-            },
-            {
-                "label": "IIS",
-                "stars": 3
-            },
-            {
-                "label": "Microsoft Graph API",
-                "stars": 1
-            }
+            { "label": "React.js", "stars": 5 },
+            { "label": "Express", "stars": 5 },
+            { "label": "MS SQL Server", "stars": 5 },
+            { "label": "Node.js", "stars": 4 },
+            { "label": "Microsoft OAuth", "stars": 3 },
+            { "label": "IIS", "stars": 3 },
+            { "label": "Microsoft Graph API", "stars": 1 },
+            { "label": "Enterprise Solution", "stars": 4 },
+            { "label": "Permissions Management", "stars": 4 }
         ],
-        "description": "A real time updating webapp with asset tracking and hourly tracking. Reports on daily dollars generated by each user in a reports section. In depth permissions with customization of all attributes of the site. Designed for internal use at MDCentric (formerly Computer Pro's on Call.)"
+        "description": "C-Track is a real-time asset tracking system designed for internal use at MDCentric. Built with React.js and Express, it uses MS SQL Server for data storage and Microsoft OAuth for authentication. Features include user permissions management, customizable attributes, and enterprise-level data security. This project highlights skills in enterprise application development, real-time data handling, and secure authentication solutions."
     }
 ]

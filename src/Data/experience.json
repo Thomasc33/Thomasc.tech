@@ -1,0 +1,64 @@
+[
+    {
+        "title": "Graduate Research Assistant",
+        "organization": "University of North Carolina at Charlotte",
+        "timeframe": "Jan 2023 – Present",
+        "responsibilities": [
+            "Spearheaded research on privacy-preserving algorithms for VR skeleton-based motion data.",
+            "Published findings at leading AI conferences and achieved a 15% accuracy boost in classification tasks.",
+            "Developed machine learning models aimed at reducing bias and improving fairness in decision-making systems.",
+            "Mentored junior researchers in data analysis, model development, and literature reviews."
+        ]
+    },
+    {
+        "title": "Founder / Lead Developer",
+        "organization": "ViBot (Startup)",
+        "timeframe": "Mar 2020 – Feb 2024",
+        "responsibilities": [
+            "Developed a global engagement bot platform serving 125,000 daily users.",
+            "Managed a 15-person development team and increased user engagement by 40%.",
+            "Designed a machine learning-based algorithm with 98% accuracy in detecting duplicate accounts, reducing account misuse by 35%.",
+            "Automated over 500 routine tasks, streamlining workflows and improving issue tracking response times by 35%."
+        ]
+    },
+    {
+        "title": "AI Trainer (Temp)",
+        "organization": "DataAnnotation",
+        "timeframe": "Apr 2024 – July 2024",
+        "responsibilities": [
+            "Optimized AI models for complex tasks, improving decision-making workflows by 25%.",
+            "Led model training for code generation and data analysis, enhancing performance by 30%.",
+            "Implemented Python-based debugging routines that reduced error rates in production systems."
+        ]
+    },
+    {
+        "title": "AI Trainer for Mathematics (Temp)",
+        "organization": "Outlier AI",
+        "timeframe": "May 2024 – Aug 2024",
+        "responsibilities": [
+            "Enhanced AI models for solving advanced mathematical problems with 40% higher accuracy.",
+            "Created evaluation frameworks to rigorously test AI’s reasoning abilities and robustness.",
+            "Collaborated with cross-functional teams to improve model performance for complex problem-solving tasks."
+        ]
+    },
+    {
+        "title": "Full-Stack Developer / Systems Engineer",
+        "organization": "MDcentric Technology",
+        "timeframe": "May 2021 – Dec 2022",
+        "responsibilities": [
+            "Built a web-based asset management system tracking over 30,000 devices in real-time.",
+            "Reduced system imaging time by 20% and implemented improvements that increased system uptime by 25%.",
+            "Delivered key updates to the Microsoft Configuration Manager, optimizing laptop deployment for enterprise clients."
+        ]
+    },
+    {
+        "title": "Assistant Manager / Interim General Manager",
+        "organization": "Marco’s Pizza",
+        "timeframe": "Jun 2018 – May 2021",
+        "responsibilities": [
+            "Managed a team of 40 employees, boosting operational efficiency and team productivity by 20%.",
+            "Reduced labor costs by 10% through optimized scheduling and cost-saving measures.",
+            "Improved customer satisfaction scores by 35% through enhanced training and service standards."
+        ]
+    }
+]

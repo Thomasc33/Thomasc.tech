@@ -1,0 +1,43 @@
+.InfoContainer {
+    padding: 2rem;
+    color: white;
+}
+
+.InfoContainer h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.InfoContainer h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1.5rem;
+}
+
+.InlineText {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: normal;
+    margin-top: 0.5rem;
+}
+
+ul.ResponsibilitiesList {
+    list-style-type: disc; /* Adds bullet points */
+    margin-left: 1.5rem; /* Indent the list */
+    padding-left: 0.5rem;
+    font-size: 1rem;
+    color: #ccc; /* Optional: a lighter shade for readability */
+}
+
+ul.ResponsibilitiesList li {
+    margin-bottom: 0.5rem;
+    text-align: left; /* Align text to the left */
+}
+
+/* Adding a horizontal line styling for separation if needed */
+hr {
+    border-top: 1px solid #888;
+    margin: 2rem 0;
+}

@@ -1,3 +1,102 @@
+/* HeroSection styles */
+.HeroSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1f1f1f 0%, #333333 100%); /* Dark gradient background */
+    color: white;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+/* HomeContent layout */
+.HomeContent {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Text area */
+.IntroText {
+    max-width: 600px;
+    padding: 1rem;
+    line-height: 1.6;
+}
+
+.IntroText h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.IntroText h3 {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    color: #bbbbbb;
+}
+
+.IntroText p {
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: #cccccc;
+}
+
+/* Buttons */
+.ButtonContainer {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.ctaButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.ctaButton:hover {
+    background-color: #45a049;
+}
+
+/* Profile photo styling */
+.Photo {
+    max-width: 300px;
+    max-height: 300px;
+    margin-left: 2rem;
+}
+
+.ProfilePhoto {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+    .HomeContent {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .IntroText {
+        padding: 1rem;
+        max-width: 90%;
+    }
+
+    .Photo {
+        margin-top: 1.5rem;
+        margin-left: 0;
+    }
+}
+
 .HomePage {
     padding: 5rem 0;
     display: flex;
