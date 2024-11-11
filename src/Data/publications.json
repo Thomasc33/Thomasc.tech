@@ -14,7 +14,7 @@
             "conference": "IEEE MetaCom 2024",
             "publicationType": "Conference",
             "abstract": "Capturing skeleton data is an important area of computer vision, especially for use in a virtual reality (VR) setting. As new simpler pose estimation techniques are created, the popularity of skeleton-based motion data has increased. While the skeleton data appears to be anonymous, it can be exploited to discover personally identifiable information (PII). This poses a risk of unintentional privacy leakages when skeletons are publicly displayed, like in a VR environment. In this survey, we look into the privacy implications posed by the skeleton data, focusing on the privacy and utility trade-off and current privacy-preserving techniques. We also look into differing pose estimation methods that are used to extract the skeleton data from videos or sensors. Then we will look into what skeleton-data is used for, particularly the state-of-the-art action recognition techniques. Lastly, we discuss the ethical implications of the use of skeleton data, emphasizing the need for an interdisciplinary view to address those challenges. This survey aims to provide an understanding of the current landscape of skeleton data while offering insights into the potential privacy issues that this new technique leads to.",
-            "links": []
+            "links": ["https://ieeexplore.ieee.org/abstract/document/10740130"]
         },
         {
             "title": "Privacy Centric Deep Motion Retargeting for Anonymization of Skeleton-Based Data",
