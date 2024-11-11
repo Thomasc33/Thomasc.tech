@@ -1,7 +1,4 @@
 import React from 'react';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
-import StarIcon from '@material-ui/icons/Star';
-import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkIcon from '@material-ui/icons/Link';
 import '../css/Projects.css';
 import useWindowDimensions from '../Components/useWindowDimensions';
