@@ -1,13 +1,12 @@
 .ProjectsContainer {
-    position: absolute;
-    width: 100vw;
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
-    align-content: flex-start;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    flex-direction: row;
-    overflow: scroll;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .ProjectsContainer * {
@@ -16,19 +15,46 @@
 }
 
 .Project {
-    background-color: #10101095;
-    border-radius: 2rem;
-    box-shadow: 0 0 25px rgba(0, 0, 0, .1), 0 5px 10px -3px rgba(0, 0, 0, .13);
-    padding: 1rem;
-    margin: 1rem;
-    transition: ease-in-out 0.5s;
+    background-color: rgba(25, 25, 25, 0.8);
+    border-radius: 1rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    margin: 1.5rem;
+    transition: all 0.3s ease;
     min-width: 10vw;
     min-height: 10vh;
     max-width: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transform: translateY(0);
+}
+
+.Project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.Project h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.Project h2 {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+    font-weight: 400;
 }
 
 .Project p {
     text-align: left;
+    line-height: 1.6;
+    margin: 1rem 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
 }
 
 .Project * {
@@ -39,8 +65,14 @@
 .Project .ProjectColumn {
     display: flex;
     justify-content: space-between;
-    margin: 0;
-    padding: 0;
+    align-items: center;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.Project .ProjectColumn:first-of-type {
+    border-top: none;
 }
 
 .Project .ProjectColumn * {
@@ -53,20 +85,174 @@
     margin-left: 0.5rem;
     margin-right: 0.5rem;
     color: white;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .Project .ProjectLinkContainer {
     display: flex;
-    justify-content: space-evenly;
-    margin: 0;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
     padding: 0;
 }
 
 .Project .ProjectLink {
     padding: 0;
     cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.Project .ProjectLink:hover {
+    transform: scale(1.2);
+}
+
+.Project .ProjectLink a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.Project .ProjectLink:hover a {
+    background-color: #aa00ff;
 }
 
 .Project .ProjectLink:hover * {
-    color: #aa00ff
+    color: white;
+}
+
+/* New skill tag styles */
+.SkillsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+    justify-content: center;
+}
+
+.SkillTag {
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+    background-color: rgba(170, 0, 255, 0.2);
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+.SkillTag:hover {
+    transform: translateY(-2px);
+}
+
+/* Publication specific styles */
+.PublicationHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.PublicationHeader h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.PublicationBadge {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 1rem;
+}
+
+.AuthorsList {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+}
+
+/* Section headers for Publications page */
+.publications-section h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    color: white;
+    position: relative;
+}
+
+.publications-section hr {
+    width: 50px;
+    margin: 0.5rem auto 2.5rem;
+    border: none;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #aa00ff, transparent);
+    opacity: 0.7;
+}
+
+.publications-grid, .projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .Project {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .Project h1 {
+        font-size: 1.5rem;
+    }
+
+    .Project h2 {
+        font-size: 1rem;
+    }
+
+    .publications-section h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ProjectsContainer {
+        padding: 1rem 0.5rem;
+    }
+
+    .Project {
+        padding: 1.25rem;
+        margin: 0.75rem 0;
+        width: 100%;
+    }
+
+    .SkillsContainer {
+        gap: 0.3rem;
+    }
+
+    .SkillTag {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+    }
+
+    .publications-grid, .projects-grid {
+        gap: 1rem;
+    }
 }

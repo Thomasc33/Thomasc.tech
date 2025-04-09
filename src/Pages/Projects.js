@@ -1,55 +1,78 @@
 import React from 'react';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
-import StarIcon from '@material-ui/icons/Star';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkIcon from '@material-ui/icons/Link';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import StarIcon from '@mui/icons-material/Star';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkIcon from '@mui/icons-material/Link';
 import '../css/Projects.css'
 import useWindowDimensions from '../Components/useWindowDimensions';
 
 const projects = require('../Data/projects.json')
 
 function ProjectPage(props) {
-    let headerHeight = document.getElementById('HeaderNavBar')
-    if (headerHeight && headerHeight[0] && headerHeight[0].offsetHeight) headerHeight = headerHeight[0].offsetHeight
-    else headerHeight = 68
-
-    const { height } = useWindowDimensions()
+    // No need to manually calculate header height anymore as we use CSS variables
 
     function renderProject(project) {
-        return <div key={project.title} className='Project'>
-            <h1>{project.title}</h1>
-            <h2>{project.subtitle}</h2>
-            <div className='ProjectColumn'>
-                <h3 style={{ margin: '.5rem 1rem .5rem .5rem' }}>{project.timeframe}</h3>
-                <h3 style={{ margin: '.5rem .5rem .5rem 1rem' }}>{project.organization}</h3>
-            </div>
-            <p>{project.description}</p>
-            <div className='ProjectColumn'>
-                <h3 style={{ margin: '.5rem 1rem .5rem .5rem' }}>Language/Framework</h3>
-                <h3 style={{ margin: '.5rem .5rem .5rem 1rem' }}>Intensity</h3>
-            </div>
-            {project.langauge_framework.map(m =>
-                <div key={m.label} className='ProjectColumn'>
-                    <h3 style={{ marginleft: '.5rem' }}>{m.label}</h3>
-                    <div style={{ display: 'flex', justifyContent: 'right' }}>
-                        {m.stars >= 1 ? <StarIcon /> : <StarBorderIcon />}
-                        {m.stars >= 2 ? <StarIcon /> : <StarBorderIcon />}
-                        {m.stars >= 3 ? <StarIcon /> : <StarBorderIcon />}
-                        {m.stars >= 4 ? <StarIcon /> : <StarBorderIcon />}
-                        {m.stars >= 5 ? <StarIcon /> : <StarBorderIcon />}
-                    </div>
+        // Get the accent color from localStorage or use the default color
+        const accentColor = localStorage.getItem('accentColor') || '#aa00ff';
+
+        return (
+            <div key={project.title} className='Project'>
+                <h1>{project.title}</h1>
+                <h2>{project.subtitle}</h2>
+                <div className='ProjectColumn' style={{ borderTop: 'none' }}>
+                    <h3>{project.timeframe}</h3>
+                    <h3>{project.organization}</h3>
                 </div>
-            )}
-            <div className='ProjectLinkContainer'>
-                {project.links.map(m => <div className='ProjectLink'><a href={m.href} target="_blank" rel="noreferrer">{m.icon === 'GitHub' ? <GitHubIcon /> : <LinkIcon />}</a></div >)}
+                <p>{project.description}</p>
+
+                <div className='SkillsContainer'>
+                    {project.langauge_framework.slice(0, 6).map(skill => (
+                        <div
+                            key={skill.label}
+                            className='SkillTag'
+                            style={{
+                                backgroundColor: `${accentColor}${skill.stars * 15}`,
+                                border: `1px solid ${accentColor}`
+                            }}
+                        >
+                            {skill.label}
+                        </div>
+                    ))}
+                    {project.langauge_framework.length > 6 && (
+                        <div className='SkillTag' style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}>
+                            +{project.langauge_framework.length - 6} more
+                        </div>
+                    )}
+                </div>
+
+                <div className='ProjectLinkContainer'>
+                    {project.links.map((link, index) => (
+                        <div key={index} className='ProjectLink'>
+                            <a
+                                href={link.href}
+                                target="_blank"
+                                rel="noreferrer"
+                                aria-label={link.icon}
+                            >
+                                {link.icon === 'GitHub' ? <GitHubIcon /> : <LinkIcon />}
+                            </a>
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
+        );
     }
 
     return (
-        <div className='ProjectsContainer' style={{ top: headerHeight, height: height - headerHeight }}>
-            {projects.map(m => renderProject(m))}
-        </div>
+        <section className='ProjectsContainer'>
+            <header>
+                <h1 className="visually-hidden">Thomas Carr's Projects and Portfolio</h1>
+                <p className="visually-hidden">Explore my projects in AI, machine learning, privacy research, and full-stack development.</p>
+            </header>
+            <div className="projects-grid">
+                {projects.map(m => renderProject(m))}
+            </div>
+        </section>
     )
 }
 

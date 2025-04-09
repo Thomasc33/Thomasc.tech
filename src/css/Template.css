@@ -1,73 +1,305 @@
-.HeaderBar {
+/* Modern Responsive Navbar */
+:root {
+    --accent-color: #aa00ff;
+    --navbar-bg: rgba(25, 25, 25, 0.9);
+    --navbar-height: 70px;
+    --navbar-scrolled-height: 60px;
+    --transition-speed: 0.3s;
+}
+
+.navbar {
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
+    height: var(--navbar-height);
+    background-color: var(--navbar-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    z-index: 1000;
+    transition: height var(--transition-speed), box-shadow var(--transition-speed);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scrolled {
+    height: var(--navbar-scrolled-height);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-container {
     display: flex;
-    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    width: 100vw;
-    background-color: #10101095;
+    height: 100%;
+    padding: 0 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Logo */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo a {
+    text-decoration: none;
     color: white;
 }
 
-.TitleArea h1 {
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: .1em;
-    font-weight: 300;
-    overflow: visible;
+.navbar-logo h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 0;
     white-space: nowrap;
-    width: 15rem;
+    transition: transform var(--transition-speed);
 }
 
-.NavigationIcons {
+.navbar-logo h1:hover {
+    transform: translateY(-2px);
+}
+
+/* Desktop Navigation */
+.desktop-nav {
     display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    align-items: center;
 }
 
-.ConnectionIcons {
+.nav-links {
     display: flex;
-    justify-content: right;
-    flex-wrap: nowrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem;
 }
 
-.HeaderBar * {
-    margin: .25rem;
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    size: 2rem
+    border-radius: 8px;
+    transition: all var(--transition-speed);
 }
 
-.HeaderIcon {
-    border-radius: 5px;
-    padding: .25rem;
-    cursor: pointer;
-    transition: ease-in-out .2s;
+.nav-links li.active a {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-links li.active .nav-icon svg {
+    fill: var(--accent-color);
+}
+
+.nav-links li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-icon {
     display: flex;
+    align-items: center;
+    margin-right: 0.5rem;
+}
+
+.nav-icon svg {
+    font-size: 1.2rem;
+    transition: fill var(--transition-speed);
+}
+
+.nav-text {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    flex-wrap: nowrap;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    transition: all var(--transition-speed);
 }
 
-.HeaderIcon * {
-    transition: ease-in-out .3s;
+.social-links a:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
 }
 
-.HeaderIcon:hover {
-    transition: ease-in-out .3s;
-    background-color: #aa00ff;
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background-color var(--transition-speed);
 }
 
-.HeaderIcon:hover * {
-    transition: ease-in-out .3s;
-    fill: white;
+.mobile-menu-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-@media only screen and (max-width: 600px) {
-    .TitleArea {
-        display: none
+.mobile-menu-btn svg {
+    font-size: 1.8rem;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--navbar-height));
+    background-color: var(--navbar-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: translateX(100%);
+    transition: transform var(--transition-speed);
+    z-index: 999;
+    overflow-y: auto;
+    padding: 2rem 0;
+    display: none;
+}
+
+.navbar.scrolled .mobile-nav {
+    top: var(--navbar-scrolled-height);
+    height: calc(100vh - var(--navbar-scrolled-height));
+}
+
+.mobile-nav.open {
+    transform: translateX(0);
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mobile-nav-links li a {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color var(--transition-speed);
+}
+
+.mobile-nav-links li.active a {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid var(--accent-color);
+}
+
+.mobile-nav-links li a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.mobile-nav-links .nav-icon {
+    margin-right: 1rem;
+}
+
+.mobile-nav-links .nav-icon svg {
+    font-size: 1.5rem;
+}
+
+.mobile-nav-links .nav-text {
+    display: inline-block;
+    font-size: 1.1rem;
+}
+
+/* Mobile Social Links */
+.mobile-social {
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+}
+
+.mobile-social a {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: white;
+    text-decoration: none;
+}
+
+.mobile-social a span {
+    margin-left: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .navbar-container {
+        padding: 0 1rem;
+    }
+
+    .nav-text {
+        display: none;
+    }
+
+    .nav-links li a {
+        padding: 0.5rem;
+    }
+
+    .nav-icon {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .desktop-nav, .social-links {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+
+    .navbar-container {
+        padding: 0 1rem;
+    }
+
+    .navbar-logo h1 {
+        font-size: 1.2rem;
+    }
+
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-logo h1 {
+        font-size: 1.1rem;
+    }
+
+    .navbar-container {
+        padding: 0 0.75rem;
     }
 }

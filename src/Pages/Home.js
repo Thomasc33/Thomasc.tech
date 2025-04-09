@@ -27,21 +27,26 @@ function HomePage(props) {
             .toString(16).slice(1);
     }
 
-    let headerHeight = document.getElementById('HeaderNavBar');
-    if (headerHeight && headerHeight[0] && headerHeight[0].offsetHeight) headerHeight = headerHeight[0].offsetHeight;
-    else headerHeight = 68;
+    // No need to manually calculate header height anymore as we use CSS variables
 
     return (
-        <div className="HeroSection" style={{ top: `${headerHeight}px`, width: '100vw', height: '100vh', color: 'white', overflow: 'hidden' }}>
+        <section className="HeroSection">
             <div className="HomeContent">
                 <div className="IntroText">
-                    <h1>Hi! I'm Thomas Carr</h1>
-                    <h3>Computer Science Ph.D. Student | Researcher in Ethical Machine Learning, Privacy, and Fairness</h3>
+                    <h1>Thomas Carr - Computer Science Ph.D. Researcher</h1>
+                    <h2>Specializing in Ethical Machine Learning, Privacy, and Fairness</h2>
                     <p>
                         With a strong foundation in full-stack development and academic expertise in privacy-preserving systems,
-                        I bring a balanced approach to AI research and software engineering. Passionate about solving real-world
-                        problems with ethical and privacy-conscious solutions.
+                        I bring a balanced approach to AI research and software engineering at the University of North Carolina at Charlotte.
+                        Passionate about solving real-world problems with ethical and privacy-conscious solutions.
                     </p>
+                    <div className="KeywordSection">
+                        <span>AI Ethics</span>
+                        <span>Privacy Research</span>
+                        <span>Machine Learning</span>
+                        <span>Data Privacy</span>
+                        <span>Computer Science</span>
+                    </div>
                     <div className="ButtonContainer">
                         <Link
                             to={`${isUNCC ? '/tcarr23' : ''}/projects`}
@@ -96,12 +101,12 @@ function HomePage(props) {
                         </Link>
                     </div>
                 </div>
-                {/* Optional profile photo or visual element */}
+                {/* Profile photo */}
                 <div className="Photo">
-                    <img src="https://media.licdn.com/dms/image/v2/D4E03AQGZMDNy_cJW5Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728522972149?e=1736380800&v=beta&t=_vrrBs6_6OPJZq-iK-r_PG_7xAkIh4ts2PwyHxDFExs" alt="Thomas Carr" className="ProfilePhoto" />
+                    <img src={require('../Data/thomas.jpg')} alt="Thomas Carr" className="ProfilePhoto" />
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

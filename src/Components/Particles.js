@@ -10,7 +10,7 @@ export default (props) => {
         <Particles
             width='100vw'
             height='100vh'
-            style={{ overflow: 'hidden', zIndex: '-1', position: 'absolute' }}
+            style={{ overflow: 'hidden', zIndex: 0, position: 'fixed', top: 0, left: 0 }}
             options={{
                 background: {
                     color: {

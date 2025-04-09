@@ -5,9 +5,34 @@
     justify-content: space-around;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    overflow: scroll;
+    overflow: auto;
     height: auto;
     animation: ease-in-out .2s;
+    scrollbar-width: none; /* Firefox */
+}
+
+.InfoContainer::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}
+
+@media (max-width: 768px) {
+    .InfoContainer {
+        overflow-x: auto;
+    }
+
+    .InfoContainer::-webkit-scrollbar {
+        display: block;
+        height: 4px;
+    }
+
+    .InfoContainer::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    .InfoContainer::-webkit-scrollbar-thumb {
+        background: var(--accent-color, #aa00ff);
+        border-radius: 4px;
+    }
 }
 
 .InfoContainer * {

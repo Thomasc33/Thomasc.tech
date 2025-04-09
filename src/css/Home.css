@@ -3,10 +3,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #1f1f1f 0%, #333333 100%); /* Dark gradient background */
+    background: transparent; /* Let particles show through */
     color: white;
-    padding: 0 2rem;
+    padding: 2rem;
     box-sizing: border-box;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 /* HomeContent layout */
@@ -43,11 +47,29 @@
     color: #cccccc;
 }
 
+/* Keyword section for SEO */
+.KeywordSection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.KeywordSection span {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
 /* Buttons */
 .ButtonContainer {
     margin-top: 1.5rem;
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .ctaButton {
@@ -69,13 +91,23 @@
     max-width: 300px;
     max-height: 300px;
     margin-left: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .ProfilePhoto {
     width: 100%;
     height: auto;
     border-radius: 50%;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    border: 3px solid var(--accent-color, #aa00ff);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ProfilePhoto:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 30px rgba(var(--accent-rgb, 170, 0, 255), 0.4);
 }
 
 /* Responsive layout adjustments */
@@ -94,6 +126,8 @@
     .Photo {
         margin-top: 1.5rem;
         margin-left: 0;
+        max-width: 250px;
+        max-height: 250px;
     }
 }
 
@@ -158,7 +192,7 @@
     width: 50%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     .HomePage * {
         width: 100%;
         padding: .5rem;
@@ -166,5 +200,42 @@
 
     .HomePage {
         padding: 0;
+    }
+
+    .HomeContent {
+        padding: 1rem;
+        max-width: 100%;
+    }
+
+    .IntroText {
+        max-width: 100%;
+    }
+
+    .IntroText h1 {
+        font-size: 2rem;
+    }
+
+    .IntroText h2 {
+        font-size: 1.5rem;
+    }
+
+    .IntroText p {
+        font-size: 0.9rem;
+    }
+
+    .ButtonContainer {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .ctaButton {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .Photo {
+        max-width: 200px;
+        max-height: 200px;
     }
 }
