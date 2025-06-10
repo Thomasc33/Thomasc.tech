@@ -2,271 +2,335 @@
     "machineLearning": [
         {
             "label": "Multi-Layer Perceptron",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Binary/Multi Class Classification",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Linear/Logistic Regression",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Generative Adversarial Networks",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Natural Language Processing",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Computer Vision",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Reinforcement Learning",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Clustering",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Dimensionality Reduction",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Recurrent Neural Network",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Long Short Term Memory",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Bayesian Networks",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Informed Search",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Robotics Obstacle Avoidance",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         }
     ],
     "languages": [
         {
             "label": "Node.js",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Java",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "C#",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Python",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "C++",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "C",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "PHP",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "HTML/CSS",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "SQL",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Typescript",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "VB.net",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "JSX",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         }
     ],
     "frameworks": [
         {
             "label": "React.js",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Tensorflow.js",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "PyTorch",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Express",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "REST",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Discord.js",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "MySQL",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "SQL Server",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         }
     ],
     "webServices": [
         {
             "label": "Google Cloud",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "AWS",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "GitHub",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Discord OAuth2.0",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Miscrosoft OAuth2.0",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Web-Scraping",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "SSL Certificates",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         }
     ],
     "ide": [
         {
             "label": "VS Code",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Visual Studios",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "IntelliJ",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "NetBeans",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "PHP Storm",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "PyCharm",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Atom",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Notepad++",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "SSMS",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "IGEL UMS",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         }
     ],
     "operatingSystems": [
         {
             "label": "Windows XP-11",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "MacOS",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Android 4+",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "iPadOS",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Ubuntu",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Ubuntu Server",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Linux Mint",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "lubuntu",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "IGEL",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         }
     ],
     "misc": [
         {
             "label": "Machine Learning",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Audio Engineering",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Sound Systems",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         },
         {
             "label": "Automotive Repairs",
-            "hint": "tooltip_placeholder"
+            "hint": "tooltip_placeholder",
+            "icon": ""
         }
     ]
 }

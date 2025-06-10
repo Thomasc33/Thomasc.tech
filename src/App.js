@@ -3,6 +3,9 @@ import AboutPage from './Pages/About';
 import ProjectPage from './Pages/Projects';
 import ContactPage from './Pages/Contact';
 import PublicationsPage from './Pages/Publications';
+import BlogPage from './Pages/Blog';
+import AwardsPage from './Pages/Awards';
+import ServicesPage from './Pages/Services';
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import PageTemplate from './Components/Template';
@@ -42,6 +45,9 @@ function App(props) {
           <Route exact path={`${isUNCC ? '/tcarr23' : ''}/about`} element={<AboutPage {...props} />} />
           <Route exact path={`${isUNCC ? '/tcarr23' : ''}/contact`} element={<ContactPage {...props} />} />
           <Route exact path={`${isUNCC ? '/tcarr23' : ''}/publications`} element={<PublicationsPage {...props} />} />
+          <Route exact path={`${isUNCC ? '/tcarr23' : ''}/blog`} element={<BlogPage {...props} />} />
+          <Route exact path={`${isUNCC ? '/tcarr23' : ''}/awards`} element={<AwardsPage {...props} />} />
+          <Route exact path={`${isUNCC ? '/tcarr23' : ''}/services`} element={<ServicesPage {...props} />} />
           <Route exact path={`${isUNCC ? '/tcarr23' : ''}/`} element={<HomePage {...props} />} />
         </Routes>
       </main>
