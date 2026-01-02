@@ -3,100 +3,244 @@ import {
     Box,
     Container,
     Typography,
+    Card,
+    CardContent,
+    Button,
+    TextField,
     ThemeProvider,
-    Fade
+    Link,
+    Stack,
 } from '@mui/material';
-import ContactForm from '../Components/ContactForm'
-import createHypermodernTheme from '../theme';
-// Recaptcha
-import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
+import {
+    Send,
+    Email,
+    GitHub,
+    LinkedIn,
+} from '@mui/icons-material';
+import createDarkTheme from '../theme';
 
-function ContactPage(props) {
-    const accentColor = localStorage.getItem('accentColor') || '#aa00ff';
-    const theme = createHypermodernTheme(accentColor);
+function ContactPage() {
+    const accentColor = localStorage.getItem('accentColor') || '#2563eb';
+    const theme = createDarkTheme(accentColor);
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // Handle form submission here
+        console.log('Form submitted');
+    };
 
     return (
         <ThemeProvider theme={theme}>
-            <Box
-                component="section"
-                sx={{
-                    minHeight: 'calc(100vh - 80px)',
-                    background: 'linear-gradient(135deg, rgba(10, 10, 15, 0.95), rgba(20, 20, 30, 0.9))',
-                    position: 'relative',
-                    pt: '80px',
-                    py: 8,
-                    zIndex: 0,
-                    '&::before': {
-                        content: '""',
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        background: `radial-gradient(circle at 20% 50%, ${accentColor}20 0%, transparent 50%), radial-gradient(circle at 80% 20%, ${accentColor}15 0%, transparent 50%)`,
-                        zIndex: -1,
-                    }
-                }}
-            >
-                <Container maxWidth="md" sx={{ position: 'relative', zIndex: 10 }}>
-                    {/* SEO Headers */}
-                    <Box component="header" sx={{ position: 'absolute', left: '-9999px' }}>
-                        <Typography variant="h1">Contact Thomas Carr</Typography>
-                        <Typography variant="body1">Get in touch with Thomas Carr for research collaborations, speaking engagements, or academic inquiries.</Typography>
+            <Box sx={{ minHeight: '100vh', bgcolor: 'background.default', py: 8 }}>
+                <Container maxWidth="xl" sx={{ py: 8 }}>
+                    {/* Header */}
+                    <Box sx={{ textAlign: 'center', mb: 8 }}>
+                        <Typography variant="h1" component="h1" gutterBottom>
+                            Get in Touch
+                        </Typography>
+                        <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 800, mx: 'auto' }}>
+                            I'm always interested in discussing research opportunities, collaborations, 
+                            or any questions about AI ethics and privacy-preserving machine learning.
+                        </Typography>
                     </Box>
 
-                    {/* Page Title */}
-                    <Fade in={true} timeout={1000}>
-                        <Box sx={{ textAlign: 'center', mb: 6 }}>
-                            <Typography
-                                variant="h1"
-                                sx={{
-                                    mb: 3,
-                                    background: `linear-gradient(135deg, ${accentColor}, #ffffff)`,
-                                    WebkitBackgroundClip: 'text',
-                                    WebkitTextFillColor: 'transparent',
-                                    backgroundClip: 'text',
-                                    fontSize: { xs: '2.5rem', md: '3.5rem' },
-                                    fontWeight: 800,
-                                    letterSpacing: '-0.02em',
-                                }}
-                            >
-                                Get In Touch
-                            </Typography>
-                            <Typography
-                                variant="h5"
-                                sx={{
-                                    color: 'rgba(255, 255, 255, 0.9)',
-                                    maxWidth: '600px',
-                                    mx: 'auto',
-                                    lineHeight: 1.6,
-                                    fontWeight: 400,
-                                }}
-                            >
-                                Ready to collaborate on research, discuss opportunities, or explore innovative AI solutions? Let's connect!
-                            </Typography>
-                        </Box>
-                    </Fade>
-
                     {/* Contact Form */}
-                    <Fade in={true} timeout={1500}>
-                        <Box sx={{
-                            background: 'rgba(30, 30, 40, 0.8)',
+                    <Box sx={{ maxWidth: '700px', mx: 'auto' }}>
+                        <Card sx={{ 
+                            p: { xs: 4, md: 6 },
+                            background: 'linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)',
                             backdropFilter: 'blur(20px)',
-                            border: '1px solid rgba(255, 255, 255, 0.1)',
-                            borderRadius: '20px',
-                            p: 4,
-                            boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)',
+                            border: '1px solid rgba(255,255,255,0.08)',
+                            boxShadow: '0 20px 60px rgba(0,0,0,0.3)'
                         }}>
-                            <GoogleReCaptchaProvider reCaptchaKey="6LfeKHAnAAAAAEMhaDCTuwgrIT4HvxG3Ur3AXnjs">
-                                <ContactForm />
-                            </GoogleReCaptchaProvider>
+                            <CardContent sx={{ p: 0 }}>
+                                <Typography variant="h3" gutterBottom sx={{ textAlign: 'center', mb: 4, fontWeight: 600 }}>
+                                    Send Message
+                                </Typography>
+                                <Box component="form" onSubmit={handleSubmit}>
+                                    <Stack spacing={3}>
+                                        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3}>
+                                            <TextField
+                                                fullWidth
+                                                label="First Name"
+                                                variant="outlined"
+                                                required
+                                                sx={{
+                                                    '& .MuiOutlinedInput-root': {
+                                                        backgroundColor: 'rgba(255,255,255,0.02)',
+                                                        '&:hover fieldset': {
+                                                            borderColor: accentColor,
+                                                        },
+                                                        '&.Mui-focused fieldset': {
+                                                            borderColor: accentColor,
+                                                        },
+                                                    },
+                                                }}
+                                            />
+                                            <TextField
+                                                fullWidth
+                                                label="Last Name"
+                                                variant="outlined"
+                                                required
+                                                sx={{
+                                                    '& .MuiOutlinedInput-root': {
+                                                        backgroundColor: 'rgba(255,255,255,0.02)',
+                                                        '&:hover fieldset': {
+                                                            borderColor: accentColor,
+                                                        },
+                                                        '&.Mui-focused fieldset': {
+                                                            borderColor: accentColor,
+                                                        },
+                                                    },
+                                                }}
+                                            />
+                                        </Stack>
+                                        <TextField
+                                            fullWidth
+                                            label="Email"
+                                            type="email"
+                                            variant="outlined"
+                                            required
+                                            sx={{
+                                                '& .MuiOutlinedInput-root': {
+                                                    backgroundColor: 'rgba(255,255,255,0.02)',
+                                                    '&:hover fieldset': {
+                                                        borderColor: accentColor,
+                                                    },
+                                                    '&.Mui-focused fieldset': {
+                                                        borderColor: accentColor,
+                                                    },
+                                                },
+                                            }}
+                                        />
+                                        <TextField
+                                            fullWidth
+                                            label="Subject"
+                                            variant="outlined"
+                                            required
+                                            sx={{
+                                                '& .MuiOutlinedInput-root': {
+                                                    backgroundColor: 'rgba(255,255,255,0.02)',
+                                                    '&:hover fieldset': {
+                                                        borderColor: accentColor,
+                                                    },
+                                                    '&.Mui-focused fieldset': {
+                                                        borderColor: accentColor,
+                                                    },
+                                                },
+                                            }}
+                                        />
+                                        <TextField
+                                            fullWidth
+                                            label="Message"
+                                            multiline
+                                            rows={5}
+                                            required
+                                            sx={{
+                                                '& .MuiOutlinedInput-root': {
+                                                    backgroundColor: 'rgba(255,255,255,0.02)',
+                                                    '&:hover fieldset': {
+                                                        borderColor: accentColor,
+                                                    },
+                                                    '&.Mui-focused fieldset': {
+                                                        borderColor: accentColor,
+                                                    },
+                                                },
+                                            }}
+                                        />
+                                        <Button 
+                                            type="submit" 
+                                            variant="contained" 
+                                            size="large"
+                                            endIcon={<Send />}
+                                            sx={{ 
+                                                py: 1.5,
+                                                px: 4,
+                                                fontSize: '1.1rem',
+                                                fontWeight: 600,
+                                                background: `linear-gradient(45deg, ${accentColor}, ${accentColor}dd)`,
+                                                '&:hover': {
+                                                    background: `linear-gradient(45deg, ${accentColor}dd, ${accentColor})`,
+                                                    transform: 'translateY(-2px)',
+                                                    boxShadow: `0 10px 25px ${accentColor}40`,
+                                                },
+                                                transition: 'all 0.3s ease',
+                                            }}
+                                        >
+                                            Send Message
+                                        </Button>
+                                    </Stack>
+                                </Box>
+                            </CardContent>
+                        </Card>
+
+                        {/* Alternative Contact Methods */}
+                        <Box sx={{ mt: 6, textAlign: 'center' }}>
+                            <Typography variant="h6" gutterBottom sx={{ color: 'text.secondary', mb: 3 }}>
+                                Or reach out directly
+                            </Typography>
+                            <Stack direction="row" spacing={3} justifyContent="center" alignItems="center">
+                                <Link 
+                                    href="mailto:thomas@example.com" 
+                                    sx={{ 
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: 1,
+                                        color: 'text.secondary',
+                                        textDecoration: 'none',
+                                        '&:hover': {
+                                            color: accentColor,
+                                        },
+                                    }}
+                                >
+                                    <Email />
+                                    <Typography variant="body2">thomas@example.com</Typography>
+                                </Link>
+                                <Typography variant="body2" sx={{ color: 'text.secondary' }}>•</Typography>
+                                <Link 
+                                    href="https://github.com/thomasc33" 
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    sx={{ 
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: 1,
+                                        color: 'text.secondary',
+                                        textDecoration: 'none',
+                                        '&:hover': {
+                                            color: accentColor,
+                                        },
+                                    }}
+                                >
+                                    <GitHub />
+                                    <Typography variant="body2">GitHub</Typography>
+                                </Link>
+                                <Typography variant="body2" sx={{ color: 'text.secondary' }}>•</Typography>
+                                <Link 
+                                    href="https://www.linkedin.com/in/thomasc33/" 
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    sx={{ 
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: 1,
+                                        color: 'text.secondary',
+                                        textDecoration: 'none',
+                                        '&:hover': {
+                                            color: accentColor,
+                                        },
+                                    }}
+                                >
+                                    <LinkedIn />
+                                    <Typography variant="body2">LinkedIn</Typography>
+                                </Link>
+                            </Stack>
                         </Box>
-                    </Fade>
+                    </Box>
                 </Container>
             </Box>
         </ThemeProvider>
-    )
+    );
 }
 
-export default ContactPage
+export default ContactPage;

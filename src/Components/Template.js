@@ -12,8 +12,7 @@ import {
     ListItemIcon,
     ListItemText,
     useMediaQuery,
-    useTheme,
-    Chip
+    useTheme
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import HomeIcon from '@mui/icons-material/Home';
@@ -25,9 +24,6 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import CreateIcon from '@mui/icons-material/Create';
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
-import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import '../css/Template.css';
 const isUNCC = require('../isUNCC.json').isUNCC;
 
@@ -91,10 +87,7 @@ function PageTemplate(props) {
         if (path.includes('/projects')) return 1;
         if (path.includes('/about')) return 2;
         if (path.includes('/publications')) return 3;
-        if (path.includes('/blog')) return 4;
-        if (path.includes('/awards')) return 5;
-        if (path.includes('/services')) return 6;
-        if (path.includes('/contact')) return 7;
+        if (path.includes('/contact')) return 4;
         return 0; // Home page
     };
 
@@ -137,10 +130,7 @@ function PageTemplate(props) {
         { to: '/projects', icon: <CodeIcon />, label: 'Projects', index: 1 },
         { to: '/about', icon: <PersonIcon />, label: 'About', index: 2 },
         { to: '/publications', icon: <ArticleIcon />, label: 'Publications', index: 3 },
-        { to: '/blog', icon: <CreateIcon />, label: 'Blog', index: 4 },
-        { to: '/awards', icon: <EmojiEventsIcon />, label: 'Awards', index: 5 },
-        { to: '/services', icon: <BusinessCenterIcon />, label: 'Services', index: 6 },
-        { to: '/contact', icon: <MailIcon />, label: 'Contact', index: 7 }
+        { to: '/contact', icon: <MailIcon />, label: 'Contact', index: 4 }
     ];
 
     // Social links data

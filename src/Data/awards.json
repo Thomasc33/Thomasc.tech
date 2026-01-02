@@ -1,127 +1,16 @@
 {
-    "awards": [
-        {
-            "id": 1,
-            "title": "Outstanding Graduate Research Award",
-            "organization": "University of North Carolina at Charlotte",
-            "year": "2024",
-            "category": "Academic",
-            "description": "Recognized for exceptional contributions to ethical machine learning research and privacy-preserving AI systems.",
-            "icon": "🏆",
-            "featured": true
-        },
-        {
-            "id": 2,
-            "title": "Best Paper Award",
-            "organization": "International Conference on AI Ethics",
-            "year": "2023",
-            "category": "Research",
-            "description": "Awarded for groundbreaking research on fairness in algorithmic decision-making systems.",
-            "icon": "📄",
-            "featured": true
-        },
-        {
-            "id": 3,
-            "title": "Dean's List",
-            "organization": "UNC Charlotte College of Computing",
-            "year": "2021-2022",
-            "category": "Academic",
-            "description": "Maintained exceptional academic performance with GPA above 3.7 throughout graduate studies.",
-            "icon": "🎓",
-            "featured": false
-        },
-        {
-            "id": 4,
-            "title": "Graduate Research Fellowship",
-            "organization": "National Science Foundation",
-            "year": "2023",
-            "category": "Fellowship",
-            "description": "Competitive fellowship supporting research in privacy-preserving machine learning techniques.",
-            "icon": "💰",
-            "featured": true
-        },
-        {
-            "id": 5,
-            "title": "Innovation in AI Award",
-            "organization": "Charlotte Tech Innovation Hub",
-            "year": "2023",
-            "category": "Innovation",
-            "description": "Recognized for developing novel approaches to ethical AI implementation in real-world applications.",
-            "icon": "💡",
-            "featured": false
-        },
-        {
-            "id": 6,
-            "title": "Outstanding Teaching Assistant",
-            "organization": "UNC Charlotte Department of Computer Science",
-            "year": "2022",
-            "category": "Teaching",
-            "description": "Exceptional performance in supporting undergraduate computer science education and mentoring.",
-            "icon": "👨‍🏫",
-            "featured": false
-        }
-    ],
-    "certifications": [
-        {
-            "id": 1,
-            "title": "AWS Certified Solutions Architect",
-            "organization": "Amazon Web Services",
-            "year": "2023",
-            "validUntil": "2026",
-            "credentialId": "AWS-CSA-2023-TC001",
-            "icon": "☁️"
-        },
-        {
-            "id": 2,
-            "title": "Google Cloud Professional ML Engineer",
-            "organization": "Google Cloud",
-            "year": "2023",
-            "validUntil": "2025",
-            "credentialId": "GCP-MLE-2023-TC002",
-            "icon": "🤖"
-        },
-        {
-            "id": 3,
-            "title": "Certified Ethical Hacker (CEH)",
-            "organization": "EC-Council",
-            "year": "2022",
-            "validUntil": "2025",
-            "credentialId": "CEH-2022-TC003",
-            "icon": "🔒"
-        }
-    ],
-    "achievements": [
-        {
-            "id": 1,
-            "title": "Published 8+ Peer-Reviewed Papers",
-            "description": "Contributed to leading conferences and journals in AI ethics and privacy research.",
-            "icon": "📚",
-            "metric": "8+",
-            "category": "Research"
-        },
-        {
-            "id": 2,
-            "title": "1000+ Citations",
-            "description": "Research work has been cited over 1000 times by fellow researchers worldwide.",
-            "icon": "📈",
-            "metric": "1000+",
-            "category": "Impact"
-        },
-        {
-            "id": 3,
-            "title": "15+ Open Source Projects",
-            "description": "Actively contributed to and maintained multiple open-source projects in AI and web development.",
-            "icon": "💻",
-            "metric": "15+",
-            "category": "Development"
-        },
-        {
-            "id": 4,
-            "title": "50+ Conference Presentations",
-            "description": "Presented research findings at national and international conferences.",
-            "icon": "🎤",
-            "metric": "50+",
-            "category": "Speaking"
-        }
-    ]
+  "awards": [
+    {
+      "id": 1,
+      "title": "Dean's List",
+      "organization": "University of North Carolina at Charlotte",
+      "year": "2019–2022",
+      "category": "Academic",
+      "description": "Maintained a GPA of 3.7 or above across multiple semesters.",
+      "icon": "🎓",
+      "featured": true
+    }
+  ],
+  "certifications": [],
+  "achievements": []
 }
