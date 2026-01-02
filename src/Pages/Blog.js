@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     Box,
     Container,
@@ -20,76 +20,18 @@ import {
     Favorite,
 } from '@mui/icons-material';
 import createDarkTheme from '../theme';
+import blogData from '../Data/blog.json';
 
-const blogPosts = [
-    {
-        title: 'The Future of Privacy in Machine Learning',
-        excerpt: 'Exploring emerging techniques in differential privacy and federated learning that are reshaping how we approach data protection in AI systems.',
-        category: 'Privacy',
-        date: '2024-01-15',
-        readTime: '8 min read',
-        likes: 42,
-        comments: 5,
-        image: '/blog/privacy-ml.jpg',
-    },
-    {
-        title: 'Building Ethical AI: A Practical Guide',
-        excerpt: 'A comprehensive framework for implementing ethical considerations throughout the machine learning lifecycle, from data collection to deployment.',
-        category: 'AI Ethics',
-        date: '2024-01-10',
-        readTime: '12 min read',
-        likes: 68,
-        comments: 12,
-        image: '/blog/ethical-ai.jpg',
-    },
-    {
-        title: 'Understanding Bias in Large Language Models',
-        excerpt: 'Deep dive into the sources of bias in LLMs and practical strategies for detection and mitigation in real-world applications.',
-        category: 'Bias & Fairness',
-        date: '2024-01-05',
-        readTime: '10 min read',
-        likes: 55,
-        comments: 8,
-        image: '/blog/llm-bias.jpg',
-    },
-    {
-        title: 'Federated Learning in Healthcare: Opportunities and Challenges',
-        excerpt: 'Examining real-world applications of federated learning in medical settings and the unique privacy challenges they present.',
-        category: 'Healthcare',
-        date: '2023-12-28',
-        readTime: '15 min read',
-        likes: 73,
-        comments: 15,
-        image: '/blog/healthcare-fl.jpg',
-    },
-    {
-        title: 'The Mathematics Behind Differential Privacy',
-        excerpt: 'A gentle introduction to the mathematical foundations of differential privacy and its practical implications for data science.',
-        category: 'Theory',
-        date: '2023-12-20',
-        readTime: '20 min read',
-        likes: 38,
-        comments: 6,
-        image: '/blog/dp-math.jpg',
-    },
-    {
-        title: 'Secure Multi-Party Computation: A Primer',
-        excerpt: 'Understanding the basics of SMPC protocols and their role in enabling privacy-preserving collaborative computation.',
-        category: 'Cryptography',
-        date: '2023-12-15',
-        readTime: '18 min read',
-        likes: 45,
-        comments: 9,
-        image: '/blog/smpc-primer.jpg',
-    },
-];
-
-const categories = ['All', 'Privacy', 'AI Ethics', 'Bias & Fairness', 'Healthcare', 'Theory', 'Cryptography'];
 
 function BlogPage() {
     const accentColor = localStorage.getItem('accentColor') || '#2563eb';
     const theme = createDarkTheme(accentColor);
     const [selectedCategory, setSelectedCategory] = useState('All');
+    const [blogPosts, setBlogPosts] = useState([]);
+
+    useEffect(() => {
+        setBlogPosts(blogData.articles);
+    }, []);
 
     const filteredPosts = selectedCategory === 'All' 
         ? blogPosts 
@@ -103,6 +45,8 @@ function BlogPage() {
             day: 'numeric' 
         });
     };
+
+    const categories = ['All', 'Technical', 'Development', 'Opinion'];
 
     return (
         <ThemeProvider theme={theme}>
@@ -161,7 +105,7 @@ function BlogPage() {
                                             <Box sx={{ display: 'flex', alignItems: 'center', color: 'text.secondary' }}>
                                                 <CalendarToday sx={{ fontSize: 16, mr: 0.5 }} />
                                                 <Typography variant="caption">
-                                                    {formatDate(post.date)}
+                                                    {formatDate(post.publishDate)}
                                                 </Typography>
                                             </Box>
                                             <Box sx={{ display: 'flex', alignItems: 'center', color: 'text.secondary' }}>

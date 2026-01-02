@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     Box,
     Container,
@@ -16,6 +16,7 @@ import {
     MilitaryTech,
 } from '@mui/icons-material';
 import createDarkTheme from '../theme';
+import awardsData from '../Data/awards.json';
 
 const achievements = [
     {
@@ -40,73 +41,21 @@ const achievements = [
     },
 ];
 
-const awards = [
-    {
-        title: 'Best Paper Award',
-        organization: 'International Conference on Machine Learning (ICML)',
-        date: '2023',
-        description: 'Recognized for outstanding research on differential privacy in deep learning systems.',
-        type: 'Conference',
-    },
-    {
-        title: 'Outstanding Research Assistant',
-        organization: 'UNC Charlotte College of Computing',
-        date: '2022',
-        description: 'Awarded for exceptional contributions to AI ethics research and mentoring.',
-        type: 'University',
-    },
-    {
-        title: 'NSF Graduate Research Fellowship',
-        organization: 'National Science Foundation',
-        date: '2021',
-        description: 'Three-year fellowship supporting research in privacy-preserving machine learning.',
-        type: 'National',
-    },
-    {
-        title: 'Google PhD Fellowship',
-        organization: 'Google',
-        date: '2021',
-        description: 'Fellowship for research in machine learning and artificial intelligence ethics.',
-        type: 'Industry',
-    },
-    {
-        title: 'Best Student Paper',
-        organization: 'Neural Information Processing Systems (NeurIPS)',
-        date: '2020',
-        description: 'Recognition for innovative work on federated learning in healthcare applications.',
-        type: 'Conference',
-    },
-];
-
-const certifications = [
-    {
-        title: 'TensorFlow Developer Certificate',
-        organization: 'Google',
-        date: '2023',
-        description: 'Professional certification in TensorFlow and machine learning implementation.',
-    },
-    {
-        title: 'AWS Certified Machine Learning Specialty',
-        organization: 'Amazon Web Services',
-        date: '2022',
-        description: 'Expertise in deploying and managing ML models on AWS infrastructure.',
-    },
-    {
-        title: 'Professional Data Scientist',
-        organization: 'IBM',
-        date: '2022',
-        description: 'Certification in advanced data science methodologies and best practices.',
-    },
-];
-
 function AwardsPage() {
     const accentColor = localStorage.getItem('accentColor') || '#2563eb';
     const theme = createDarkTheme(accentColor);
+    const [awards, setAwards] = useState([]);
+    const [certifications, setCertifications] = useState([]);
 
-    const getAwardIcon = (type) => {
-        switch(type) {
+    useEffect(() => {
+        setAwards(awardsData.awards || []);
+        setCertifications(awardsData.certifications || []);
+    }, []);
+
+    const getAwardIcon = (category) => {
+        switch(category) {
+            case 'Academic': return <School />;
             case 'Conference': return <EmojiEvents />;
-            case 'University': return <School />;
             case 'National': return <MilitaryTech />;
             case 'Industry': return <WorkspacePremium />;
             default: return <EmojiEvents />;
@@ -170,14 +119,14 @@ function AwardsPage() {
                                         <CardContent sx={{ p: 0 }}>
                                             <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 3 }}>
                                                 <Avatar sx={{ bgcolor: accentColor, width: 48, height: 48 }}>
-                                                    {getAwardIcon(award.type)}
+                                                    {getAwardIcon(award.category)}
                                                 </Avatar>
                                                 <Box sx={{ flexGrow: 1 }}>
                                                     <Typography variant="h6" gutterBottom>
                                                         {award.title}
                                                     </Typography>
                                                     <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-                                                        <strong>{award.organization}</strong> • {award.date}
+                                                        <strong>{award.organization}</strong> • {award.year}
                                                     </Typography>
                                                     <Typography variant="body2" color="text.secondary">
                                                         {award.description}

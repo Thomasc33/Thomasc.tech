@@ -1,30 +1,21 @@
-import React, { useCallback, useMemo, useEffect, useState } from 'react'
-import Particles, { initParticlesEngine } from '@tsparticles/react'
-import { loadSlim } from '@tsparticles/slim'
+import React, { useEffect, useState, useMemo } from 'react';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
+import { loadSlim } from '@tsparticles/slim';
 import { isMobile } from 'react-device-detect';
 
-const ParticlesBackground = () => {
+const ParticlesFixed = () => {
     const [mounted, setMounted] = useState(false);
     const [accent, setAccent] = useState('#8b5cf6');
-    const [particlesReady, setParticlesReady] = useState(false);
-    
-    const particlesLoaded = useCallback(async (container) => {
-        console.log('Particles container loaded:', container);
-        console.log('Number of particles:', container.particles.count);
-    }, []);
+    const [ready, setReady] = useState(false);
     
     useEffect(() => {
         setMounted(true);
         setAccent(localStorage.getItem('accentColor') || '#8b5cf6');
         
-        // Initialize particles engine
         initParticlesEngine(async (engine) => {
             await loadSlim(engine);
         }).then(() => {
-            console.log('Particles engine initialized');
-            setParticlesReady(true);
-        }).catch(err => {
-            console.error('Particles initialization failed:', err);
+            setReady(true);
         });
     }, []);
 
@@ -91,7 +82,7 @@ const ParticlesBackground = () => {
                 animation: {
                     enable: true,
                     speed: 1,
-                    minimumValue: 0.1,
+                    min: 0.1,
                     sync: false
                 }
             },
@@ -103,7 +94,7 @@ const ParticlesBackground = () => {
                 animation: {
                     enable: true,
                     speed: 2,
-                    minimumValue: 0.1,
+                    min: 0.1,
                     sync: false
                 }
             }
@@ -111,12 +102,7 @@ const ParticlesBackground = () => {
         detectRetina: true
     }), [accent]);
 
-    if (isMobile || !mounted || !particlesReady) {
-        console.log('Particles not rendering:', { isMobile, mounted, particlesReady });
-        return null;
-    }
-    
-    console.log('Rendering particles with options:', options);
+    if (isMobile || !mounted || !ready) return null;
 
     return (
         <div style={{
@@ -125,13 +111,12 @@ const ParticlesBackground = () => {
             left: 0,
             width: '100%',
             height: '100%',
-            zIndex: 9999,
+            zIndex: -1,
             pointerEvents: 'none'
         }}>
             <Particles 
                 id="tsparticles"
-                options={options} 
-                loaded={particlesLoaded}
+                options={options}
                 style={{
                     position: 'absolute',
                     top: 0,
@@ -144,4 +129,4 @@ const ParticlesBackground = () => {
     );
 };
 
-export default ParticlesBackground;
+export default ParticlesFixed;

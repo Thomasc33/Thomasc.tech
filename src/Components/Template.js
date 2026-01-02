@@ -25,7 +25,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import '../css/Template.css';
-const isUNCC = require('../isUNCC.json').isUNCC;
+import FloatingText from './FloatingText';
 
 // Modern styled components
 const ModernAppBar = styled(AppBar)(({ accentcolor }) => ({
@@ -33,7 +33,17 @@ const ModernAppBar = styled(AppBar)(({ accentcolor }) => ({
     backdropFilter: 'blur(20px)',
     border: '1px solid rgba(255, 255, 255, 0.1)',
     boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
-    transition: 'all 0.3s ease',
+    transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+    position: 'relative',
+    '&::after': {
+        content: '""',
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: '2px',
+        background: accentcolor,
+    },
     '&.scrolled': {
         background: 'rgba(10, 10, 15, 0.95)',
         boxShadow: `0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px ${accentcolor}20`,
@@ -48,15 +58,30 @@ const NavButton = styled(Box)(({ accentcolor, active }) => ({
     borderRadius: '12px',
     textDecoration: 'none',
     color: active ? accentcolor : 'rgba(255, 255, 255, 0.8)',
-    background: active ? `${accentcolor}20` : 'transparent',
-    border: active ? `1px solid ${accentcolor}40` : '1px solid transparent',
-    transition: 'all 0.3s ease',
+    background: active ? `${accentcolor}15` : 'transparent',
+    border: active ? `1px solid ${accentcolor}30` : '1px solid transparent',
+    transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
     fontWeight: 500,
+    position: 'relative',
+    overflow: 'hidden',
+    '&::before': {
+        content: '""',
+        position: 'absolute',
+        top: 0,
+        left: '-100%',
+        width: '100%',
+        height: '100%',
+        background: `linear-gradient(90deg, transparent, ${accentcolor}10, transparent)`,
+        transition: 'left 0.5s',
+    },
     '&:hover': {
         color: accentcolor,
-        background: `${accentcolor}15`,
+        background: `${accentcolor}10`,
         border: `1px solid ${accentcolor}30`,
-        transform: 'translateY(-2px)',
+        transform: 'translateY(-1px)',
+        '&::before': {
+            left: '100%',
+        },
     },
 }));
 
@@ -64,16 +89,17 @@ const SocialButton = styled(IconButton)(({ accentcolor }) => ({
     color: 'rgba(255, 255, 255, 0.8)',
     background: 'rgba(255, 255, 255, 0.05)',
     border: '1px solid rgba(255, 255, 255, 0.1)',
-    transition: 'all 0.3s ease',
+    transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
     '&:hover': {
         color: accentcolor,
-        background: `${accentcolor}20`,
-        border: `1px solid ${accentcolor}40`,
-        transform: 'translateY(-2px)',
+        background: `${accentcolor}15`,
+        border: `1px solid ${accentcolor}30`,
+        transform: 'translateY(-1px)',
     },
 }));
 
 function PageTemplate(props) {
+    const { setPage } = props;
     const accent = localStorage.getItem('accentColor') || '#aa00ff';
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -81,21 +107,20 @@ function PageTemplate(props) {
     const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
 
-    // Determine active page based on URL path
-    const getActivePage = () => {
-        const path = location.pathname;
-        if (path.includes('/projects')) return 1;
-        if (path.includes('/about')) return 2;
-        if (path.includes('/publications')) return 3;
-        if (path.includes('/contact')) return 4;
-        return 0; // Home page
-    };
-
     // Set the active page based on URL
     useEffect(() => {
+        const getActivePage = () => {
+            const path = location.pathname;
+            if (path.includes('/projects')) return 1;
+            if (path.includes('/about')) return 2;
+            if (path.includes('/publications')) return 3;
+            if (path.includes('/contact')) return 4;
+            return 0; // Home page
+        };
+        
         const activePage = getActivePage();
-        props.setPage(activePage);
-    }, [location, props.setPage]);
+        setPage(activePage);
+    }, [location, setPage]);
 
     // Handle scroll effect for navbar
     useEffect(() => {
@@ -168,19 +193,20 @@ function PageTemplate(props) {
                     <Typography
                         variant="h5"
                         component={Link}
-                        to={`${isUNCC ? '/tcarr23' : ''}/`}
+                        to="/"
                         onClick={() => handleNavClick(0)}
-                        sx={{
-                            textDecoration: 'none',
-                            color: 'white',
-                            fontWeight: 700,
-                            background: `linear-gradient(135deg, ${accent}, #ffffff)`,
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            backgroundClip: 'text',
-                        }}
                     >
-                        Thomas Carr
+                        <FloatingText
+                            variant="h5"
+                            component="div"
+                            animation="gentle"
+                            sx={{
+                                color: 'white',
+                                fontWeight: 700,
+                            }}
+                        >
+                            Thomas Carr
+                        </FloatingText>
                     </Typography>
 
                     {/* Desktop Navigation */}
@@ -190,7 +216,7 @@ function PageTemplate(props) {
                                 <NavButton
                                     key={item.index}
                                     component={Link}
-                                    to={`${isUNCC ? '/tcarr23' : ''}${item.to}`}
+                                    to={item.to}
                                     onClick={() => handleNavClick(item.index)}
                                     accentcolor={accent}
                                     active={props.Page === item.index}
@@ -255,7 +281,7 @@ function PageTemplate(props) {
                             <ListItem
                                 key={item.index}
                                 component={Link}
-                                to={`${isUNCC ? '/tcarr23' : ''}${item.to}`}
+                                to={item.to}
                                 onClick={() => handleNavClick(item.index)}
                                 sx={{
                                     borderRadius: '12px',

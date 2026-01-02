@@ -5,16 +5,19 @@ import PublicationsPage from './Pages/Publications';
 import ContactPage from './Pages/Contact';
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import PageTemplate from './Components/Template';
-import ParticlesElement from './Components/Particles';
+import PageTemplate from './Components/HypermodernHeader';
+import ParticlesBackground from './Components/ParticlesFixed';
 import SEO from './Components/SEO';
 import './App.css';
 import './css/Info.css';
-const isUNCC = require('./isUNCC.json').isUNCC
 
 
 function App(props) {
   const [Page, setPage] = useState(0)
+  
+  // Detect if we're on UNCC hosting and set basename accordingly
+  const isUnccHosting = window.location.hostname === 'webpages.charlotte.edu';
+  const basename = isUnccHosting ? '/tcarr23' : '/';
 
   // Set the accent color as a CSS variable
   React.useEffect(() => {
@@ -32,17 +35,17 @@ function App(props) {
   }, []);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <SEO />
-      <ParticlesElement />
+      <ParticlesBackground />
       <PageTemplate {...props} Page={Page} setPage={setPage} />
       <main className="page-content">
         <Routes>
-          <Route exact path={`${isUNCC ? '/tcarr23' : ''}/projects`} element={<ProjectsPage {...props} />} />
-          <Route exact path={`${isUNCC ? '/tcarr23' : ''}/about`} element={<AboutPage {...props} />} />
-          <Route exact path={`${isUNCC ? '/tcarr23' : ''}/contact`} element={<ContactPage {...props} />} />
-          <Route exact path={`${isUNCC ? '/tcarr23' : ''}/publications`} element={<PublicationsPage {...props} />} />
-          <Route exact path={`${isUNCC ? '/tcarr23' : ''}/`} element={<HomePage {...props} />} />
+          <Route exact path="/projects" element={<ProjectsPage {...props} />} />
+          <Route exact path="/about" element={<AboutPage {...props} />} />
+          <Route exact path="/contact" element={<ContactPage {...props} />} />
+          <Route exact path="/publications" element={<PublicationsPage {...props} />} />
+          <Route exact path="/" element={<HomePage {...props} />} />
         </Routes>
       </main>
     </BrowserRouter>

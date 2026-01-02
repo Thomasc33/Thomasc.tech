@@ -1,12 +1,21 @@
 {
     "published": [
         {
-            "title": "Linkage Attack on Skeleton-based Motion Visualization",
-            "authors": "Thomas Carr, Aidong Lu, Depeng Xu",
-            "conference": "CIKM 2023",
+            "title": "Privacy-centric Deep Motion Retargeting for Anonymization of Skeleton-Based Motion Visualization",
+            "authors": "Thomas Carr, Depeng Xu, Shuang Yuan, Aidong Lu",
+            "conference": "Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) 2025",
             "publicationType": "Conference",
-            "abstract": "Skeleton-based motion capture and visualization is an important computer vision task, especially in the virtual reality (VR) environment. It has grown increasingly popular due to the ease of gathering skeleton data and the high demand of virtual socialization. The captured skeleton data seems anonymous but can still be used to extract personal identifiable information (PII). This can lead to an unintended privacy leakage inside a VR meta-verse. We propose a novel linkage attack on skeleton-based motion visualization. It detects if a target and a reference skeleton are the same individual. The proposed model, called Linkage Attack Neural Network (LAN), is based on the principles of a Siamese Network. It incorporates deep neural networks to embed the relevant PII then uses a classifier to match the reference and target skeletons. We also employ classical and deep motion retargeting (MR) to cast the target skeleton onto a dummy skeleton such that the motion sequence is anonymized for privacy protection. Our evaluation shows that the effectiveness of LAN in the linkage attack and the effectiveness of MR in anonymization.",
-            "links": ["https://dl.acm.org/doi/10.1145/3583780.3615263"],
+            "year": 2025,
+            "abstract": "Capturing and visualizing motion using skeleton-based techniques is a key aspect of computer vision, particularly in virtual reality (VR) settings. Its popularity has surged, driven by the simplicity of obtaining skeleton data and the growing appetite for virtual interaction. Although this skeleton data appears to be non-identifiable, it can be exploited to derive personally identifiable information (PII), posing a risk of inadvertent privacy breaches. In this paper, we explore the application of motion retargeting and its ability to mitigate privacy leakages. Motion retargeting can effectively transfer the motion from an initial user onto a dummy skeleton with the purpose of hiding PII. We propose a Privacy-centric Deep Motion Retargeting model (PMR), which mitigates the PII through adversarial learning. In our evaluation, our proposed model achieves motion retargeting performance on par with the current state-of-the-art models. More importantly, it effectively prevents the attackers from identifying the initial user.",
+            "status": "Published"
+        },
+        {
+            "title": "AnonVis: A Visualization Tool for Human Motion Anonymization",
+            "authors": "Thomas Carr, Ruby Flanagan, Albert Bastakoti, Depeng Xu, Aidong Lu",
+            "conference": "ISMAR 2025 - Demo Track",
+            "publicationType": "Conference",
+            "year": 2025,
+            "abstract": "Privacy preservation in skeleton-based motion data has become increasingly important as virtual and augmented reality applications proliferate. While skeleton data appears abstract, it contains personally identifiable information that can be exploited for privacy attacks. This demonstration presents AnonVis, an interactive VR visualization tool that showcases the Smart Noise anonymization technique. Smart Noise leverages explainable AI to identify privacy-sensitive joints and applies adaptive noises. Our VR demonstration enables comparison between original and anonymized motions, allowing users to understand the privacy-utility trade-offs in motion anonymization. The system integrates a curated dataset processed through a Blender-to-Unity pipeline, providing an immersive environment for exploration.",
             "status": "Published"
         },
         {
@@ -14,6 +23,7 @@
             "authors": "Thomas Carr, Yaxin Zhao, Depeng Xu, Aidong Lu",
             "conference": "Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD) 2025",
             "publicationType": "Conference",
+            "year": 2025,
             "abstract": "We propose novel explanation-based methods for motion privacy preservation in skeleton data. By leveraging explainable AI techniques, we identify and protect sensitive information while maintaining data utility for motion analysis tasks.",
             "status": "Published",
             "citations": 1
@@ -23,34 +33,30 @@
             "authors": "Thomas Carr, Depeng Xu, Aidong Lu",
             "conference": "2024 IEEE International Conference on Metaverse Computing, Networking, and Communications (MetaCom)",
             "publicationType": "Conference",
+            "year": 2024,
             "abstract": "Capturing skeleton data is an important area of computer vision, especially for use in a virtual reality (VR) setting. As new simpler pose estimation techniques are created, the popularity of skeleton-based motion data has increased. While the skeleton data appears to be anonymous, it can be exploited to discover personally identifiable information (PII). This poses a risk of unintentional privacy leakages when skeletons are publicly displayed, like in a VR environment. In this survey, we look into the privacy implications posed by the skeleton data, focusing on the privacy and utility trade-off and current privacy-preserving techniques. We also look into differing pose estimation methods that are used to extract the skeleton data from videos or sensors. Then we will look into what skeleton-data is used for, particularly the state-of-the-art action recognition techniques. Lastly, we discuss the ethical implications of the use of skeleton data, emphasizing the need for an interdisciplinary view to address those challenges. This survey aims to provide an understanding of the current landscape of skeleton data while offering insights into the potential privacy issues that this new technique leads to.",
             "links": ["https://ieeexplore.ieee.org/abstract/document/10740130"],
             "status": "Published",
             "citations": 1
         },
         {
-            "title": "Privacy-centric Deep Motion Retargeting for Anonymization of Skeleton-Based Motion Visualization",
-            "authors": "Thomas Carr, Depeng Xu, Shuang Yuan, Aidong Lu",
-            "conference": "Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) 2025",
-            "publicationType": "Conference",
-            "abstract": "Capturing and visualizing motion using skeleton-based techniques is a key aspect of computer vision, particularly in virtual reality (VR) settings. Its popularity has surged, driven by the simplicity of obtaining skeleton data and the growing appetite for virtual interaction. Although this skeleton data appears to be non-identifiable, it can be exploited to derive personally identifiable information (PII), posing a risk of inadvertent privacy breaches. In this paper, we explore the application of motion retargeting and its ability to mitigate privacy leakages. Motion retargeting can effectively transfer the motion from an initial user onto a dummy skeleton with the purpose of hiding PII. We propose a Privacy-centric Deep Motion Retargeting model (PMR), which mitigates the PII through adversarial learning. In our evaluation, our proposed model achieves motion retargeting performance on par with the current state-of-the-art models. More importantly, it effectively prevents the attackers from identifying the initial user.",
-            "status": "Published"
-        },
-        {
             "title": "User Privacy in Skeleton-based Motion Data",
             "authors": "Thomas Carr, Depeng Xu",
             "conference": "2024 IEEE International Conference on Big Data (BigData)",
             "publicationType": "Conference",
+            "year": 2024,
             "description": "Capturing skeleton data is an important area of computer vision, especially for use in a virtual reality (VR) setting. As new techniques to extract skeletons come out, the popularity of skeleton-based motion data has increased. While the skeleton data appears to be anonymous, it can be exploited to discover personally identifiable information (PII). This poses a risk of unintentional privacy leakages when skeletons are publicly displayed, like in a VR environment. We explore the privacy implications posed by the skeleton data, focusing on the privacy and utility trade-off and current privacy-preserving techniques. In this paper, we propose a new baseline attack model Linkage Attack Neural Network (LAN) that acts as a matching classifier to distinguish whether two skeleton-sequences are from the same actor. Then we propose a new defense model, the Privacy-centric Deep Motion Retargeting (PMR) model that is an adversarial/cooperatively trained motion retargeting model. Additionally, we incorporate explanation techniques to identify and mask the most privacy-sensitive joints, either by zeroing them out or adding controlled noise. Finally, we propose a transformer-based motion retargeting model designed for real-time applications, leveraging autoregressive decoding for continuous, frame-by-frame skeleton generation.",
             "links": ["https://ieeexplore.ieee.org/abstract/document/9796423"],
             "status": "Published"
         },
         {
-            "title": "AnonVis: A Visualization Tool for Human Motion Anonymization",
-            "authors": "Thomas Carr, Ruby Flanagan, Albert Bastakoti, Depeng Xu, Aidong Lu",
-            "conference": "ISMAR 2025 - Demo Track",
+            "title": "Linkage Attack on Skeleton-based Motion Visualization",
+            "authors": "Thomas Carr, Aidong Lu, Depeng Xu",
+            "conference": "CIKM 2023",
             "publicationType": "Conference",
-            "abstract": "Privacy preservation in skeleton-based motion data has become increasingly important as virtual and augmented reality applications proliferate. While skeleton data appears abstract, it contains personally identifiable information that can be exploited for privacy attacks. This demonstration presents AnonVis, an interactive VR visualization tool that showcases the Smart Noise anonymization technique. Smart Noise leverages explainable AI to identify privacy-sensitive joints and applies adaptive noises. Our VR demonstration enables comparison between original and anonymized motions, allowing users to understand the privacy-utility trade-offs in motion anonymization. The system integrates a curated dataset processed through a Blender-to-Unity pipeline, providing an immersive environment for exploration.",
+            "year": 2023,
+            "abstract": "Skeleton-based motion capture and visualization is an important computer vision task, especially in the virtual reality (VR) environment. It has grown increasingly popular due to the ease of gathering skeleton data and the high demand of virtual socialization. The captured skeleton data seems anonymous but can still be used to extract personal identifiable information (PII). This can lead to an unintended privacy leakage inside a VR meta-verse. We propose a novel linkage attack on skeleton-based motion visualization. It detects if a target and a reference skeleton are the same individual. The proposed model, called Linkage Attack Neural Network (LAN), is based on the principles of a Siamese Network. It incorporates deep neural networks to embed the relevant PII then uses a classifier to match the reference and target skeletons. We also employ classical and deep motion retargeting (MR) to cast the target skeleton onto a dummy skeleton such that the motion sequence is anonymized for privacy protection. Our evaluation shows that the effectiveness of LAN in the linkage attack and the effectiveness of MR in anonymization.",
+            "links": ["https://dl.acm.org/doi/10.1145/3583780.3615263"],
             "status": "Published"
         }
     ],
@@ -60,6 +66,7 @@
             "authors": "Thomas Carr, Depeng Xu, Aidong Lu",
             "conference": "ECCV 2025 (Target)",
             "publicationType": "Conference",
+            "year": 2025,
             "abstract": "Skeleton-based motion data reveal private information from both static skeletal structure (body proportions, bone lengths) and dynamic motion patterns (gait signatures, person-specific movement styles), enabling re-identification attacks despite lacking facial features. We propose DisentangledTMR, a transformer-based motion retargeting architecture that aims to achieve privacy through explicit architectural disentanglement. Unlike single-encoder approaches that rely on implicit separation via decoder attention, DisentangledTMR employs dual encoders with complementary inductive biases (temporal processing for action, spatial processing for identity) combined with a factorized decoder using adaptive fusion. A three-stage training strategy progressively builds disentangled representations, reconstruction capability, and end-to-end refinement. We will evaluate DisentangledTMR on NTU RGB+D 60, NTU RGB+D 120, and ETRI-Activity3D datasets using cross-view protocols. We hypothesize that architectural disentanglement with staged training will provide superior privacy-utility trade-offs compared to single-encoder end-to-end approaches. Planned ablation studies will validate each component's contribution, establishing a principled framework for privacy-preserving skeleton motion analysis.",
             "status": "In Writing"
         }
