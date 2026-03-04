@@ -1,13 +1,43 @@
 [
     {
+        "title": "AI & Software Engineer",
+        "organization": "Incerta Intelligence",
+        "timeframe": "Jul 2025 – Present",
+        "responsibilities": [
+            "Work on defense contracts focusing on multimodal fusion for explainable and auditable decision support.",
+            "Build AI systems for defense applications with emphasis on transparency and accountability.",
+            "Develop production software integrating machine learning models with mission-critical systems."
+        ]
+    },
+    {
+        "title": "Founding AI & Software Engineer",
+        "organization": "ACR Technologies",
+        "timeframe": "Dec 2024 – Oct 2025",
+        "responsibilities": [
+            "Built an AI-enhanced surgery communications platform for intraoperative neural monitoring.",
+            "Designed and implemented real-time AI systems for surgical communication workflows.",
+            "Led technical architecture decisions as founding engineer of the AI division."
+        ]
+    },
+    {
         "title": "Graduate Research Assistant",
         "organization": "University of North Carolina at Charlotte",
-        "timeframe": "Jan 2023 – Present",
+        "timeframe": "Jan 2023 – 2025",
         "responsibilities": [
             "Spearheaded research on privacy-preserving algorithms for VR skeleton-based motion data.",
             "Published findings at leading AI conferences and achieved a 15% accuracy boost in classification tasks.",
             "Developed machine learning models aimed at reducing bias and improving fairness in decision-making systems.",
             "Mentored junior researchers in data analysis, model development, and literature reviews."
+        ]
+    },
+    {
+        "title": "Full-Stack Developer / Systems Engineer",
+        "organization": "MDcentric Technology",
+        "timeframe": "May 2021 – Dec 2022",
+        "responsibilities": [
+            "Built a web-based asset management system tracking over 30,000 devices in real-time.",
+            "Reduced system imaging time by 20% and implemented improvements that increased system uptime by 25%.",
+            "Delivered key updates to the Microsoft Configuration Manager, optimizing laptop deployment for enterprise clients."
         ]
     },
     {
@@ -37,23 +67,13 @@
         "timeframe": "May 2024 – Aug 2024",
         "responsibilities": [
             "Enhanced AI models for solving advanced mathematical problems with 40% higher accuracy.",
-            "Created evaluation frameworks to rigorously test AI’s reasoning abilities and robustness.",
+            "Created evaluation frameworks to rigorously test AI's reasoning abilities and robustness.",
             "Collaborated with cross-functional teams to improve model performance for complex problem-solving tasks."
         ]
     },
     {
-        "title": "Full-Stack Developer / Systems Engineer",
-        "organization": "MDcentric Technology",
-        "timeframe": "May 2021 – Dec 2022",
-        "responsibilities": [
-            "Built a web-based asset management system tracking over 30,000 devices in real-time.",
-            "Reduced system imaging time by 20% and implemented improvements that increased system uptime by 25%.",
-            "Delivered key updates to the Microsoft Configuration Manager, optimizing laptop deployment for enterprise clients."
-        ]
-    },
-    {
         "title": "Assistant Manager / Interim General Manager",
-        "organization": "Marco’s Pizza",
+        "organization": "Marco's Pizza",
         "timeframe": "Jun 2018 – May 2021",
         "responsibilities": [
             "Managed a team of 40 employees, boosting operational efficiency and team productivity by 20%.",

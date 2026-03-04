@@ -2,11 +2,13 @@
     "published": [
         {
             "title": "Privacy-centric Deep Motion Retargeting for Anonymization of Skeleton-Based Motion Visualization",
-            "authors": "Thomas Carr, Depeng Xu, Shuang Yuan, Aidong Lu",
+            "authors": "Thomas Carr, Depeng Xu, Shuhan Yuan, Aidong Lu",
             "conference": "Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) 2025",
             "publicationType": "Conference",
             "year": 2025,
             "abstract": "Capturing and visualizing motion using skeleton-based techniques is a key aspect of computer vision, particularly in virtual reality (VR) settings. Its popularity has surged, driven by the simplicity of obtaining skeleton data and the growing appetite for virtual interaction. Although this skeleton data appears to be non-identifiable, it can be exploited to derive personally identifiable information (PII), posing a risk of inadvertent privacy breaches. In this paper, we explore the application of motion retargeting and its ability to mitigate privacy leakages. Motion retargeting can effectively transfer the motion from an initial user onto a dummy skeleton with the purpose of hiding PII. We propose a Privacy-centric Deep Motion Retargeting model (PMR), which mitigates the PII through adversarial learning. In our evaluation, our proposed model achieves motion retargeting performance on par with the current state-of-the-art models. More importantly, it effectively prevents the attackers from identifying the initial user.",
+            "links": [],
+            "projectPage": "https://pmr.thomasc.tech",
             "status": "Published"
         },
         {
@@ -25,8 +27,7 @@
             "publicationType": "Conference",
             "year": 2025,
             "abstract": "We propose novel explanation-based methods for motion privacy preservation in skeleton data. By leveraging explainable AI techniques, we identify and protect sensitive information while maintaining data utility for motion analysis tasks.",
-            "status": "Published",
-            "citations": 1
+            "status": "Published"
         },
         {
             "title": "A Review of Privacy and Utility in Skeleton-based Data in Virtual Reality Metaverses",
@@ -36,8 +37,7 @@
             "year": 2024,
             "abstract": "Capturing skeleton data is an important area of computer vision, especially for use in a virtual reality (VR) setting. As new simpler pose estimation techniques are created, the popularity of skeleton-based motion data has increased. While the skeleton data appears to be anonymous, it can be exploited to discover personally identifiable information (PII). This poses a risk of unintentional privacy leakages when skeletons are publicly displayed, like in a VR environment. In this survey, we look into the privacy implications posed by the skeleton data, focusing on the privacy and utility trade-off and current privacy-preserving techniques. We also look into differing pose estimation methods that are used to extract the skeleton data from videos or sensors. Then we will look into what skeleton-data is used for, particularly the state-of-the-art action recognition techniques. Lastly, we discuss the ethical implications of the use of skeleton data, emphasizing the need for an interdisciplinary view to address those challenges. This survey aims to provide an understanding of the current landscape of skeleton data while offering insights into the potential privacy issues that this new technique leads to.",
             "links": ["https://ieeexplore.ieee.org/abstract/document/10740130"],
-            "status": "Published",
-            "citations": 1
+            "status": "Published"
         },
         {
             "title": "User Privacy in Skeleton-based Motion Data",
@@ -59,16 +59,27 @@
             "links": ["https://dl.acm.org/doi/10.1145/3583780.3615263"],
             "status": "Published"
         }
+        ,{
+            "title": "DisentangledTMR: Privacy-Preserving Skeleton Motion Retargeting via Factorized Transformers",
+            "authors": "Thomas Carr, Shuhan Yuan, Depeng Xu, Aidong Lu",
+            "conference": "ECCV 2026",
+            "publicationType": "Conference",
+            "year": 2026,
+            "abstract": "Skeleton-based motion data leak personally identifiable information through both static skeletal structure and dynamic motion patterns, enabling re-identification even without facial features. We present DisentangledTMR, a transformer-based motion retargeting architecture that achieves privacy through explicit architectural disentanglement. Two encoders with complementary inductive biases, temporal convolutions for action and spatial graph convolutions for identity, feed a factorized decoder that fuses their representations through separate cross-attention streams and adaptive gating. A three-stage training curriculum progressively establishes disentanglement, reconstruction, and end-to-end refinement. On three benchmarks, DisentangledTMR substantially reduces re-identification while preserving action recognition, outperforming single-encoder baselines.",
+            "projectPage": "https://tmr.thomasc.tech",
+            "status": "Under Review"
+        }
     ],
     "ongoing": [
         {
-            "title": "Disentangled Transformer Motion Retargeting for Privacy-Preserving in Skeleton-Based Motion Data",
+            "title": "MIRAGE: Motion Identity Removal via Autoregressive Generative Encoding for Privacy-Preserving Skeleton-based Motion Data",
             "authors": "Thomas Carr, Depeng Xu, Aidong Lu",
-            "conference": "ECCV 2025 (Target)",
+            "conference": "AAAI 2027 (Target)",
             "publicationType": "Conference",
-            "year": 2025,
-            "abstract": "Skeleton-based motion data reveal private information from both static skeletal structure (body proportions, bone lengths) and dynamic motion patterns (gait signatures, person-specific movement styles), enabling re-identification attacks despite lacking facial features. We propose DisentangledTMR, a transformer-based motion retargeting architecture that aims to achieve privacy through explicit architectural disentanglement. Unlike single-encoder approaches that rely on implicit separation via decoder attention, DisentangledTMR employs dual encoders with complementary inductive biases (temporal processing for action, spatial processing for identity) combined with a factorized decoder using adaptive fusion. A three-stage training strategy progressively builds disentangled representations, reconstruction capability, and end-to-end refinement. We will evaluate DisentangledTMR on NTU RGB+D 60, NTU RGB+D 120, and ETRI-Activity3D datasets using cross-view protocols. We hypothesize that architectural disentanglement with staged training will provide superior privacy-utility trade-offs compared to single-encoder end-to-end approaches. Planned ablation studies will validate each component's contribution, establishing a principled framework for privacy-preserving skeleton motion analysis.",
-            "status": "In Writing"
+            "year": 2027,
+            "abstract": "Skeleton motion data leaks identity through anthropometric structure and movement style. Existing anonymization methods based on motion retargeting require a target skeleton at inference, precluding deployment in real-time streaming scenarios. We present MIRAGE, a causal autoregressive Transformer for online skeleton anonymization that operates frame-by-frame using only the current frame and a bounded history window, with no target skeleton required. MIRAGE combines a residual decoder that produces identity-suppressing perturbations while preserving the input coordinate distribution, sliding-window causal attention for constant-memory streaming, and dual-level adversarial-cooperative supervision at both latent and output stages. On NTU RGB+D 60, MIRAGE achieves 89.0% action recognition accuracy with 35.6% re-identification accuracy, competitive with retargeting baselines that require target skeletons, while enabling real-time streaming at 262 FPS with constant memory. Experiments across three benchmarks with external evaluators trained from scratch, component ablations, adaptive attacks, and frozen-evaluator transfer validate the approach.",
+            "projectPage": "https://mirage.thomasc.tech",
+            "status": "In Progress"
         }
     ]
 }

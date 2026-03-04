@@ -3,15 +3,15 @@ import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import { isMobile } from 'react-device-detect';
 
+const EMERALD = '#10b981';
+
 const ParticlesFixed = () => {
     const [mounted, setMounted] = useState(false);
-    const [accent, setAccent] = useState('#8b5cf6');
     const [ready, setReady] = useState(false);
-    
+
     useEffect(() => {
         setMounted(true);
-        setAccent(localStorage.getItem('accentColor') || '#8b5cf6');
-        
+
         initParticlesEngine(async (engine) => {
             await loadSlim(engine);
         }).then(() => {
@@ -43,17 +43,12 @@ const ParticlesFixed = () => {
         },
         particles: {
             color: {
-                value: accent,
-                animation: {
-                    enable: true,
-                    speed: 2,
-                    sync: false
-                }
+                value: EMERALD
             },
             links: {
                 enable: true,
                 distance: 150,
-                color: accent,
+                color: EMERALD,
                 opacity: 0.2,
                 width: 1
             },
@@ -75,7 +70,7 @@ const ParticlesFixed = () => {
                     enable: true,
                     area: 800
                 },
-                value: 80
+                value: 60
             },
             opacity: {
                 value: 0.5,
@@ -100,7 +95,7 @@ const ParticlesFixed = () => {
             }
         },
         detectRetina: true
-    }), [accent]);
+    }), []);
 
     if (isMobile || !mounted || !ready) return null;
 
@@ -114,7 +109,7 @@ const ParticlesFixed = () => {
             zIndex: -1,
             pointerEvents: 'none'
         }}>
-            <Particles 
+            <Particles
                 id="tsparticles"
                 options={options}
                 style={{

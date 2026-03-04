@@ -1,7 +1,8 @@
 import { createTheme, keyframes } from '@mui/material/styles';
 
-// Dark theme with particles support
-const createDarkTheme = (accentColor = '#8b5cf6') => {
+const createDarkTheme = (accentColor = '#10b981') => {
+  const goldColor = '#d4a853';
+
   // Animation keyframes
   const fadeInUp = keyframes`
     from {
@@ -49,36 +50,32 @@ const createDarkTheme = (accentColor = '#8b5cf6') => {
       mode: 'dark',
       primary: {
         main: accentColor,
-        light: `${accentColor}CC`,
-        dark: `${accentColor}99`,
+        light: '#34d399',
+        dark: '#059669',
       },
       secondary: {
-        main: '#ec4899',
-        light: '#ec4899CC',
-        dark: '#ec489999',
-      },
-      tertiary: {
-        main: '#f59e0b',
-        light: '#f59e0bCC',
-        dark: '#f59e0b99',
+        main: goldColor,
+        light: '#e0bc6a',
+        dark: '#c49b48',
       },
       background: {
-        default: '#0a0a0f',
-        paper: 'rgba(15, 15, 25, 0.9)',
-        glass: 'rgba(255, 255, 255, 0.05)',
-        glassHover: 'rgba(255, 255, 255, 0.08)',
+        default: '#060608',
+        paper: 'rgba(12, 12, 20, 0.85)',
+        glass: 'rgba(255, 255, 255, 0.04)',
+        glassHover: 'rgba(255, 255, 255, 0.07)',
         gradient1: `linear-gradient(135deg, ${accentColor}20, transparent)`,
         gradient2: `linear-gradient(45deg, ${accentColor}10, transparent)`,
-        gradient3: `linear-gradient(225deg, rgba(236, 72, 153, 0.1), transparent)`,
+        gradient3: `linear-gradient(225deg, ${goldColor}10, transparent)`,
       },
       text: {
-        primary: '#ffffff',
-        secondary: '#b0b0c0',
+        primary: '#f0f0f5',
+        secondary: '#8a8a9a',
       },
-      divider: 'rgba(255, 255, 255, 0.1)',
+      divider: 'rgba(255, 255, 255, 0.08)',
     },
     typography: {
       fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+      fontFamilyDisplay: '"DM Serif Display", serif',
       h1: {
         fontSize: '2.5rem',
         fontWeight: 700,
@@ -127,9 +124,9 @@ const createDarkTheme = (accentColor = '#8b5cf6') => {
       MuiCard: {
         styleOverrides: {
           root: {
-            background: 'rgba(20, 20, 35, 0.9)',
+            background: 'rgba(12, 12, 20, 0.85)',
             backdropFilter: 'blur(20px)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
             boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
             borderRadius: 16,
             transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -147,10 +144,10 @@ const createDarkTheme = (accentColor = '#8b5cf6') => {
               transition: 'opacity 0.3s ease',
             },
             '&:hover': {
-              background: 'rgba(25, 25, 40, 0.95)',
-              border: '1px solid rgba(255, 255, 255, 0.15)',
-              boxShadow: `0 16px 48px rgba(0, 0, 0, 0.4), 0 0 20px ${accentColor}20`,
-              transform: 'translateY(-4px) scale(1.02)',
+              background: 'rgba(14, 14, 24, 0.9)',
+              border: '1px solid rgba(255, 255, 255, 0.12)',
+              boxShadow: `0 16px 48px rgba(0, 0, 0, 0.4), 0 0 25px rgba(16, 185, 129, 0.12)`,
+              transform: 'translateY(-4px)',
               '&::before': {
                 opacity: 1,
               },
@@ -186,22 +183,23 @@ const createDarkTheme = (accentColor = '#8b5cf6') => {
             },
           },
           contained: {
-            background: `linear-gradient(135deg, ${accentColor}, ${accentColor}DD)`,
-            boxShadow: `0 4px 16px ${accentColor}40`,
+            background: `linear-gradient(135deg, ${goldColor}, #c49b48)`,
+            color: '#060608',
+            boxShadow: `0 4px 16px ${goldColor}40`,
             '&:hover': {
-              background: `linear-gradient(135deg, ${accentColor}DD, ${accentColor})`,
-              boxShadow: `0 8px 24px ${accentColor}60`,
+              background: `linear-gradient(135deg, #c49b48, ${goldColor})`,
+              boxShadow: `0 8px 24px ${goldColor}60`,
               transform: 'translateY(-2px)',
             },
           },
           outlined: {
-            borderColor: `${accentColor}40`,
+            borderColor: `${accentColor}60`,
             color: accentColor,
             background: 'rgba(255, 255, 255, 0.02)',
             backdropFilter: 'blur(10px)',
             '&:hover': {
-              borderColor: `${accentColor}60`,
-              background: `${accentColor}10`,
+              borderColor: accentColor,
+              background: `${accentColor}15`,
               transform: 'translateY(-2px)',
               boxShadow: `0 4px 16px ${accentColor}20`,
             },
@@ -217,9 +215,9 @@ const createDarkTheme = (accentColor = '#8b5cf6') => {
       MuiAppBar: {
         styleOverrides: {
           root: {
-            background: 'rgba(10, 10, 15, 0.9)',
+            background: 'rgba(6, 6, 8, 0.9)',
             backdropFilter: 'blur(20px)',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
             boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
           },
         },
@@ -227,13 +225,13 @@ const createDarkTheme = (accentColor = '#8b5cf6') => {
       MuiChip: {
         styleOverrides: {
           root: {
-            backgroundColor: 'rgba(255, 255, 255, 0.08)',
-            color: '#ffffff',
-            border: '1px solid rgba(255, 255, 255, 0.15)',
+            backgroundColor: 'rgba(255, 255, 255, 0.04)',
+            color: '#f0f0f5',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
             backdropFilter: 'blur(10px)',
             fontWeight: 500,
             '&:hover': {
-              backgroundColor: 'rgba(255, 255, 255, 0.12)',
+              backgroundColor: 'rgba(255, 255, 255, 0.07)',
               borderColor: `${accentColor}40`,
               transform: 'translateY(-1px)',
             },
@@ -244,15 +242,15 @@ const createDarkTheme = (accentColor = '#8b5cf6') => {
         styleOverrides: {
           root: {
             '& .MuiOutlinedInput-root': {
-              backgroundColor: 'rgba(255, 255, 255, 0.03)',
+              backgroundColor: 'rgba(255, 255, 255, 0.04)',
               backdropFilter: 'blur(10px)',
               borderRadius: 12,
               transition: 'all 0.3s ease',
               '&:hover': {
-                backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                backgroundColor: 'rgba(255, 255, 255, 0.06)',
               },
               '&.Mui-focused': {
-                backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                backgroundColor: 'rgba(255, 255, 255, 0.06)',
                 boxShadow: `0 0 0 2px ${accentColor}30`,
               },
             },
