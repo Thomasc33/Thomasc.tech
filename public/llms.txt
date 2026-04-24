@@ -1,0 +1,20 @@
+# Thomas Carr, Ph.D.
+
+> AI researcher and software engineer. Ph.D. in Computing and Information Systems (UNC Charlotte, Spring 2026). Research focus: privacy-preserving machine learning on skeleton-based motion data.
+
+Thomas Carr is currently an AI & Software Engineer at Incerta Intelligence, working on multimodal fusion for explainable and auditable decision support in defense contexts. He earned his Ph.D. in Computing and Information Systems from the University of North Carolina at Charlotte in May 2026, with a dissertation titled "Preserving User Privacy on Skeleton-Based Motion Data." His research program introduced a family of attack and defense models (LAN, PMR, DisentangledTMR, MIRAGE) that characterize the privacy–utility trade-off for skeleton motion in virtual-reality settings.
+
+This site is a single-page portfolio. The links below are machine-readable Markdown versions of each section, intended as the canonical source for LLM agents and retrieval systems.
+
+## Primary
+
+- [About](https://thomasc.tech/about.md): Biography, education, credentials, and research focus.
+- [Publications](https://thomasc.tech/publications.md): Peer-reviewed papers, dissertation, and ongoing work.
+- [Projects](https://thomasc.tech/projects.md): Selected engineering and research projects.
+- [Contact](https://thomasc.tech/contact.md): Email and professional profiles.
+
+## Optional
+
+- [Full site export](https://thomasc.tech/llms-full.txt): Single-file concatenation of all Markdown sections.
+- [ORCID](https://orcid.org/0009-0006-6039-0209): Authoritative academic identifier.
+- [Google Scholar](https://scholar.google.com/citations?hl=en&user=a1uc2zEAAAAJ): Citation record.

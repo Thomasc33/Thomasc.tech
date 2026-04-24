@@ -1,6 +1,16 @@
 {
     "published": [
         {
+            "title": "Preserving User Privacy on Skeleton-Based Motion Data",
+            "authors": "Thomas Carr",
+            "conference": "Ph.D. Dissertation, University of North Carolina at Charlotte",
+            "publicationType": "Dissertation",
+            "year": 2026,
+            "abstract": "This dissertation investigates privacy preservation for skeleton-based motion data in virtual reality and related settings. Although skeleton data appears anonymous, it encodes personally identifiable information through anthropometric structure and motion style, enabling re-identification. The work contributes a family of attack and defense models — including the Linkage Attack Neural Network (LAN), the Privacy-centric Deep Motion Retargeting (PMR) model, explanation-based anonymization, factorized-transformer retargeting (DisentangledTMR), and streaming autoregressive anonymization (MIRAGE) — that together characterize the privacy–utility trade-off and advance the state of the art in privacy-preserving motion analysis.",
+            "links": [],
+            "status": "Published"
+        },
+        {
             "title": "Privacy-centric Deep Motion Retargeting for Anonymization of Skeleton-Based Motion Visualization",
             "authors": "Thomas Carr, Depeng Xu, Shuhan Yuan, Aidong Lu",
             "conference": "Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) 2025",

@@ -13,11 +13,11 @@ import skillsData from '../Data/skills.json';
 
 const EDUCATION_ITEMS = [
   {
-    year: '2023 \u2013 2026',
-    title: 'Ph.D. Computer Science',
+    year: '2023 \u2013 Spring 2026',
+    title: 'Ph.D. Computing and Information Systems',
     subtitle: 'UNC Charlotte',
     details:
-      'Research focus: Privacy-preserving algorithms for VR skeleton motion data',
+      'Dissertation: Preserving User Privacy on Skeleton-Based Motion Data',
   },
   {
     year: '2022',

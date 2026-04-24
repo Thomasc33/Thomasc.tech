@@ -48,7 +48,7 @@ const letterVariants = {
   },
 };
 
-const NAME = 'Thomas Carr';
+const NAME = 'Thomas Carr, Ph.D.';
 
 const Hero = () => (
   <ThemeProvider theme={theme}>
@@ -120,7 +120,7 @@ const Hero = () => (
               mt: 2,
             }}
           >
-            Computer Science Ph.D. Researcher
+            AI Researcher & Software Engineer
           </Typography>
         </ScrollReveal>
 
