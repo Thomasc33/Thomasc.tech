@@ -8,7 +8,7 @@
             "year": 2026,
 
             "abstract": "This dissertation investigates privacy preservation for skeleton-based motion data in virtual reality and related settings. Although skeleton data appears anonymous, it encodes personally identifiable information through anthropometric structure and motion style, enabling re-identification. The work contributes a family of attack and defense models — including the Linkage Attack Neural Network (LAN), the Privacy-centric Deep Motion Retargeting (PMR) model, explanation-based anonymization, factorized-transformer retargeting (DisentangledTMR), and streaming autoregressive anonymization (MIRAGE) — that together characterize the privacy–utility trade-off and advance the state of the art in privacy-preserving motion analysis.",
-            "links": [],
+            "links": ["https://www.proquest.com/openview/1d6b3a4092c04a3819883a0371080348/1?pq-origsite=gscholar&cbl=18750&diss=y"],
             "status": "Published"
         },
         {
@@ -93,21 +93,21 @@
     ],
     "ongoing": [
         {
-            "title": "Ongoing Project — Title TBD",
-            "authors": "Thomas Carr, et al.",
-            "conference": "Target Venue TBD",
+            "title": "AEGIS: Adversary-proof ε-Guaranteed Identity-Suppression for User-Level Differentially Private Skeleton Motion Anonymization",
+            "authors": "Thomas Carr, Depeng Xu, Aidong Lu",
+            "conference": "AAAI 2026",
             "publicationType": "Conference",
             "year": 2026,
-            "abstract": "Abstract forthcoming. Placeholder entry — details to be added when the work is ready to surface.",
+            "abstract": "Skeleton motion is biometric: static structure and dynamic style jointly identify the subject within seconds, even from three-joint VR streams. Every published skeleton anonymizer to date defends only against the in-loop classifier it was trained on. We introduce AEGIS, the first skeleton-motion anonymizer with a formal user-level (ε,δ)-differential privacy guarantee. AEGIS trains a causal residual-perturbation decoder under user-level DP-SGD; adversarial, contrastive, and information-bottleneck losses are summed into the per-user gradient before clipping and noise, so the certified (ε,δ) bound covers the full composite objective. On NTU RGB+D 120 at ε=8 user-level, AEGIS reaches 77.46% top-1 action recognition on a frozen SGN evaluator — within 1pp of the strongest empirical baseline — while cutting top-1 re-identification from the raw-skeleton ceiling of 98.77% to 37.62%. First demonstration that formal user-level DP for skeleton motion is utility-competitive with the empirical state of the art.",
             "status": "In Progress"
         },
         {
-            "title": "Ongoing Project — Title TBD",
-            "authors": "Thomas Carr, et al.",
-            "conference": "Target Venue TBD",
+            "title": "WRAITH: Window-free Recurrent Anonymization with Identity-leakage Time Horizon for Mobile-VR Skeleton Motion Privacy",
+            "authors": "Thomas Carr, Depeng Xu, Aidong Lu",
+            "conference": "AAAI 2026",
             "publicationType": "Conference",
             "year": 2026,
-            "abstract": "Abstract forthcoming. Placeholder entry — details to be added when the work is ready to surface.",
+            "abstract": "Mobile VR headsets stream skeletal motion continuously, and that motion is biometric — head-and-hand trajectories alone identify users with 94% accuracy across 50,000+ subjects. Server-side anonymization arrives too late: the raw signal must already leave the device. We present WRAITH, the first sub-megabyte, bounded-state, in-coordinate skeleton anonymizer designed for Quest-class deployment. WRAITH replaces MIRAGE's windowed-softmax backbone with a unified matrix-state linear-recurrence scaffold instantiated by four backbones (RWKV-7 Goose, Mamba-3, Gated DeltaNet, and a Griffin/Gemma-3 hybrid). The bounded matrix recurrence yields a logarithmic identity-leakage time horizon in which each past frame's contribution to the state decays geometrically. WRAITH-A1 (0.78M parameters, 64kB state) closes the action-recognition gap to MIRAGE within ~5.5pp on SGN and 0.2pp on MixFormer at 10× fewer parameters.",
             "status": "In Progress"
         }
     ]

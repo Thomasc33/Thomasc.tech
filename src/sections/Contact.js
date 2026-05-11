@@ -14,6 +14,7 @@ import {
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import SchoolIcon from '@mui/icons-material/School';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useForm, ValidationError } from '@formspree/react';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
@@ -107,6 +108,11 @@ const DIRECT_LINKS = [
     icon: <LinkedInIcon fontSize="small" />,
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/thomasc33/',
+  },
+  {
+    icon: <SchoolIcon fontSize="small" />,
+    label: 'Google Scholar',
+    href: 'https://scholar.google.com/citations?user=a1uc2zEAAAAJ',
   },
 ];
 

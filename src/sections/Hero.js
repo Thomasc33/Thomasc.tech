@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Container, Typography, IconButton, Stack } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
-import { GitHub, LinkedIn, Email } from '@mui/icons-material';
+import { GitHub, LinkedIn, Email, School } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import createDarkTheme from '../theme';
 import TypingAnimation from '../Components/TypingAnimation';
@@ -16,6 +16,7 @@ const TYPING_WORDS = ['Ethical AI', 'Privacy', 'Machine Learning', 'Fairness'];
 const SOCIAL_LINKS = [
   { icon: GitHub, href: 'https://github.com/thomasc33', label: 'GitHub' },
   { icon: LinkedIn, href: 'https://www.linkedin.com/in/thomasc33/', label: 'LinkedIn' },
+  { icon: School, href: 'https://scholar.google.com/citations?user=a1uc2zEAAAAJ', label: 'Google Scholar' },
   { icon: Email, href: 'mailto:thomas@thomasc.tech', label: 'Email' },
 ];
 
