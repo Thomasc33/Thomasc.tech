@@ -4,6 +4,7 @@ import createDarkTheme from './theme';
 import useScrollSpy from './hooks/useScrollSpy';
 import useMouseGlow from './hooks/useMouseGlow';
 import DotNav from './Components/DotNav';
+import GrainOverlay from './Components/GrainOverlay';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Stats from './sections/Stats';
@@ -41,6 +42,7 @@ const Portfolio = () => {
         }}
       />
 
+      <GrainOverlay opacity={0.05} />
       <DotNav sections={sections} activeSection={activeSection} />
 
       <Box component="main" sx={{ position: 'relative', zIndex: 1 }}>

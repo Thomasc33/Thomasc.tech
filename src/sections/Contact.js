@@ -21,6 +21,7 @@ import createDarkTheme from '../theme';
 import TextReveal from '../Components/TextReveal';
 import ScrollReveal from '../Components/ScrollReveal';
 import MagneticButton from '../Components/MagneticButton';
+import SectionKicker from '../Components/SectionKicker';
 
 const theme = createDarkTheme();
 
@@ -43,16 +44,38 @@ const goldButtonSx = {
   },
 };
 
+const monoFamily = '"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace';
+
 const directLinkSx = {
-  color: 'text.secondary',
+  color: 'rgba(240, 240, 245, 0.7)',
   textDecoration: 'none',
-  display: 'flex',
+  display: 'inline-flex',
   alignItems: 'center',
-  gap: 1,
-  fontSize: '0.9rem',
-  transition: 'color 0.3s ease',
+  gap: 1.2,
+  px: 2,
+  py: 1,
+  fontFamily: monoFamily,
+  fontSize: '0.78rem',
+  letterSpacing: '0.08em',
+  borderRadius: 1,
+  border: '1px solid rgba(255, 255, 255, 0.06)',
+  background: 'rgba(255, 255, 255, 0.015)',
+  transition: 'color 200ms ease, border-color 200ms ease, background 200ms ease',
+  '& .MuiSvgIcon-root': {
+    color: 'rgba(212, 168, 83, 0.75)',
+    transition: 'color 200ms ease',
+  },
   '&:hover': {
+    color: '#f0f0f5',
+    borderColor: 'rgba(16, 185, 129, 0.35)',
+    background: 'rgba(16, 185, 129, 0.06)',
+  },
+  '&:hover .MuiSvgIcon-root': {
     color: '#10b981',
+  },
+  '&:focus-visible': {
+    outline: '2px solid rgba(16, 185, 129, 0.6)',
+    outlineOffset: '2px',
   },
 };
 
@@ -78,12 +101,12 @@ const DIRECT_LINKS = [
   {
     icon: <GitHubIcon fontSize="small" />,
     label: 'GitHub',
-    href: 'https://github.com/thomascarr',
+    href: 'https://github.com/thomasc33',
   },
   {
     icon: <LinkedInIcon fontSize="small" />,
     label: 'LinkedIn',
-    href: 'https://linkedin.com/in/thomascarr',
+    href: 'https://www.linkedin.com/in/thomasc33/',
   },
 ];
 
@@ -164,22 +187,20 @@ const ContactForm = () => {
 const DirectLinks = () => (
   <Stack
     direction={{ xs: 'column', sm: 'row' }}
-    spacing={{ xs: 2, sm: 3 }}
-    sx={{ mt: 5, justifyContent: 'center', alignItems: 'center' }}
+    spacing={{ xs: 1.5, sm: 2 }}
+    sx={{ mt: 5, justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}
   >
     {DIRECT_LINKS.map((link, index) => (
-      <ScrollReveal key={link.label} direction="scale" delay={index * 100}>
-        <MagneticButton>
-          <Link
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={directLinkSx}
-          >
-            {link.icon}
-            {link.label}
-          </Link>
-        </MagneticButton>
+      <ScrollReveal key={link.label} direction="up" delay={index * 100}>
+        <Link
+          href={link.href}
+          target={link.href.startsWith('mailto:') ? undefined : '_blank'}
+          rel={link.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+          sx={directLinkSx}
+        >
+          {link.icon}
+          {link.label}
+        </Link>
       </ScrollReveal>
     ))}
   </Stack>
@@ -192,7 +213,7 @@ const Contact = () => {
     <ThemeProvider theme={theme}>
       <Box id="contact" sx={{ py: { xs: 6, md: 12 }, position: 'relative', zIndex: 1 }}>
         <Container maxWidth="md" sx={{ textAlign: 'center' }}>
-          {/* Header — word-by-word reveal */}
+          <SectionKicker index={5} label="get in touch" />
           <TextReveal
             sx={{
               fontFamily: '"DM Serif Display", serif',

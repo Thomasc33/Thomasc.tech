@@ -1,12 +1,13 @@
 import React from 'react';
 import { Box, Container, Typography, IconButton, Stack } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
-import { GitHub, LinkedIn, Email, KeyboardArrowDown } from '@mui/icons-material';
+import { GitHub, LinkedIn, Email } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import createDarkTheme from '../theme';
 import TypingAnimation from '../Components/TypingAnimation';
 import MagneticButton from '../Components/MagneticButton';
 import ScrollReveal from '../Components/ScrollReveal';
+import SkeletonFigure from '../Components/SkeletonFigure';
 
 const theme = createDarkTheme();
 
@@ -29,6 +30,8 @@ const socialIconSx = {
   },
 };
 
+const monoFamily = '"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace';
+
 const MotionBox = motion.create(Box);
 
 const nameVariants = {
@@ -50,6 +53,44 @@ const letterVariants = {
 
 const NAME = 'Thomas Carr, Ph.D.';
 
+const ScrollIndicator = () => (
+  <MotionBox
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 1.8, duration: 1 }}
+    sx={{
+      position: 'absolute',
+      bottom: { xs: 24, md: 48 },
+      left: '50%',
+      transform: 'translateX(-50%)',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: 1.2,
+      color: 'rgba(255,255,255,0.4)',
+    }}
+  >
+    <Typography
+      sx={{
+        fontFamily: monoFamily,
+        fontSize: '0.7rem',
+        letterSpacing: '0.25em',
+        textTransform: 'uppercase',
+      }}
+    >
+      Scroll
+    </Typography>
+    <Box
+      sx={{
+        width: '1px',
+        height: 36,
+        background: 'linear-gradient(to bottom, rgba(16,185,129,0.6), rgba(16,185,129,0))',
+        animation: 'scrollLineCycle 2.4s ease-in-out infinite',
+      }}
+    />
+  </MotionBox>
+);
+
 const Hero = () => (
   <ThemeProvider theme={theme}>
     <Box
@@ -61,9 +102,51 @@ const Hero = () => (
         justifyContent: 'center',
         position: 'relative',
         zIndex: 1,
+        overflow: 'hidden',
       }}
     >
-      <Container maxWidth="md" sx={{ textAlign: 'center', px: { xs: 3, md: 2 } }}>
+      {/* Signature skeleton — sits behind hero text */}
+      <Box
+        sx={{
+          position: 'absolute',
+          inset: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 0,
+        }}
+      >
+        <Box
+          sx={{
+            width: { xs: 240, sm: 320, md: 420 },
+            height: { xs: 312, sm: 416, md: 546 },
+            position: 'relative',
+          }}
+        >
+          <SkeletonFigure opacity={0.14} size="100%" />
+        </Box>
+      </Box>
+
+      <Container maxWidth="md" sx={{ textAlign: 'center', px: { xs: 3, md: 2 }, position: 'relative', zIndex: 1 }}>
+        {/* Mono kicker */}
+        <ScrollReveal direction="blur" delay={0} duration={0.6}>
+          <Typography
+            component="span"
+            sx={{
+              fontFamily: monoFamily,
+              fontSize: { xs: '0.7rem', md: '0.78rem' },
+              letterSpacing: '0.28em',
+              textTransform: 'uppercase',
+              color: '#10b981',
+              opacity: 0.8,
+              display: 'inline-block',
+              mb: 2,
+            }}
+          >
+            {'// ai researcher · privacy + ml'}
+          </Typography>
+        </ScrollReveal>
+
         {/* Name — letter-by-letter blur-in reveal */}
         <Typography
           component={motion.h1}
@@ -90,23 +173,26 @@ const Hero = () => (
                 whiteSpace: char === ' ' ? 'pre' : 'normal',
               }}
             >
-              {char === ' ' ? '\u00A0' : char}
+              {char === ' ' ? ' ' : char}
             </motion.span>
           ))}
         </Typography>
 
-        {/* Emerald underline — draws in */}
+        {/* Iridescent gold underline — draws in */}
         <MotionBox
           initial={{ scaleX: 0, opacity: 0 }}
           animate={{ scaleX: 1, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           sx={{
-            width: 80,
+            width: 96,
             height: 2,
-            background: '#10b981',
+            background: 'linear-gradient(90deg, #d4a853 0%, #e8c075 50%, #d4a853 100%)',
+            backgroundSize: '200% auto',
+            animation: 'shimmerGold 5s linear infinite',
             mx: 'auto',
-            mt: 1,
+            mt: 1.5,
             transformOrigin: 'left',
+            borderRadius: 1,
           }}
         />
 
@@ -125,8 +211,8 @@ const Hero = () => (
         </ScrollReveal>
 
         {/* Typing line — blur in */}
-        <ScrollReveal direction="blur" delay={700} duration={0.8}>
-          <Box sx={{ color: '#10b981', mt: 2, fontSize: { xs: '0.95rem', md: '1.1rem' } }}>
+        <ScrollReveal direction="blur" delay={650} duration={0.8}>
+          <Box sx={{ color: '#10b981', mt: 3, fontSize: { xs: '0.95rem', md: '1.1rem' } }}>
             <Typography component="span" sx={{ color: 'inherit', fontSize: 'inherit' }}>
               Specializing in{' '}
             </Typography>
@@ -155,22 +241,7 @@ const Hero = () => (
         </Stack>
       </Container>
 
-      {/* Scroll indicator — bouncing + fade in */}
-      <MotionBox
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8, duration: 1 }}
-        sx={{
-          position: 'absolute',
-          bottom: { xs: 20, md: 40 },
-          left: '50%',
-          transform: 'translateX(-50%)',
-          color: 'rgba(255,255,255,0.3)',
-          animation: 'bounceDown 2s ease-in-out infinite',
-        }}
-      >
-        <KeyboardArrowDown fontSize="large" />
-      </MotionBox>
+      <ScrollIndicator />
     </Box>
   </ThemeProvider>
 );

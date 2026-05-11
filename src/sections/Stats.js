@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Stack, ThemeProvider } from '@mui/material';
+import { Box, Container, ThemeProvider } from '@mui/material';
 import AnimatedCounter from '../Components/AnimatedCounter';
 import StaggerGrid from '../Components/StaggerGrid';
 import createDarkTheme from '../theme';
@@ -13,6 +13,34 @@ const stats = [
 
 const theme = createDarkTheme();
 
+const DottedDivider = () => (
+  <Box
+    aria-hidden="true"
+    sx={{
+      display: { xs: 'none', md: 'flex' },
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 1,
+      height: 48,
+      flexShrink: 0,
+      gap: 0.6,
+    }}
+  >
+    {[0, 1, 2, 3, 4].map((i) => (
+      <Box
+        key={i}
+        sx={{
+          width: 2,
+          height: 2,
+          borderRadius: '50%',
+          background: i === 2 ? '#d4a853' : 'rgba(212, 168, 83, 0.35)',
+        }}
+      />
+    ))}
+  </Box>
+);
+
 const Stats = () => (
   <ThemeProvider theme={theme}>
     <Box
@@ -25,47 +53,35 @@ const Stats = () => (
         overflowX: 'hidden',
       }}
     >
-      <Container maxWidth="xs">
+      <Container maxWidth="md">
         <StaggerGrid stagger={0.12} direction="blur-up">
-          <Stack
-            direction="row"
-            spacing={0}
+          <Box
             sx={{
-              justifyContent: 'center',
+              display: 'grid',
+              gridTemplateColumns: {
+                xs: 'repeat(2, 1fr)',
+                md: '1fr auto 1fr auto 1fr auto 1fr',
+              },
               alignItems: 'center',
-              flexWrap: { xs: 'wrap', md: 'nowrap' },
+              justifyItems: 'center',
+              gap: { xs: 3, md: 1 },
+              width: '100%',
+              maxWidth: '100%',
             }}
           >
-            {stats.map((stat, index) => (
+            {stats.map((stat, idx) => (
               <React.Fragment key={stat.label}>
-                <Box sx={{
-                  flex: { xs: '0 0 50%', md: 'unset' },
-                  py: { xs: 2, md: 0 },
-                  display: 'flex',
-                  justifyContent: 'center',
-                }}>
-                  <AnimatedCounter
-                    end={stat.end}
-                    suffix={stat.suffix}
-                    label={stat.label}
-                    duration={2000}
-                  />
-                </Box>
-                {index < stats.length - 1 && (
-                  <Box
-                    sx={{
-                      display: { xs: 'none', md: 'block' },
-                      width: 1,
-                      height: 40,
-                      background: 'rgba(212, 168, 83, 0.2)',
-                      mx: 1,
-                      flexShrink: 0,
-                    }}
-                  />
-                )}
+                <AnimatedCounter
+                  end={stat.end}
+                  suffix={stat.suffix}
+                  label={stat.label}
+                  duration={2000}
+                  index={idx + 1}
+                />
+                {idx < stats.length - 1 && <DottedDivider />}
               </React.Fragment>
             ))}
-          </Stack>
+          </Box>
         </StaggerGrid>
       </Container>
     </Box>

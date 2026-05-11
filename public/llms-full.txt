@@ -1,6 +1,6 @@
 # About Thomas Carr, Ph.D.
 
-Thomas Carr is an AI researcher and software engineer based in Charlotte, North Carolina. He earned his **Ph.D. in Computing and Information Systems** from the **University of North Carolina at Charlotte** in **Spring 2026**, with a dissertation titled *Preserving User Privacy on Skeleton-Based Motion Data*.
+Thomas Carr is an AI researcher and software engineer based in Charlotte, North Carolina. He earned his **Ph.D. in Computing and Information Systems** from the **University of North Carolina at Charlotte** in **May 2026**, with a dissertation titled *Preserving User Privacy on Skeleton-Based Motion Data*.
 
 ## Research Focus
 
@@ -18,7 +18,7 @@ Thomas's research investigates privacy preservation for skeleton-based motion da
 
 ## Education
 
-- **Ph.D., Computing and Information Systems** — UNC Charlotte, 2023 – Spring 2026. Dissertation: *Preserving User Privacy on Skeleton-Based Motion Data*.
+- **Ph.D., Computing and Information Systems** — UNC Charlotte, 2023 – May 2026. Dissertation: *Preserving User Privacy on Skeleton-Based Motion Data*.
 - **M.S., Computer Science** — UNC Charlotte, 2022.
 - **B.S., Computer Science** — UNC Charlotte, 2019 – 2021.
 

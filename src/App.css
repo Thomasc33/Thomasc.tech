@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 /* CSS Custom Properties */
 :root {
@@ -9,9 +9,19 @@
   --mouse-y: 50%;
 }
 
-/* Smooth scrolling */
+/* Smooth scrolling + section snap */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
+
+main {
+  scroll-snap-type: y proximity;
+}
+
+main > * {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
 }
 
 /* Keyframes */
@@ -53,6 +63,29 @@ html {
 @keyframes shimmerGold {
   0% { background-position: -200% center; }
   100% { background-position: 200% center; }
+}
+
+@keyframes scrollLineCycle {
+  0%   { transform: scaleY(0); transform-origin: top; opacity: 0; }
+  20%  { opacity: 1; }
+  50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  51%  { transform: scaleY(1); transform-origin: bottom; }
+  90%  { transform: scaleY(0); transform-origin: bottom; opacity: 0.4; }
+  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+}
+
+@keyframes skeletonFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+.iridescent-gold {
+  background: linear-gradient(90deg, #d4a853 0%, #e8c075 25%, #d4a853 50%, #e8c075 75%, #d4a853 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerGold 6s linear infinite;
 }
 
 /* Custom scrollbar */
@@ -115,4 +148,5 @@ html {
     transition-duration: 0.01ms !important;
   }
   html { scroll-behavior: auto; }
+  main { scroll-snap-type: none; }
 }

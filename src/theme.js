@@ -76,6 +76,7 @@ const createDarkTheme = (accentColor = '#10b981') => {
     typography: {
       fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
       fontFamilyDisplay: '"DM Serif Display", serif',
+      fontFamilyMono: '"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace',
       h1: {
         fontSize: '2.5rem',
         fontWeight: 700,

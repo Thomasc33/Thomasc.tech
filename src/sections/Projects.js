@@ -16,6 +16,7 @@ import createDarkTheme from '../theme';
 import TextReveal from '../Components/TextReveal';
 import ScrollLine from '../Components/ScrollLine';
 import StaggerGrid from '../Components/StaggerGrid';
+import SectionKicker from '../Components/SectionKicker';
 import GlowingEffect from '../Components/GlowingEffect';
 import projectsData from '../Data/projects.json';
 
@@ -23,6 +24,10 @@ const theme = createDarkTheme();
 
 const TAG_COUNT = 4;
 const DESCRIPTION_LIMIT = 150;
+const monoFamily = '"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace';
+
+// Bento layout (md cols): 7 entries → varied spans for visual rhythm
+const BENTO_MD = [8, 4, 4, 4, 4, 4, 8];
 
 const truncateDescription = (text) =>
   text.length > DESCRIPTION_LIMIT
@@ -76,7 +81,6 @@ const getLinkIcon = (iconType) =>
 
 const LinkButtons = ({ links }) => {
   if (!links || links.length === 0) return null;
-
   return (
     <Stack direction="row" spacing={1}>
       {links.map((link) => (
@@ -105,7 +109,7 @@ const TagChips = ({ tags, max }) => (
   </Stack>
 );
 
-const ProjectCard = ({ project }) => (
+const ProjectCard = ({ project, index, wide }) => (
   <Box sx={{ position: 'relative', height: '100%', borderRadius: 4, p: '2px' }}>
     <GlowingEffect
       spread={40}
@@ -116,15 +120,27 @@ const ProjectCard = ({ project }) => (
       borderWidth={3}
     />
     <Card sx={featuredCardSx} elevation={0}>
-      <CardContent sx={{ p: 3, display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2 }}>
+      <CardContent sx={{ p: { xs: 2.5, md: 3 }, display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+        <Typography
+          sx={{
+            fontFamily: monoFamily,
+            fontSize: '0.62rem',
+            letterSpacing: '0.28em',
+            color: 'rgba(16, 185, 129, 0.6)',
+            mb: 1.5,
+          }}
+        >
+          {'// '}{String(index).padStart(2, '0')}
+        </Typography>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2, gap: 1 }}>
           <Typography
             sx={{
               fontFamily: '"Inter", sans-serif',
               fontWeight: 600,
-              fontSize: '1rem',
+              fontSize: wide ? { xs: '1rem', md: '1.15rem' } : '1rem',
               color: 'text.primary',
               pr: 1,
+              lineHeight: 1.3,
             }}
           >
             {project.title}
@@ -146,7 +162,7 @@ const ProjectCard = ({ project }) => (
 
         <Box sx={{ mt: 'auto' }}>
           <Box sx={{ mb: 2 }}>
-            <TagChips tags={project.langauge_framework} max={TAG_COUNT} />
+            <TagChips tags={project.language_framework} max={wide ? TAG_COUNT + 2 : TAG_COUNT} />
           </Box>
           <LinkButtons links={project.links} />
         </Box>
@@ -159,7 +175,7 @@ const Projects = () => (
   <ThemeProvider theme={theme}>
     <Box id="projects" sx={{ py: { xs: 6, md: 12 }, position: 'relative', zIndex: 1 }}>
       <Container maxWidth="lg">
-        {/* Section Header — word reveal + scroll-drawn line */}
+        <SectionKicker index={3} label="selected work" />
         <TextReveal
           sx={{
             fontFamily: '"DM Serif Display", serif',
@@ -173,14 +189,18 @@ const Projects = () => (
         </TextReveal>
         <ScrollLine width={60} sx={{ mt: 1, mb: 6 }} />
 
-        {/* Projects Grid — staggered blur-up cascade */}
+        {/* Bento grid */}
         <StaggerGrid stagger={0.1} direction="blur-up">
           <Grid container spacing={{ xs: 2, md: 3 }}>
-            {projectsData.map((project) => (
-              <Grid key={project.title} size={{ xs: 12, sm: 6, md: 4 }}>
-                <ProjectCard project={project} />
-              </Grid>
-            ))}
+            {projectsData.map((project, idx) => {
+              const md = BENTO_MD[idx] || 4;
+              const wide = md >= 8;
+              return (
+                <Grid key={project.title} size={{ xs: 12, sm: 6, md }}>
+                  <ProjectCard project={project} index={idx + 1} wide={wide} />
+                </Grid>
+              );
+            })}
           </Grid>
         </StaggerGrid>
       </Container>

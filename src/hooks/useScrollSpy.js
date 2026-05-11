@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const useScrollSpy = (sectionIds, options = {}) => {
-  const { threshold = 0.3, rootMargin = '0px' } = options;
+  const { threshold = [0, 0.25, 0.5, 0.75, 1], rootMargin = '0px' } = options;
   const [activeSection, setActiveSection] = useState(sectionIds[0] || '');
 
   useEffect(() => {
@@ -18,7 +18,6 @@ const useScrollSpy = (sectionIds, options = {}) => {
             visibilityMap.set(id, entry.intersectionRatio);
           });
 
-          // Find the section with highest visibility
           let maxRatio = 0;
           let maxId = sectionIds[0];
           visibilityMap.forEach((ratio, sectionId) => {
@@ -32,7 +31,7 @@ const useScrollSpy = (sectionIds, options = {}) => {
             setActiveSection(maxId);
           }
         },
-        { threshold: [0, 0.25, 0.5, 0.75, 1], rootMargin }
+        { threshold, rootMargin }
       );
 
       observer.observe(element);

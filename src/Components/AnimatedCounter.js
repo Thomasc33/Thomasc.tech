@@ -2,19 +2,35 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import useCountUp from '../hooks/useCountUp';
 
-const AnimatedCounter = ({ end, suffix = '', label, duration = 2000 }) => {
+const monoFamily = '"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace';
+
+const AnimatedCounter = ({ end, suffix = '', label, duration = 2000, index }) => {
   const { ref, count } = useCountUp({ end, duration });
 
   return (
-    <Box ref={ref} sx={{ textAlign: 'center', px: { xs: 1, md: 2 }, minWidth: 0 }}>
+    <Box ref={ref} sx={{ textAlign: 'center', minWidth: 0, position: 'relative' }}>
+      {index && (
+        <Typography
+          sx={{
+            fontFamily: monoFamily,
+            fontSize: '0.62rem',
+            letterSpacing: '0.25em',
+            color: 'rgba(212, 168, 83, 0.55)',
+            mb: 0.75,
+          }}
+        >
+          {String(index).padStart(2, '0')}
+        </Typography>
+      )}
       <Typography
         sx={{
-          fontFamily: '"DM Serif Display", serif',
-          fontSize: { xs: '2rem', md: '2.5rem' },
-          fontWeight: 400,
+          fontFamily: monoFamily,
+          fontSize: { xs: '1.9rem', sm: '2.2rem', md: '2.4rem' },
+          fontWeight: 500,
           color: '#d4a853',
           lineHeight: 1,
           mb: 1,
+          fontVariantNumeric: 'tabular-nums',
         }}
       >
         {count}{suffix}
@@ -36,7 +52,8 @@ const AnimatedCounter = ({ end, suffix = '', label, duration = 2000 }) => {
           fontWeight: 500,
           letterSpacing: '0.05em',
           textTransform: 'uppercase',
-          fontSize: '0.75rem',
+          fontSize: { xs: '0.65rem', md: '0.72rem' },
+          whiteSpace: 'nowrap',
         }}
       >
         {label}

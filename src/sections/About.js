@@ -8,12 +8,13 @@ import ScrollLine from '../Components/ScrollLine';
 import ParallaxSection from '../Components/ParallaxSection';
 import TimelineDrawing from '../Components/TimelineDrawing';
 import SkillTicker from '../Components/SkillTicker';
+import SectionKicker from '../Components/SectionKicker';
 import experienceData from '../Data/experience.json';
 import skillsData from '../Data/skills.json';
 
 const EDUCATION_ITEMS = [
   {
-    year: '2023 \u2013 Spring 2026',
+    year: '2023 \u2013 May 2026',
     title: 'Ph.D. Computing and Information Systems',
     subtitle: 'UNC Charlotte',
     details:
@@ -80,7 +81,7 @@ const About = () => (
   <ThemeProvider theme={theme}>
     <Box id="about" sx={{ py: { xs: 6, md: 12 }, position: 'relative', zIndex: 1 }}>
       <Container maxWidth="lg">
-        {/* Section Header — word-by-word reveal */}
+        <SectionKicker index={2} label="background" />
         <TextReveal sx={sectionHeaderSx} component="h2">
           About
         </TextReveal>
@@ -112,9 +113,9 @@ const About = () => (
         {/* Skills Ticker — with parallax float */}
         <ParallaxSection speed={0.08} sx={{ mt: 8 }}>
           <ScrollReveal direction="blur" duration={1}>
-            <SkillTicker skills={tickerRow1Skills} direction="left" />
+            <SkillTicker skills={tickerRow1Skills} direction="left" speed={75} />
             <Box sx={{ mt: 1.5 }}>
-              <SkillTicker skills={tickerRow2Skills} direction="right" />
+              <SkillTicker skills={tickerRow2Skills} direction="right" speed={85} />
             </Box>
           </ScrollReveal>
         </ParallaxSection>
