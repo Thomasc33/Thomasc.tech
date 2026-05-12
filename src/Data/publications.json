@@ -94,7 +94,7 @@
     "ongoing": [
         {
             "title": "AEGIS: Adversary-proof ε-Guaranteed Identity-Suppression for User-Level Differentially Private Skeleton Motion Anonymization",
-            "authors": "Thomas Carr, Depeng Xu, Aidong Lu",
+            "authors": "Thomas Carr, Depeng Xu, Aidong Lu, Shuhan Yuan",
             "conference": "AAAI 2026",
             "publicationType": "Conference",
             "year": 2026,
@@ -103,7 +103,7 @@
         },
         {
             "title": "WRAITH: Window-free Recurrent Anonymization with Identity-leakage Time Horizon for Mobile-VR Skeleton Motion Privacy",
-            "authors": "Thomas Carr, Depeng Xu, Aidong Lu",
+            "authors": "Thomas Carr, Depeng Xu, Aidong Lu, Shuhan Yuan",
             "conference": "AAAI 2026",
             "publicationType": "Conference",
             "year": 2026,
