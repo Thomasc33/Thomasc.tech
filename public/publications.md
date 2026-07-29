@@ -62,15 +62,15 @@ Introduces the Linkage Attack Neural Network (LAN) — a Siamese-network-based c
 
 A causal autoregressive Transformer for online skeleton anonymization that operates frame-by-frame using only the current frame and a bounded history window, with no target skeleton required. Combines a residual decoder that produces identity-suppressing perturbations while preserving the input coordinate distribution, sliding-window causal attention for constant-memory streaming, and dual-level adversarial–cooperative supervision at both latent and output stages. On NTU RGB+D 60, MIRAGE achieves 89.0% action recognition accuracy with 35.6% re-identification accuracy, competitive with retargeting baselines that require target skeletons, while enabling real-time streaming at 262 FPS with constant memory.
 
-### AEGIS: Certified User-Level (ε,δ)-Differentially Private Training for Skeleton-Motion Anonymizers (2026, Under Review)
+### AEGIS: Certified User-Level (ε,δ)-Differentially Private Training for Skeleton-Motion Anonymizers (2027, Under Review)
 
-**Thomas Carr, Xujun Che, Depeng Xu, Shuhan Yuan, Aidong Lu.** Under Review.
+**Thomas Carr, Xujun Che, Depeng Xu, Shuhan Yuan, Aidong Lu.** AAAI 2027 (Under Review).
 
 Skeleton-motion anonymizer with a formal user-level (ε,δ)-differential privacy guarantee via certified DP training.
 
-### WRAITH: An Adaptive Evaluation Protocol for Streaming Skeleton De-identification (2026, Under Review)
+### WRAITH: An Adaptive Evaluation Protocol for Streaming Skeleton De-identification (2027, Under Review)
 
-**Thomas Carr, Xujun Che, Depeng Xu, Shuhan Yuan, Aidong Lu.** Under Review.
+**Thomas Carr, Xujun Che, Depeng Xu, Shuhan Yuan, Aidong Lu.** AAAI 2027 (Under Review).
 
 An adaptive evaluation protocol for assessing streaming skeleton de-identification methods under realistic deployment constraints.
 

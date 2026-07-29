@@ -93,18 +93,18 @@
         {
             "title": "AEGIS: Certified User-Level (ε,δ)-Differentially Private Training for Skeleton-Motion Anonymizers",
             "authors": "Thomas Carr, Xujun Che, Depeng Xu, Shuhan Yuan, Aidong Lu",
-            "conference": "Manuscript",
+            "conference": "AAAI Conference on Artificial Intelligence (AAAI)",
             "publicationType": "Conference",
-            "year": 2026,
+            "year": 2027,
             "abstract": "Skeleton motion is biometric: static structure and dynamic style jointly identify the subject within seconds, even from three-joint VR streams. Every published skeleton anonymizer to date defends only against the in-loop classifier it was trained on. We introduce AEGIS, the first skeleton-motion anonymizer with a formal user-level (ε,δ)-differential privacy guarantee. AEGIS trains a causal residual-perturbation decoder under user-level DP-SGD; adversarial, contrastive, and information-bottleneck losses are summed into the per-user gradient before clipping and noise, so the certified (ε,δ) bound covers the full composite objective. On NTU RGB+D 120 at ε=8 user-level, AEGIS reaches 77.46% top-1 action recognition on a frozen SGN evaluator — within 1pp of the strongest empirical baseline — while cutting top-1 re-identification from the raw-skeleton ceiling of 98.77% to 37.62%. First demonstration that formal user-level DP for skeleton motion is utility-competitive with the empirical state of the art.",
             "status": "Under Review"
         },
         {
             "title": "WRAITH: An Adaptive Evaluation Protocol for Streaming Skeleton De-identification",
             "authors": "Thomas Carr, Xujun Che, Depeng Xu, Shuhan Yuan, Aidong Lu",
-            "conference": "Manuscript",
+            "conference": "AAAI Conference on Artificial Intelligence (AAAI)",
             "publicationType": "Conference",
-            "year": 2026,
+            "year": 2027,
             "abstract": "An adaptive evaluation protocol for assessing streaming skeleton de-identification methods under realistic deployment constraints.",
             "status": "Under Review"
         }
