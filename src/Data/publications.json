@@ -69,8 +69,8 @@
             "abstract": "Skeleton-based motion capture and visualization is an important computer vision task, especially in the virtual reality (VR) environment. It has grown increasingly popular due to the ease of gathering skeleton data and the high demand of virtual socialization. The captured skeleton data seems anonymous but can still be used to extract personal identifiable information (PII). This can lead to an unintended privacy leakage inside a VR meta-verse. We propose a novel linkage attack on skeleton-based motion visualization. It detects if a target and a reference skeleton are the same individual. The proposed model, called Linkage Attack Neural Network (LAN), is based on the principles of a Siamese Network. It incorporates deep neural networks to embed the relevant PII then uses a classifier to match the reference and target skeletons. We also employ classical and deep motion retargeting (MR) to cast the target skeleton onto a dummy skeleton such that the motion sequence is anonymized for privacy protection. Our evaluation shows that the effectiveness of LAN in the linkage attack and the effectiveness of MR in anonymization.",
             "links": ["https://dl.acm.org/doi/10.1145/3583780.3615263"],
             "status": "Published"
-        }
-        ,{
+        },
+        {
             "title": "DisentangledTMR: Privacy-Preserving Skeleton Motion Retargeting via Factorized Transformers",
             "authors": "Thomas Carr, Shuhan Yuan, Depeng Xu, Aidong Lu",
             "conference": "European Conference on Computer Vision (ECCV)",
@@ -78,7 +78,7 @@
             "year": 2026,
             "abstract": "Skeleton-based motion data leak personally identifiable information through both static skeletal structure and dynamic motion patterns, enabling re-identification even without facial features. We present DisentangledTMR, a transformer-based motion retargeting architecture that achieves privacy through explicit architectural disentanglement. Two encoders with complementary inductive biases, temporal convolutions for action and spatial graph convolutions for identity, feed a factorized decoder that fuses their representations through separate cross-attention streams and adaptive gating. A three-stage training curriculum progressively establishes disentanglement, reconstruction, and end-to-end refinement. On three benchmarks, DisentangledTMR substantially reduces re-identification while preserving action recognition, outperforming single-encoder baselines.",
             "projectPage": "https://tmr.thomasc.tech",
-            "status": "Under Review"
+            "status": "Accepted"
         },
         {
             "title": "MIRAGE: Motion Identity Removal via Autoregressive Generative Encoding for Privacy-Preserving Skeleton-based Motion Data",
@@ -89,25 +89,34 @@
             "abstract": "Skeleton motion data leaks identity through anthropometric structure and movement style. Existing anonymization methods based on motion retargeting require a target skeleton at inference, precluding deployment in real-time streaming scenarios. We present MIRAGE, a causal autoregressive Transformer for online skeleton anonymization that operates frame-by-frame using only the current frame and a bounded history window, with no target skeleton required. MIRAGE combines a residual decoder that produces identity-suppressing perturbations while preserving the input coordinate distribution, sliding-window causal attention for constant-memory streaming, and dual-level adversarial-cooperative supervision at both latent and output stages. On NTU RGB+D 60, MIRAGE achieves 89.0% action recognition accuracy with 35.6% re-identification accuracy, competitive with retargeting baselines that require target skeletons, while enabling real-time streaming at 262 FPS with constant memory. Experiments across three benchmarks with external evaluators trained from scratch, component ablations, adaptive attacks, and frozen-evaluator transfer validate the approach.",
             "projectPage": "https://mirage.thomasc.tech",
             "status": "Under Review"
+        },
+        {
+            "title": "AEGIS: Certified User-Level (ε,δ)-Differentially Private Training for Skeleton-Motion Anonymizers",
+            "authors": "Thomas Carr, Xujun Che, Depeng Xu, Shuhan Yuan, Aidong Lu",
+            "conference": "Manuscript",
+            "publicationType": "Conference",
+            "year": 2026,
+            "abstract": "Skeleton motion is biometric: static structure and dynamic style jointly identify the subject within seconds, even from three-joint VR streams. Every published skeleton anonymizer to date defends only against the in-loop classifier it was trained on. We introduce AEGIS, the first skeleton-motion anonymizer with a formal user-level (ε,δ)-differential privacy guarantee. AEGIS trains a causal residual-perturbation decoder under user-level DP-SGD; adversarial, contrastive, and information-bottleneck losses are summed into the per-user gradient before clipping and noise, so the certified (ε,δ) bound covers the full composite objective. On NTU RGB+D 120 at ε=8 user-level, AEGIS reaches 77.46% top-1 action recognition on a frozen SGN evaluator — within 1pp of the strongest empirical baseline — while cutting top-1 re-identification from the raw-skeleton ceiling of 98.77% to 37.62%. First demonstration that formal user-level DP for skeleton motion is utility-competitive with the empirical state of the art.",
+            "status": "Under Review"
+        },
+        {
+            "title": "WRAITH: An Adaptive Evaluation Protocol for Streaming Skeleton De-identification",
+            "authors": "Thomas Carr, Xujun Che, Depeng Xu, Shuhan Yuan, Aidong Lu",
+            "conference": "Manuscript",
+            "publicationType": "Conference",
+            "year": 2026,
+            "abstract": "An adaptive evaluation protocol for assessing streaming skeleton de-identification methods under realistic deployment constraints.",
+            "status": "Under Review"
         }
     ],
     "ongoing": [
         {
-            "title": "AEGIS: Adversary-proof ε-Guaranteed Identity-Suppression for User-Level Differentially Private Skeleton Motion Anonymization",
-            "authors": "Thomas Carr, Depeng Xu, Aidong Lu, Shuhan Yuan",
-            "conference": "AAAI 2026",
+            "title": "Who You Are Is Not What You Do: Subject Identity Is Encoded but Unused in Skeleton-Based Action Recognition",
+            "authors": "Thomas Carr, Xujun Che, Depeng Xu, Shuhan Yuan, Aidong Lu",
+            "conference": "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
             "publicationType": "Conference",
-            "year": 2026,
-            "abstract": "Skeleton motion is biometric: static structure and dynamic style jointly identify the subject within seconds, even from three-joint VR streams. Every published skeleton anonymizer to date defends only against the in-loop classifier it was trained on. We introduce AEGIS, the first skeleton-motion anonymizer with a formal user-level (ε,δ)-differential privacy guarantee. AEGIS trains a causal residual-perturbation decoder under user-level DP-SGD; adversarial, contrastive, and information-bottleneck losses are summed into the per-user gradient before clipping and noise, so the certified (ε,δ) bound covers the full composite objective. On NTU RGB+D 120 at ε=8 user-level, AEGIS reaches 77.46% top-1 action recognition on a frozen SGN evaluator — within 1pp of the strongest empirical baseline — while cutting top-1 re-identification from the raw-skeleton ceiling of 98.77% to 37.62%. First demonstration that formal user-level DP for skeleton motion is utility-competitive with the empirical state of the art.",
-            "status": "In Progress"
-        },
-        {
-            "title": "WRAITH: Window-free Recurrent Anonymization with Identity-leakage Time Horizon for Mobile-VR Skeleton Motion Privacy",
-            "authors": "Thomas Carr, Depeng Xu, Aidong Lu, Shuhan Yuan",
-            "conference": "AAAI 2026",
-            "publicationType": "Conference",
-            "year": 2026,
-            "abstract": "Mobile VR headsets stream skeletal motion continuously, and that motion is biometric — head-and-hand trajectories alone identify users with 94% accuracy across 50,000+ subjects. Server-side anonymization arrives too late: the raw signal must already leave the device. We present WRAITH, the first sub-megabyte, bounded-state, in-coordinate skeleton anonymizer designed for Quest-class deployment. WRAITH replaces MIRAGE's windowed-softmax backbone with a unified matrix-state linear-recurrence scaffold instantiated by four backbones (RWKV-7 Goose, Mamba-3, Gated DeltaNet, and a Griffin/Gemma-3 hybrid). The bounded matrix recurrence yields a logarithmic identity-leakage time horizon in which each past frame's contribution to the state decays geometrically. WRAITH-A1 (0.78M parameters, 64kB state) closes the action-recognition gap to MIRAGE within ~5.5pp on SGN and 0.2pp on MixFormer at 10× fewer parameters.",
+            "year": 2027,
+            "abstract": "Work in progress investigating whether skeleton-based action recognition models encode subject identity in their representations even when identity is unused for the action classification objective.",
             "status": "In Progress"
         }
     ]

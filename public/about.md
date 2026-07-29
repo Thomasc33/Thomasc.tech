@@ -14,7 +14,7 @@ Thomas's research investigates privacy preservation for skeleton-based motion da
 
 ## Current Role
 
-**AI & Software Engineer, Incerta Intelligence** (July 2025 – present). Works on defense contracts focused on multimodal fusion for explainable and auditable decision support. Builds AI systems for mission-critical applications with emphasis on transparency and accountability.
+**Lead AI & Software Engineer, Incerta Intelligence** (July 2025 – present). Works on defense contracts focused on multimodal fusion for explainable and auditable decision support. Builds AI systems for mission-critical applications with emphasis on transparency and accountability.
 
 ## Education
 

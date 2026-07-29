@@ -14,7 +14,7 @@ Thomas's research investigates privacy preservation for skeleton-based motion da
 
 ## Current Role
 
-**AI & Software Engineer, Incerta Intelligence** (July 2025 – present). Works on defense contracts focused on multimodal fusion for explainable and auditable decision support. Builds AI systems for mission-critical applications with emphasis on transparency and accountability.
+**Lead AI & Software Engineer, Incerta Intelligence** (July 2025 – present). Works on defense contracts focused on multimodal fusion for explainable and auditable decision support. Builds AI systems for mission-critical applications with emphasis on transparency and accountability.
 
 ## Education
 
@@ -58,9 +58,9 @@ This dissertation investigates privacy preservation for skeleton-based motion da
 
 ## Peer-Reviewed Publications
 
-### DisentangledTMR: Privacy-Preserving Skeleton Motion Retargeting via Factorized Transformers (2026, Under Review)
+### DisentangledTMR: Privacy-Preserving Skeleton Motion Retargeting via Factorized Transformers (2026, Accepted)
 
-**Thomas Carr, Shuhan Yuan, Depeng Xu, Aidong Lu.** ECCV 2026 (Under Review). Project page: [tmr.thomasc.tech](https://tmr.thomasc.tech).
+**Thomas Carr, Shuhan Yuan, Depeng Xu, Aidong Lu.** ECCV 2026 (Accepted). Project page: [tmr.thomasc.tech](https://tmr.thomasc.tech).
 
 A transformer-based motion-retargeting architecture that achieves privacy through explicit architectural disentanglement. Two encoders with complementary inductive biases — temporal convolutions for action, spatial graph convolutions for identity — feed a factorized decoder that fuses their representations through separate cross-attention streams and adaptive gating. A three-stage training curriculum progressively establishes disentanglement, reconstruction, and end-to-end refinement. On three benchmarks, DisentangledTMR substantially reduces re-identification while preserving action recognition, outperforming single-encoder baselines.
 
@@ -100,13 +100,33 @@ Proposes the LAN baseline attack model and the PMR adversarial defense model, an
 
 Introduces the Linkage Attack Neural Network (LAN) — a Siamese-network-based classifier that detects whether a target and reference skeleton belong to the same individual. Also employs classical and deep motion retargeting to cast target skeletons onto dummies for anonymization.
 
-## Ongoing / In Progress
+## Under Review
 
-### MIRAGE: Motion Identity Removal via Autoregressive Generative Encoding for Privacy-Preserving Skeleton-based Motion Data (2027 Target)
+### MIRAGE: Motion Identity Removal via Autoregressive Generative Encoding for Privacy-Preserving Skeleton-based Motion Data (2026, Under Review)
 
-**Thomas Carr, Depeng Xu, Aidong Lu.** AAAI 2027 (Target). Project page: [mirage.thomasc.tech](https://mirage.thomasc.tech).
+**Thomas Carr, Depeng Xu, Aidong Lu.** NeurIPS 2026 (Under Review). Project page: [mirage.thomasc.tech](https://mirage.thomasc.tech).
 
 A causal autoregressive Transformer for online skeleton anonymization that operates frame-by-frame using only the current frame and a bounded history window, with no target skeleton required. Combines a residual decoder that produces identity-suppressing perturbations while preserving the input coordinate distribution, sliding-window causal attention for constant-memory streaming, and dual-level adversarial–cooperative supervision at both latent and output stages. On NTU RGB+D 60, MIRAGE achieves 89.0% action recognition accuracy with 35.6% re-identification accuracy, competitive with retargeting baselines that require target skeletons, while enabling real-time streaming at 262 FPS with constant memory.
+
+### AEGIS: Certified User-Level (ε,δ)-Differentially Private Training for Skeleton-Motion Anonymizers (2026, Under Review)
+
+**Thomas Carr, Xujun Che, Depeng Xu, Shuhan Yuan, Aidong Lu.** Under Review.
+
+Skeleton-motion anonymizer with a formal user-level (ε,δ)-differential privacy guarantee via certified DP training.
+
+### WRAITH: An Adaptive Evaluation Protocol for Streaming Skeleton De-identification (2026, Under Review)
+
+**Thomas Carr, Xujun Che, Depeng Xu, Shuhan Yuan, Aidong Lu.** Under Review.
+
+An adaptive evaluation protocol for assessing streaming skeleton de-identification methods under realistic deployment constraints.
+
+## Ongoing / In Progress
+
+### Who You Are Is Not What You Do: Subject Identity Is Encoded but Unused in Skeleton-Based Action Recognition (CVPR 2027 Target)
+
+**Thomas Carr, Xujun Che, Depeng Xu, Shuhan Yuan, Aidong Lu.** CVPR 2027 (Target).
+
+Work in progress investigating whether skeleton-based action recognition models encode subject identity in their representations even when identity is unused for the action classification objective.
 
 
 ---

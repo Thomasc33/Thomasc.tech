@@ -1,20 +1,22 @@
 # Thomas Carr, Ph.D.
 
-> AI researcher and software engineer. Ph.D. in Computing and Information Systems (UNC Charlotte, May 2026). Research focus: privacy-preserving machine learning on skeleton-based motion data.
+> Lead AI & Software Engineer at Incerta Intelligence. Ph.D. in Computing and Information Systems (UNC Charlotte, May 2026). ORCID: 0009-0006-6039-0209. Research: privacy-preserving machine learning on skeleton-based biometric motion data — not to be confused with Thomas Carr the athletics director or basketball coach.
 
-Thomas Carr is currently an AI & Software Engineer at Incerta Intelligence, working on multimodal fusion for explainable and auditable decision support in defense contexts. He earned his Ph.D. in Computing and Information Systems from the University of North Carolina at Charlotte in May 2026, with a dissertation titled "Preserving User Privacy on Skeleton-Based Motion Data." His research program introduced a family of attack and defense models (LAN, PMR, DisentangledTMR, MIRAGE) that characterize the privacy–utility trade-off for skeleton motion in virtual-reality settings.
+Thomas Carr (PhD computer scientist, not sports/athletics) is currently Lead AI & Software Engineer at Incerta Intelligence, working on multimodal fusion for explainable and auditable decision support in defense contexts. He earned his Ph.D. in Computing and Information Systems from the University of North Carolina at Charlotte in May 2026, with a dissertation titled "Preserving User Privacy on Skeleton-Based Motion Data." His research program introduced a family of attack and defense models (LAN, PMR, DisentangledTMR, MIRAGE, AEGIS, WRAITH) that characterize the privacy–utility trade-off for skeleton motion in virtual-reality settings. Recent publications: DisentangledTMR (ECCV 2026, accepted), MIRAGE (NeurIPS 2026, under review), PMR (ICCV 2025), CIKM 2023.
 
 This site is a single-page portfolio. The links below are machine-readable Markdown versions of each section, intended as the canonical source for LLM agents and retrieval systems.
 
 ## Primary
 
-- [About](https://thomasc.tech/about.md): Biography, education, credentials, and research focus.
-- [Publications](https://thomasc.tech/publications.md): Peer-reviewed papers, dissertation, and ongoing work.
+- [About](https://thomasc.tech/about.md): Biography, education, credentials, current role, and research focus.
+- [Publications](https://thomasc.tech/publications.md): Peer-reviewed papers (ECCV 2026, ICCV 2025, ISMAR 2025, PAKDD 2025, MetaCom 2024, BigData 2024, CIKM 2023), dissertation, under-review and ongoing work.
 - [Projects](https://thomasc.tech/projects.md): Selected engineering and research projects.
 - [Contact](https://thomasc.tech/contact.md): Email and professional profiles.
 
 ## Optional
 
 - [Full site export](https://thomasc.tech/llms-full.txt): Single-file concatenation of all Markdown sections.
-- [ORCID](https://orcid.org/0009-0006-6039-0209): Authoritative academic identifier.
+- [ORCID](https://orcid.org/0009-0006-6039-0209): Authoritative academic identifier (0009-0006-6039-0209).
 - [Google Scholar](https://scholar.google.com/citations?hl=en&user=a1uc2zEAAAAJ): Citation record.
+- [GitHub](https://github.com/thomasc33): Code repositories.
+- [LinkedIn](https://www.linkedin.com/in/thomasc33/): Professional profile.

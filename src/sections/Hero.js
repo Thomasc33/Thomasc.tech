@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Typography, IconButton, Stack } from '@mui/material';
+import { Box, Container, Typography, IconButton, Stack, SvgIcon } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { GitHub, LinkedIn, Email, School } from '@mui/icons-material';
 import { motion } from 'framer-motion';
@@ -13,10 +13,17 @@ const theme = createDarkTheme();
 
 const TYPING_WORDS = ['Ethical AI', 'Privacy', 'Machine Learning', 'Fairness'];
 
+const OrcidIcon = (props) => (
+  <SvgIcon {...props} viewBox="0 0 24 24">
+    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 01-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.738-1.359 3.738-3.722 0-2.473-1.29-3.722-3.56-3.722h-2.475z" />
+  </SvgIcon>
+);
+
 const SOCIAL_LINKS = [
   { icon: GitHub, href: 'https://github.com/thomasc33', label: 'GitHub' },
   { icon: LinkedIn, href: 'https://www.linkedin.com/in/thomasc33/', label: 'LinkedIn' },
   { icon: School, href: 'https://scholar.google.com/citations?user=a1uc2zEAAAAJ', label: 'Google Scholar' },
+  { icon: OrcidIcon, href: 'https://orcid.org/0009-0006-6039-0209', label: 'ORCID' },
   { icon: Email, href: 'mailto:thomas@thomasc.tech', label: 'Email' },
 ];
 

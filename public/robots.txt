@@ -49,3 +49,12 @@ User-agent: Perplexity-User
 Allow: /
 
 Sitemap: https://thomasc.tech/sitemap.xml
+
+# LLM-readable content (static files, no JS required)
+# Site index:   https://thomasc.tech/llms.txt
+# Full content: https://thomasc.tech/llms-full.txt
+# Section mirrors (text/markdown):
+#   https://thomasc.tech/about.md
+#   https://thomasc.tech/publications.md
+#   https://thomasc.tech/projects.md
+#   https://thomasc.tech/contact.md

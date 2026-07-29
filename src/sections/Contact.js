@@ -15,6 +15,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import SchoolIcon from '@mui/icons-material/School';
+import SvgIcon from '@mui/material/SvgIcon';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useForm, ValidationError } from '@formspree/react';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
@@ -23,6 +24,12 @@ import TextReveal from '../Components/TextReveal';
 import ScrollReveal from '../Components/ScrollReveal';
 import MagneticButton from '../Components/MagneticButton';
 import SectionKicker from '../Components/SectionKicker';
+
+const OrcidIcon = (props) => (
+  <SvgIcon {...props} viewBox="0 0 24 24" fontSize="small">
+    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 01-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.738-1.359 3.738-3.722 0-2.473-1.29-3.722-3.56-3.722h-2.475z" />
+  </SvgIcon>
+);
 
 const theme = createDarkTheme();
 
@@ -113,6 +120,11 @@ const DIRECT_LINKS = [
     icon: <SchoolIcon fontSize="small" />,
     label: 'Google Scholar',
     href: 'https://scholar.google.com/citations?user=a1uc2zEAAAAJ',
+  },
+  {
+    icon: <OrcidIcon />,
+    label: 'ORCID',
+    href: 'https://orcid.org/0009-0006-6039-0209',
   },
 ];
 
