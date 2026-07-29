@@ -8,17 +8,54 @@
     ],
     "headers": [
       {
+        "source": "**",
+        "headers": [
+          { "key": "X-Content-Type-Options", "value": "nosniff" },
+          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+          { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" }
+        ]
+      },
+      {
+        "source": "index.html",
+        "headers": [
+          { "key": "Cache-Control", "value": "no-cache" },
+          { "key": "X-Robots-Tag", "value": "index, follow, max-image-preview:large, max-snippet:-1" }
+        ]
+      },
+      {
         "source": "**/*.md",
         "headers": [
           { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
-          { "key": "X-Robots-Tag", "value": "all" }
+          { "key": "X-Robots-Tag", "value": "all" },
+          { "key": "Cache-Control", "value": "public, max-age=3600" }
         ]
       },
       {
         "source": "llms*.txt",
         "headers": [
           { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
+          { "key": "X-Robots-Tag", "value": "all" },
+          { "key": "Cache-Control", "value": "public, max-age=3600" }
+        ]
+      },
+      {
+        "source": "humans.txt",
+        "headers": [
+          { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
           { "key": "X-Robots-Tag", "value": "all" }
+        ]
+      },
+      {
+        "source": "sitemap.xml",
+        "headers": [
+          { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
+          { "key": "Cache-Control", "value": "public, max-age=3600" }
+        ]
+      },
+      {
+        "source": "robots.txt",
+        "headers": [
+          { "key": "Content-Type", "value": "text/plain; charset=utf-8" }
         ]
       }
     ],

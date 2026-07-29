@@ -214,7 +214,7 @@ const Hero = () => (
               mt: 2,
             }}
           >
-            AI Researcher & Software Engineer
+            Lead AI & Software Engineer · Privacy-Preserving ML · UNC Charlotte Ph.D.
           </Typography>
         </ScrollReveal>
 

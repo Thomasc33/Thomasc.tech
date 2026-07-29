@@ -1,0 +1,16 @@
+/* TEAM */
+Thomas Carr, Ph.D.
+Lead AI & Software Engineer, Incerta Intelligence
+Site: https://thomasc.tech
+ORCID: https://orcid.org/0009-0006-6039-0209
+Scholar: https://scholar.google.com/citations?user=a1uc2zEAAAAJ
+Contact: thomas@thomasc.tech
+
+/* THANKS */
+UNC Charlotte College of Computing and Informatics
+Depeng Xu, Aidong Lu, and the Trustworthy AI lab
+
+/* SITE */
+Standards: HTML5, Schema.org ProfilePage + Person, llms.txt
+Last update: 2026-07-29
+Language: English
