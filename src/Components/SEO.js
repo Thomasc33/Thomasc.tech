@@ -9,7 +9,6 @@ const WEBPAGE_ID = `${SITE_URL}/#webpage`;
 const ORG_INCERTA_ID = `${SITE_URL}/#incerta`;
 const ORG_UNCC_ID = `${SITE_URL}/#uncc`;
 const PUB_LIST_ID = `${SITE_URL}/#publications`;
-const IMAGE_URL = `${SITE_URL}/android-chrome-512x512.png`;
 const OG_IMAGE_URL = `${SITE_URL}/og-card.png`;
 
 const PAGE_TITLE =
@@ -114,9 +113,9 @@ const graph = {
       author: { '@id': PERSON_ID },
       primaryImageOfPage: {
         '@type': 'ImageObject',
-        url: IMAGE_URL,
-        width: 512,
-        height: 512,
+        url: OG_IMAGE_URL,
+        width: 1200,
+        height: 630,
       },
       speakable: {
         '@type': 'SpeakableSpecification',
@@ -137,7 +136,7 @@ const graph = {
       familyName: 'Carr',
       honorificSuffix: 'Ph.D.',
       url: SITE_URL,
-      image: IMAGE_URL,
+      image: OG_IMAGE_URL,
       email: 'thomas@thomasc.tech',
       mainEntityOfPage: { '@id': WEBPAGE_ID },
       sameAs: SAME_AS,
