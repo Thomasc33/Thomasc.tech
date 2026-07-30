@@ -24,6 +24,7 @@ import TextReveal from '../Components/TextReveal';
 import ScrollReveal from '../Components/ScrollReveal';
 import MagneticButton from '../Components/MagneticButton';
 import SectionKicker from '../Components/SectionKicker';
+import SiteFooterNav from '../Components/SiteFooterNav';
 
 const OrcidIcon = (props) => (
   <SvgIcon {...props} viewBox="0 0 24 24" fontSize="small">
@@ -283,10 +284,12 @@ const Contact = () => {
 
           <DirectLinks />
 
+          <SiteFooterNav />
+
           <ScrollReveal direction="blur" delay={200}>
             <Typography
               sx={{
-                mt: 8,
+                mt: 3,
                 textAlign: 'center',
                 color: 'text.secondary',
                 fontSize: '0.8rem',

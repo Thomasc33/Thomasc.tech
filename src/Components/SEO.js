@@ -10,15 +10,21 @@ const ORG_INCERTA_ID = `${SITE_URL}/#incerta`;
 const ORG_UNCC_ID = `${SITE_URL}/#uncc`;
 const PUB_LIST_ID = `${SITE_URL}/#publications`;
 const IMAGE_URL = `${SITE_URL}/android-chrome-512x512.png`;
+const OG_IMAGE_URL = `${SITE_URL}/og-card.png`;
 
 const PAGE_TITLE =
   'Thomas Carr, Ph.D. | Privacy-Preserving AI Researcher | UNC Charlotte';
 const PAGE_DESCRIPTION =
   'Thomas Carr, Ph.D. — Lead AI & Software Engineer at Incerta Intelligence. UNC Charlotte Ph.D. (2026) in Computing and Information Systems. Research on privacy-preserving machine learning for skeleton-based biometric motion data (ECCV, ICCV, CIKM). ORCID 0009-0006-6039-0209.';
 
+// Every authoritative profile that resolves to THIS Thomas Carr. Google uses
+// reciprocal sameAs links to merge these into a single entity — the main lever
+// for outranking the many other people who share the name.
 const SAME_AS = [
   'https://orcid.org/0009-0006-6039-0209',
   'https://scholar.google.com/citations?hl=en&user=a1uc2zEAAAAJ',
+  'https://dblp.org/pid/176/3082-1',
+  'https://www.semanticscholar.org/author/2260650849',
   'https://github.com/thomasc33',
   'https://www.linkedin.com/in/thomasc33/',
 ];
@@ -147,6 +153,18 @@ const graph = {
           propertyID: 'Google Scholar',
           value: 'a1uc2zEAAAAJ',
           url: 'https://scholar.google.com/citations?user=a1uc2zEAAAAJ',
+        },
+        {
+          '@type': 'PropertyValue',
+          propertyID: 'DBLP',
+          value: '176/3082-1',
+          url: 'https://dblp.org/pid/176/3082-1',
+        },
+        {
+          '@type': 'PropertyValue',
+          propertyID: 'Semantic Scholar',
+          value: '2260650849',
+          url: 'https://www.semanticscholar.org/author/2260650849',
         },
       ],
       jobTitle: [
@@ -278,6 +296,8 @@ function SEO() {
         rel="me"
         href="https://scholar.google.com/citations?user=a1uc2zEAAAAJ"
       />
+      <link rel="me" href="https://dblp.org/pid/176/3082-1" />
+      <link rel="me" href="https://www.semanticscholar.org/author/2260650849" />
       <link
         rel="alternate"
         type="text/plain"
@@ -308,23 +328,23 @@ function SEO() {
       <meta property="og:url" content={`${SITE_URL}/`} />
       <meta property="og:title" content={PAGE_TITLE} />
       <meta property="og:description" content={PAGE_DESCRIPTION} />
-      <meta property="og:image" content={IMAGE_URL} />
+      <meta property="og:image" content={OG_IMAGE_URL} />
       <meta
         property="og:image:alt"
-        content="Thomas Carr, Ph.D. — Privacy-Preserving AI Researcher"
+        content="Thomas Carr, Ph.D. — Privacy-Preserving AI Researcher, UNC Charlotte"
       />
-      <meta property="og:image:width" content="512" />
-      <meta property="og:image:height" content="512" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:locale" content="en_US" />
       <meta property="profile:first_name" content="Thomas" />
       <meta property="profile:last_name" content="Carr" />
       <meta property="profile:username" content="thomasc33" />
 
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={PAGE_TITLE} />
       <meta name="twitter:description" content={PAGE_DESCRIPTION} />
-      <meta name="twitter:image" content={IMAGE_URL} />
+      <meta name="twitter:image" content={OG_IMAGE_URL} />
       <meta
         name="twitter:image:alt"
         content="Thomas Carr, Ph.D. — Privacy-Preserving AI Researcher"

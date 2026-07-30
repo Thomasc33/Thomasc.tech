@@ -8,6 +8,9 @@ This site is a single-page portfolio. The links below are machine-readable Markd
 
 ## Primary
 
+- [About (HTML)](https://thomasc.tech/about/): Biography, research program, disambiguation from other people named Thomas Carr, and FAQ.
+- [Publications (HTML)](https://thomasc.tech/publications/): Full bibliography with abstracts and publisher links.
+- [Projects (HTML)](https://thomasc.tech/projects/): Engineering and research projects with tech stacks.
 - [About](https://thomasc.tech/about.md): Biography, education, credentials, current role, and research focus.
 - [Publications](https://thomasc.tech/publications.md): Peer-reviewed papers (ECCV 2026, ICCV 2025, ISMAR 2025, PAKDD 2025, MetaCom 2024, BigData 2024, CIKM 2023), dissertation, under-review and ongoing work.
 - [Projects](https://thomasc.tech/projects.md): Selected engineering and research projects.
@@ -18,5 +21,7 @@ This site is a single-page portfolio. The links below are machine-readable Markd
 - [Full site export](https://thomasc.tech/llms-full.txt): Single-file concatenation of all Markdown sections.
 - [ORCID](https://orcid.org/0009-0006-6039-0209): Authoritative academic identifier (0009-0006-6039-0209).
 - [Google Scholar](https://scholar.google.com/citations?hl=en&user=a1uc2zEAAAAJ): Citation record.
+- [DBLP](https://dblp.org/pid/176/3082-1): Computer-science bibliography ("Thomas Carr 0001" — the correct homonym).
+- [Semantic Scholar](https://www.semanticscholar.org/author/2260650849): Author record.
 - [GitHub](https://github.com/thomasc33): Code repositories.
 - [LinkedIn](https://www.linkedin.com/in/thomasc33/): Professional profile.
