@@ -37,35 +37,116 @@ const NAV_LINKS = Object.freeze([
 ]);
 
 const STYLES = `
-:root{--emerald:#10b981;--gold:#d4a853;--bg:#050807;--fg:#e9efec;--muted:#9aa8a2;--line:rgba(255,255,255,.10)}
+:root{
+  --emerald:#10b981;--emerald-dim:rgba(16,185,129,.55);
+  --gold:#d4a853;--gold-lite:#e8c075;
+  --bg:#050807;--fg:#e9efec;--muted:#93a49c;
+  --line:rgba(255,255,255,.09);
+  --glass:rgba(255,255,255,.022);
+  --serif:"DM Serif Display",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif}
-a{color:var(--emerald);text-decoration:none}
-a:hover,a:focus{text-decoration:underline}
-.wrap{max-width:56rem;margin:0 auto;padding:2rem 1.25rem 4rem}
-nav.top{border-bottom:1px solid var(--line);padding:1rem 0;margin-bottom:2.5rem}
-nav.top ul{list-style:none;display:flex;flex-wrap:wrap;gap:1.25rem;margin:0;padding:0;font-size:.92rem}
-nav.top a[aria-current=page]{color:var(--gold);font-weight:600}
-h1{font-size:clamp(1.9rem,4.5vw,2.7rem);line-height:1.15;margin:0 0 .4rem;letter-spacing:-.01em}
-h2{font-size:1.35rem;margin:2.75rem 0 .75rem;color:var(--gold);letter-spacing:-.01em}
-h3{font-size:1.05rem;margin:1.75rem 0 .35rem}
-p.lede{font-size:1.08rem;color:var(--muted);margin:0 0 1.75rem}
-.kicker{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--emerald);margin:0 0 .6rem}
-.meta{color:var(--muted);font-size:.9rem;margin:.15rem 0 .5rem}
-article.entry{border-left:2px solid var(--line);padding:0 0 .25rem 1.1rem;margin:0 0 2rem}
-article.entry h3{margin-top:0}
-.tags{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem;padding:0;margin:.6rem 0 0}
-.tags li{font-size:.75rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:.15rem .6rem}
-.badge{display:inline-block;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:3px;padding:.1rem .45rem;color:var(--gold);vertical-align:middle}
-dl.ids{margin:0}
-dl.ids dt{font-weight:600;margin-top:.85rem}
-dl.ids dd{margin:0;color:var(--muted)}
-details.faq{border-bottom:1px solid var(--line);padding:.85rem 0}
-details.faq summary{cursor:pointer;font-weight:600}
-details.faq p{margin:.6rem 0 0;color:var(--muted)}
-footer.site{border-top:1px solid var(--line);margin-top:3.5rem;padding-top:1.5rem;color:var(--muted);font-size:.88rem}
-footer.site ul{list-style:none;display:flex;flex-wrap:wrap;gap:1rem;padding:0;margin:0 0 1rem}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.68;
+  background:
+    radial-gradient(900px 620px at 78% -6%, rgba(16,185,129,.13), transparent 62%),
+    radial-gradient(760px 520px at 4% 102%, rgba(212,168,83,.09), transparent 60%),
+    var(--bg);
+  background-attachment:fixed;
+  -webkit-font-smoothing:antialiased;
+}
+/* grain, matching the main site's GrainOverlay */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.16;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
+}
+a{color:var(--emerald);text-decoration:none;transition:color .25s ease}
+a:hover,a:focus-visible{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+.wrap{position:relative;z-index:1;max-width:54rem;margin:0 auto;padding:1.5rem 1.5rem 5rem}
+
+nav.top{border-bottom:1px solid var(--line);padding:1.1rem 0;margin-bottom:3.25rem}
+nav.top ul{list-style:none;display:flex;flex-wrap:wrap;gap:1.6rem;margin:0;padding:0}
+nav.top a{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;
+}
+nav.top a:hover{color:var(--fg)}
+nav.top a[aria-current=page]{color:var(--gold)}
+
+.kicker{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--emerald);opacity:.85;margin:0 0 1.1rem;
+}
+h1{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2.3rem,6vw,3.5rem);line-height:1.06;letter-spacing:.01em;
+  margin:0 0 1.1rem;
+}
+h1::after{
+  content:"";display:block;width:96px;height:2px;border-radius:2px;margin-top:1.4rem;
+  background:linear-gradient(90deg,var(--gold),var(--gold-lite) 50%,var(--gold));
+}
+h2{
+  font-family:var(--serif);font-weight:400;color:var(--gold);
+  font-size:1.6rem;letter-spacing:.01em;margin:3.5rem 0 1rem;
+}
+h3{font-size:1.04rem;font-weight:600;line-height:1.4;margin:0 0 .5rem;letter-spacing:-.005em}
+p{margin:0 0 1.15rem}
+p.lede{font-size:1.13rem;line-height:1.6;color:var(--muted);margin:0 0 2.25rem;max-width:44rem}
+ul,ol{padding-left:1.15rem}
+li{margin:0 0 .55rem}
+strong{color:#f3f8f5;font-weight:600}
+em{color:var(--muted)}
+
+.meta{color:var(--muted);font-size:.88rem;line-height:1.55;margin:0 0 .5rem}
+.meta a{color:var(--emerald-dim)}
+.meta a:hover{color:var(--gold)}
+
+article.entry{
+  background:var(--glass);border:1px solid var(--line);border-radius:10px;
+  padding:1.4rem 1.5rem 1.25rem;margin:0 0 1.1rem;
+  transition:border-color .3s ease,background .3s ease;
+}
+article.entry:hover{border-color:rgba(212,168,83,.26);background:rgba(255,255,255,.035)}
+article.entry p:last-of-type{margin-bottom:0}
+
+.tags{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem;padding:0;margin:1rem 0 0}
+.tags li{
+  margin:0;font-family:var(--mono);font-size:.68rem;letter-spacing:.05em;color:var(--muted);
+  border:1px solid var(--line);border-radius:999px;padding:.24rem .7rem;
+}
+.badge{
+  display:inline-block;vertical-align:middle;margin-left:.5rem;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid rgba(212,168,83,.35);border-radius:3px;padding:.12rem .5rem;color:var(--gold);
+}
+
+dl.ids{margin:0;display:grid;grid-template-columns:minmax(9rem,auto) 1fr;gap:.55rem 1.5rem}
+dl.ids dt{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:.15rem}
+dl.ids dd{margin:0}
+
+details.faq{border-bottom:1px solid var(--line);padding:1rem 0}
+details.faq summary{cursor:pointer;font-weight:600;list-style:none;transition:color .25s ease}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::before{content:"+ ";font-family:var(--mono);color:var(--emerald)}
+details.faq[open] summary::before{content:"\\2212 "}
+details.faq summary:hover{color:var(--gold)}
+details.faq p{margin:.85rem 0 0;color:var(--muted)}
+
+footer.site{border-top:1px solid var(--line);margin-top:4.5rem;padding-top:1.75rem;color:var(--muted);font-size:.85rem}
+footer.site ul{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;padding:0;margin:0 0 1.25rem}
+footer.site li{margin:0}
+footer.site a{color:var(--muted)}
+footer.site a:hover{color:var(--gold)}
+
+@media (max-width:640px){
+  .wrap{padding:1.25rem 1.15rem 4rem}
+  dl.ids{grid-template-columns:1fr;gap:.15rem}
+  dl.ids dt{margin-top:.85rem}
+}
 `.trim();
 
 const navHtml = (currentPath) => {
@@ -129,6 +210,9 @@ const renderPage = (page) => {
   <link rel="canonical" href="${canonical}" />
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/android-chrome-192x192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
   <link rel="author" href="${SITE_URL}/" />
   <link rel="me" href="${PROFILE_URLS.orcid}" />
   <link rel="me" href="${PROFILE_URLS.dblp}" />

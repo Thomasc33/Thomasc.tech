@@ -14,6 +14,9 @@
   <link rel="canonical" href="https://thomasc.tech/projects/" />
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/android-chrome-192x192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
   <link rel="author" href="https://thomasc.tech/" />
   <link rel="me" href="https://orcid.org/0009-0006-6039-0209" />
   <link rel="me" href="https://dblp.org/pid/176/3082-1" />
@@ -33,35 +36,116 @@
   <meta name="twitter:title" content="Projects — Thomas Carr, Ph.D. | Software &amp; ML Engineering" />
   <meta name="twitter:description" content="Engineering and research projects by Thomas Carr, Ph.D. — machine learning systems, full-stack web applications, computer vision, and real-time platforms built in React, Node.js, Python, and PyTorch." />
   <meta name="twitter:image" content="https://thomasc.tech/og-card.png" />
-  <style>:root{--emerald:#10b981;--gold:#d4a853;--bg:#050807;--fg:#e9efec;--muted:#9aa8a2;--line:rgba(255,255,255,.10)}
+  <style>:root{
+  --emerald:#10b981;--emerald-dim:rgba(16,185,129,.55);
+  --gold:#d4a853;--gold-lite:#e8c075;
+  --bg:#050807;--fg:#e9efec;--muted:#93a49c;
+  --line:rgba(255,255,255,.09);
+  --glass:rgba(255,255,255,.022);
+  --serif:"DM Serif Display",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif}
-a{color:var(--emerald);text-decoration:none}
-a:hover,a:focus{text-decoration:underline}
-.wrap{max-width:56rem;margin:0 auto;padding:2rem 1.25rem 4rem}
-nav.top{border-bottom:1px solid var(--line);padding:1rem 0;margin-bottom:2.5rem}
-nav.top ul{list-style:none;display:flex;flex-wrap:wrap;gap:1.25rem;margin:0;padding:0;font-size:.92rem}
-nav.top a[aria-current=page]{color:var(--gold);font-weight:600}
-h1{font-size:clamp(1.9rem,4.5vw,2.7rem);line-height:1.15;margin:0 0 .4rem;letter-spacing:-.01em}
-h2{font-size:1.35rem;margin:2.75rem 0 .75rem;color:var(--gold);letter-spacing:-.01em}
-h3{font-size:1.05rem;margin:1.75rem 0 .35rem}
-p.lede{font-size:1.08rem;color:var(--muted);margin:0 0 1.75rem}
-.kicker{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--emerald);margin:0 0 .6rem}
-.meta{color:var(--muted);font-size:.9rem;margin:.15rem 0 .5rem}
-article.entry{border-left:2px solid var(--line);padding:0 0 .25rem 1.1rem;margin:0 0 2rem}
-article.entry h3{margin-top:0}
-.tags{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem;padding:0;margin:.6rem 0 0}
-.tags li{font-size:.75rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:.15rem .6rem}
-.badge{display:inline-block;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:3px;padding:.1rem .45rem;color:var(--gold);vertical-align:middle}
-dl.ids{margin:0}
-dl.ids dt{font-weight:600;margin-top:.85rem}
-dl.ids dd{margin:0;color:var(--muted)}
-details.faq{border-bottom:1px solid var(--line);padding:.85rem 0}
-details.faq summary{cursor:pointer;font-weight:600}
-details.faq p{margin:.6rem 0 0;color:var(--muted)}
-footer.site{border-top:1px solid var(--line);margin-top:3.5rem;padding-top:1.5rem;color:var(--muted);font-size:.88rem}
-footer.site ul{list-style:none;display:flex;flex-wrap:wrap;gap:1rem;padding:0;margin:0 0 1rem}</style>
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.68;
+  background:
+    radial-gradient(900px 620px at 78% -6%, rgba(16,185,129,.13), transparent 62%),
+    radial-gradient(760px 520px at 4% 102%, rgba(212,168,83,.09), transparent 60%),
+    var(--bg);
+  background-attachment:fixed;
+  -webkit-font-smoothing:antialiased;
+}
+/* grain, matching the main site's GrainOverlay */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.16;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
+}
+a{color:var(--emerald);text-decoration:none;transition:color .25s ease}
+a:hover,a:focus-visible{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+.wrap{position:relative;z-index:1;max-width:54rem;margin:0 auto;padding:1.5rem 1.5rem 5rem}
+
+nav.top{border-bottom:1px solid var(--line);padding:1.1rem 0;margin-bottom:3.25rem}
+nav.top ul{list-style:none;display:flex;flex-wrap:wrap;gap:1.6rem;margin:0;padding:0}
+nav.top a{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;
+}
+nav.top a:hover{color:var(--fg)}
+nav.top a[aria-current=page]{color:var(--gold)}
+
+.kicker{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--emerald);opacity:.85;margin:0 0 1.1rem;
+}
+h1{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2.3rem,6vw,3.5rem);line-height:1.06;letter-spacing:.01em;
+  margin:0 0 1.1rem;
+}
+h1::after{
+  content:"";display:block;width:96px;height:2px;border-radius:2px;margin-top:1.4rem;
+  background:linear-gradient(90deg,var(--gold),var(--gold-lite) 50%,var(--gold));
+}
+h2{
+  font-family:var(--serif);font-weight:400;color:var(--gold);
+  font-size:1.6rem;letter-spacing:.01em;margin:3.5rem 0 1rem;
+}
+h3{font-size:1.04rem;font-weight:600;line-height:1.4;margin:0 0 .5rem;letter-spacing:-.005em}
+p{margin:0 0 1.15rem}
+p.lede{font-size:1.13rem;line-height:1.6;color:var(--muted);margin:0 0 2.25rem;max-width:44rem}
+ul,ol{padding-left:1.15rem}
+li{margin:0 0 .55rem}
+strong{color:#f3f8f5;font-weight:600}
+em{color:var(--muted)}
+
+.meta{color:var(--muted);font-size:.88rem;line-height:1.55;margin:0 0 .5rem}
+.meta a{color:var(--emerald-dim)}
+.meta a:hover{color:var(--gold)}
+
+article.entry{
+  background:var(--glass);border:1px solid var(--line);border-radius:10px;
+  padding:1.4rem 1.5rem 1.25rem;margin:0 0 1.1rem;
+  transition:border-color .3s ease,background .3s ease;
+}
+article.entry:hover{border-color:rgba(212,168,83,.26);background:rgba(255,255,255,.035)}
+article.entry p:last-of-type{margin-bottom:0}
+
+.tags{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem;padding:0;margin:1rem 0 0}
+.tags li{
+  margin:0;font-family:var(--mono);font-size:.68rem;letter-spacing:.05em;color:var(--muted);
+  border:1px solid var(--line);border-radius:999px;padding:.24rem .7rem;
+}
+.badge{
+  display:inline-block;vertical-align:middle;margin-left:.5rem;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid rgba(212,168,83,.35);border-radius:3px;padding:.12rem .5rem;color:var(--gold);
+}
+
+dl.ids{margin:0;display:grid;grid-template-columns:minmax(9rem,auto) 1fr;gap:.55rem 1.5rem}
+dl.ids dt{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:.15rem}
+dl.ids dd{margin:0}
+
+details.faq{border-bottom:1px solid var(--line);padding:1rem 0}
+details.faq summary{cursor:pointer;font-weight:600;list-style:none;transition:color .25s ease}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::before{content:"+ ";font-family:var(--mono);color:var(--emerald)}
+details.faq[open] summary::before{content:"\2212 "}
+details.faq summary:hover{color:var(--gold)}
+details.faq p{margin:.85rem 0 0;color:var(--muted)}
+
+footer.site{border-top:1px solid var(--line);margin-top:4.5rem;padding-top:1.75rem;color:var(--muted);font-size:.85rem}
+footer.site ul{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;padding:0;margin:0 0 1.25rem}
+footer.site li{margin:0}
+footer.site a{color:var(--muted)}
+footer.site a:hover{color:var(--gold)}
+
+@media (max-width:640px){
+  .wrap{padding:1.25rem 1.15rem 4rem}
+  dl.ids{grid-template-columns:1fr;gap:.15rem}
+  dl.ids dt{margin-top:.85rem}
+}</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://thomasc.tech/projects/#webpage","url":"https://thomasc.tech/projects/","name":"Projects — Thomas Carr, Ph.D. | Software & ML Engineering","description":"Engineering and research projects by Thomas Carr, Ph.D. — machine learning systems, full-stack web applications, computer vision, and real-time platforms built in React, Node.js, Python, and PyTorch.","inLanguage":"en-US","isPartOf":{"@id":"https://thomasc.tech/#website"},"about":{"@id":"https://thomasc.tech/#thomas"},"breadcrumb":{"@id":"https://thomasc.tech/projects/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://thomasc.tech/projects/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Thomas Carr, Ph.D.","item":"https://thomasc.tech/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://thomasc.tech/projects/"}]},{"@type":"Person","@id":"https://thomasc.tech/#thomas","name":"Thomas Carr","alternateName":["Thomas Carr, Ph.D.","Thomas Carr PhD","Thomas Carr AI","Thomas Carr UNC Charlotte"],"givenName":"Thomas","familyName":"Carr","honorificSuffix":"Ph.D.","url":"https://thomasc.tech/","image":"https://thomasc.tech/og-card.png","email":"thomas@thomasc.tech","jobTitle":["Lead AI & Software Engineer","AI Researcher","Computer Scientist"],"worksFor":{"@id":"https://thomasc.tech/#incerta"},"alumniOf":{"@id":"https://thomasc.tech/#uncc"},"affiliation":[{"@id":"https://thomasc.tech/#incerta"},{"@id":"https://thomasc.tech/#uncc"}],"homeLocation":{"@type":"Place","name":"Charlotte, North Carolina, USA","address":{"@type":"PostalAddress","addressLocality":"Charlotte","addressRegion":"NC","addressCountry":"US"}},"knowsAbout":["Privacy-Preserving Machine Learning","Skeleton-Based Motion Data","Biometric Data Privacy","Motion Retargeting","Virtual Reality Privacy","Differential Privacy","Skeleton De-identification","Action Recognition","Adversarial Machine Learning","Ethical Machine Learning","Explainable AI","Deep Learning","Computer Vision","Multimodal Fusion","Trustworthy AI"],"disambiguatingDescription":"Thomas Carr is a Ph.D. computer scientist (UNC Charlotte, 2026) and Lead AI & Software Engineer at Incerta Intelligence in Charlotte, North Carolina. He is not the athletics director, the basketball coach, the cognitive psychologist Thomas H. Carr, or the paleontologist Thomas D. Carr of the same name. ORCID: 0009-0006-6039-0209.","sameAs":["https://orcid.org/0009-0006-6039-0209","https://scholar.google.com/citations?hl=en&user=a1uc2zEAAAAJ","https://dblp.org/pid/176/3082-1","https://www.semanticscholar.org/author/2260650849","https://github.com/thomasc33","https://www.linkedin.com/in/thomasc33/"],"identifier":[{"@type":"PropertyValue","propertyID":"ORCID","value":"0009-0006-6039-0209","url":"https://orcid.org/0009-0006-6039-0209"},{"@type":"PropertyValue","propertyID":"Google Scholar","value":"a1uc2zEAAAAJ","url":"https://scholar.google.com/citations?hl=en&user=a1uc2zEAAAAJ"},{"@type":"PropertyValue","propertyID":"DBLP","value":"176/3082-1","url":"https://dblp.org/pid/176/3082-1"},{"@type":"PropertyValue","propertyID":"Semantic Scholar","value":"2260650849","url":"https://www.semanticscholar.org/author/2260650849"}]},{"@type":"Organization","@id":"https://thomasc.tech/#incerta","name":"Incerta Intelligence","alternateName":"Incerta Intelligence Inc."},{"@type":"CollegeOrUniversity","@id":"https://thomasc.tech/#uncc","name":"University of North Carolina at Charlotte","alternateName":["UNC Charlotte","UNCC"],"url":"https://www.charlotte.edu/","sameAs":"https://www.charlotte.edu/"},{"@type":"ItemList","@id":"https://thomasc.tech/projects/#list","name":"Projects by Thomas Carr, Ph.D.","numberOfItems":7,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://thomasc.tech/projects/#project-0"}},{"@type":"ListItem","position":2,"item":{"@id":"https://thomasc.tech/projects/#project-1"}},{"@type":"ListItem","position":3,"item":{"@id":"https://thomasc.tech/projects/#project-2"}},{"@type":"ListItem","position":4,"item":{"@id":"https://thomasc.tech/projects/#project-3"}},{"@type":"ListItem","position":5,"item":{"@id":"https://thomasc.tech/projects/#project-4"}},{"@type":"ListItem","position":6,"item":{"@id":"https://thomasc.tech/projects/#project-5"}},{"@type":"ListItem","position":7,"item":{"@id":"https://thomasc.tech/projects/#project-6"}}]},{"@type":"SoftwareSourceCode","@id":"https://thomasc.tech/projects/#project-0","name":"ViBot","alternativeHeadline":"Discord Bot","description":"ViBot is a comprehensive Discord bot for managing community organization and moderation in 'Realm of the Mad God'. Features include user authentication, moderation, and a REST API for external web app interaction. ViBot also includes a basic machine learning model for user account detection (alternate vs. main) and utilizes NLP and web scraping for dynamic data gathering. The project emphasizes skills in real-time analytics, cloud deployment, and backend integration with Google Cloud and AWS.","author":{"@id":"https://thomasc.tech/#thomas"},"creator":{"@id":"https://thomasc.tech/#thomas"},"programmingLanguage":["Node.js","Discord.js","MySQL","Machine Learning","Tensorflow.js","Google Cloud","Web-Scraping","Express","REST API","AWS","Natural Language Processing (NLP)","Real-time Analytics"],"codeRepository":"https://github.com/thomasc33/vibot","url":"https://github.com/thomasc33/vibot","inLanguage":"en"},{"@type":"SoftwareSourceCode","@id":"https://thomasc.tech/projects/#project-1","name":"ViBot.tech","alternativeHeadline":"Web App","description":"A web-based interface for interacting with the ViBot project, showcasing data visualization and real-time server management. This web app integrates with Discord's OAuth2 for authentication and is hosted on Google Firebase. Built with a focus on responsive design, secure SSL implementation, and efficient API integration, ViBot.tech demonstrates strong skills in full-stack development and user authentication for web applications.","author":{"@id":"https://thomasc.tech/#thomas"},"creator":{"@id":"https://thomasc.tech/#thomas"},"programmingLanguage":["React.js","SSL","Discord OAuth2","Google Firebase","Responsive Design","API Integration"],"inLanguage":"en"},{"@type":"SoftwareSourceCode","@id":"https://thomasc.tech/projects/#project-2","name":"Recycling Classification","alternativeHeadline":"Webapp + Machine Learning Model","description":"A computer vision application for recycling classification based on image/video input, built using PyTorch and FastAI. The project utilizes image processing and data augmentation techniques to improve classification accuracy. Hosted on Google Firebase with a frontend in React.js, it integrates deep learning and web app deployment, demonstrating proficiency in applied AI, sustainability tech, and image recognition solutions.","author":{"@id":"https://thomasc.tech/#thomas"},"creator":{"@id":"https://thomasc.tech/#thomas"},"programmingLanguage":["Python","PyTorch","Computer Vision","Fast AI","Machine Learning","React.js","Google Firebase","Image Processing","Data Augmentation"],"codeRepository":"https://github.com/thomasc33/recycling-classification","url":"https://recycling-classification-6db68.web.app/","inLanguage":"en"},{"@type":"SoftwareSourceCode","@id":"https://thomasc.tech/projects/#project-3","name":"Blue Bounty","alternativeHeadline":"Note Taking Webapp","description":"Blue Bounty is a collaborative note-taking app designed in React.js and Node.js for group projects. Initially intended to be an HTML/CSS app, we expanded it to include an Express.js backend after gaining approval. The project highlights skills in team collaboration, Agile development, and full-stack web app deployment. It emphasizes efficient backend communication and user-friendly design.","author":{"@id":"https://thomasc.tech/#thomas"},"creator":{"@id":"https://thomasc.tech/#thomas"},"programmingLanguage":["React.js","Node.js","Express","MySQL","Team Collaboration","Agile Development"],"codeRepository":"https://github.com/Ksolh/Blue-bounty","url":"https://bluebounty-uncc.firebaseapp.com/","inLanguage":"en"},{"@type":"SoftwareSourceCode","@id":"https://thomasc.tech/projects/#project-4","name":"Thomasc.tech","alternativeHeadline":"Personal Portfolio Website","description":"A personal portfolio website to showcase academic, professional, and personal projects. Built with React.js and designed with a focus on UI/UX and responsive design principles. Thomasc.tech demonstrates strengths in frontend development, web design, and creating user-centered experiences. It's a platform for both self-promotion and learning advanced React techniques.","author":{"@id":"https://thomasc.tech/#thomas"},"creator":{"@id":"https://thomasc.tech/#thomas"},"programmingLanguage":["React.js","UI/UX Design","Responsive Design","Frontend Development"],"codeRepository":"https://github.com/thomasc33/Thomasc.tech","url":"https://thomasc.tech","inLanguage":"en"},{"@type":"SoftwareSourceCode","@id":"https://thomasc.tech/projects/#project-5","name":"Charlotte Research Connect","alternativeHeadline":"UNC Charlotte Research Webapp","description":"Charlotte Research Connect is a web application that visualizes and organizes research data for UNC Charlotte's faculty. Developed using React.js, MySQL, and Express, it provides an accessible interface for exploring research projects. Emphasis on data visualization, REST API integration, and full-stack development, showcasing skills in database management and academic data presentation.","author":{"@id":"https://thomasc.tech/#thomas"},"creator":{"@id":"https://thomasc.tech/#thomas"},"programmingLanguage":["React.js","MySQL","Express","Node.js","Data Visualization","REST API Integration"],"codeRepository":"https://github.com/JokkerBang/Charlotte-Research-Connect","url":"https://charlotte-research-connect.web.app/","inLanguage":"en"},{"@type":"SoftwareSourceCode","@id":"https://thomasc.tech/projects/#project-6","name":"C-Track","alternativeHeadline":"Asset Tracking Webapp","description":"C-Track is a real-time asset tracking system designed for internal use at MDCentric. Built with React.js and Express, it uses MS SQL Server for data storage and Microsoft OAuth for authentication. Features include user permissions management, customizable attributes, and enterprise-level data security. This project highlights skills in enterprise application development, real-time data handling, and secure authentication solutions.","author":{"@id":"https://thomasc.tech/#thomas"},"creator":{"@id":"https://thomasc.tech/#thomas"},"programmingLanguage":["React.js","Express","MS SQL Server","Node.js","Microsoft OAuth","IIS","Microsoft Graph API","Enterprise Solution","Permissions Management"],"codeRepository":"https://github.com/thomasc33/Asset-Tracking-Frontend","url":"https://github.com/thomasc33/Asset-Tracking-Frontend","inLanguage":"en"}]}</script>
 </head>
 <body>

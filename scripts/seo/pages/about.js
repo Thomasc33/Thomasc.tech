@@ -1,12 +1,12 @@
 /**
- * /about/ — the disambiguation page.
+ * /about/ — biography, research summary, and identifiers.
  *
- * "Thomas Carr" is a heavily contested name (athletics directors, a cognitive
- * psychologist, a paleontologist). This page exists to answer "which Thomas
- * Carr?" in plain text, with a visible FAQ backing the FAQPage markup.
+ * "Thomas Carr" is a contested name, but the disambiguation lives in the
+ * Person node's disambiguatingDescription rather than in visible prose:
+ * search engines read it, human readers never have to.
  */
 
-const { SITE_URL, PERSON_ID, ORCID, PROFILE_URLS, KNOWS_ABOUT, DISAMBIGUATION, personNode, organizationNodes } = require('../identity');
+const { SITE_URL, PERSON_ID, ORCID, PROFILE_URLS, KNOWS_ABOUT, personNode, organizationNodes } = require('../identity');
 const { esc, breadcrumb } = require('../layout');
 
 const PATH = '/about/';
@@ -19,10 +19,6 @@ const FAQ = Object.freeze([
   {
     q: 'Who is Thomas Carr?',
     a: 'Thomas Carr, Ph.D. is a computer scientist and Lead AI & Software Engineer at Incerta Intelligence in Charlotte, North Carolina. He earned his Ph.D. in Computing and Information Systems from the University of North Carolina at Charlotte in May 2026. His research covers privacy-preserving machine learning, with publications at ICCV, ECCV, CIKM, PAKDD, ISMAR, and IEEE BigData.',
-  },
-  {
-    q: 'Which Thomas Carr is the AI researcher?',
-    a: 'The AI researcher Thomas Carr is identified by ORCID 0009-0006-6039-0209 and DBLP profile "Thomas Carr 0001". He is a different person from Thomas H. Carr the cognitive psychologist, Thomas D. Carr the paleontologist, and the several college athletics directors and basketball coaches who share the name.',
   },
   {
     q: 'What is Thomas Carr’s research about?',
@@ -40,13 +36,6 @@ const FAQ = Object.freeze([
     q: 'How can I contact Thomas Carr?',
     a: 'By email at thomas@thomasc.tech, or through LinkedIn at linkedin.com/in/thomasc33. Academic correspondence can reference ORCID 0009-0006-6039-0209.',
   },
-]);
-
-const NOT_ME = Object.freeze([
-  'Thomas H. Carr — cognitive psychologist (reading and attention research)',
-  'Thomas D. Carr — vertebrate paleontologist (tyrannosaur systematics)',
-  'Thomas Carr — college athletics directors and basketball coaches',
-  'Thomas Carr — clinicians publishing in oncology and pain medicine',
 ]);
 
 const faqHtml = () =>
@@ -90,8 +79,6 @@ const buildBody = () => `<p class="kicker">// about</p>
 <h1>Thomas Carr, Ph.D.</h1>
 <p class="lede">Lead AI &amp; Software Engineer at Incerta Intelligence &middot; Ph.D., University of North Carolina at Charlotte &middot; Charlotte, North Carolina</p>
 
-<p>${esc(DISAMBIGUATION)}</p>
-
 <h2>Research</h2>
 <p>Skeleton-based motion data &mdash; the stick-figure body tracking produced by VR headsets, depth cameras, and pose estimators &mdash; looks anonymous. It is not. Limb proportions encode who you are structurally; the way you move encodes it dynamically. Published results re-identify individuals from skeleton sequences alone at over 80% accuracy, and infer gender at over 87%.</p>
 <p>Thomas Carr&rsquo;s dissertation, <em>Preserving User Privacy on Skeleton-Based Motion Data</em>, builds both sides of that problem: the attacks that demonstrate the leak, and the defenses that close it while keeping the data useful for its intended purpose.</p>
@@ -128,10 +115,6 @@ const buildBody = () => `<p class="kicker">// about</p>
 
 <h2>Frequently asked</h2>
 ${faqHtml()}
-
-<h2>Other people named Thomas Carr</h2>
-<p>This page is about the AI researcher identified by ORCID ${esc(ORCID)}. Unrelated individuals who share the name include:</p>
-<ul>${NOT_ME.map((entry) => `<li>${esc(entry)}</li>`).join('')}</ul>
 
 <h2>Identifiers</h2>
 <dl class="ids">
