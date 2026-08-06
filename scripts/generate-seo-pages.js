@@ -15,6 +15,13 @@ const path = require('path');
 
 const { renderPage } = require('./seo/layout');
 const { renderSitemap } = require('./seo/sitemap');
+const {
+  aboutMarkdown,
+  publicationsMarkdown,
+  projectsMarkdown,
+  contactMarkdown,
+} = require('./seo/markdown');
+const { llmsTxt, llmsFullTxt, humansTxt, noscriptBlock } = require('./seo/text-indexes');
 
 const PAGE_MODULES = [
   require('./seo/pages/about'),
@@ -52,6 +59,52 @@ const generateSitemap = () => {
   writeFile(path.join(PUBLIC_DIR, 'sitemap.xml'), renderSitemap());
 };
 
+/**
+ * The Markdown mirrors and the machine-readable indexes built from them. These
+ * carry the same facts as the HTML pages above; rendering both from src/Data is
+ * what stops them drifting apart.
+ */
+const generateTextSurfaces = () => {
+  const about = aboutMarkdown();
+  const publications = publicationsMarkdown();
+  const projects = projectsMarkdown();
+  const contact = contactMarkdown();
+
+  writeFile(path.join(PUBLIC_DIR, 'about.md'), about);
+  writeFile(path.join(PUBLIC_DIR, 'publications.md'), publications);
+  writeFile(path.join(PUBLIC_DIR, 'projects.md'), projects);
+  writeFile(path.join(PUBLIC_DIR, 'contact.md'), contact);
+
+  writeFile(path.join(PUBLIC_DIR, 'llms.txt'), llmsTxt());
+  writeFile(
+    path.join(PUBLIC_DIR, 'llms-full.txt'),
+    llmsFullTxt([about, publications, projects, contact])
+  );
+  writeFile(
+    path.join(PUBLIC_DIR, 'humans.txt'),
+    humansTxt(new Date().toISOString().slice(0, 10))
+  );
+};
+
+/**
+ * index.html is hand-maintained apart from its no-JS fallback, so that one
+ * block is patched in place between its <noscript> tags rather than the whole
+ * file being regenerated.
+ */
+const NOSCRIPT_BLOCK = / {2}<noscript>[\s\S]*?<\/noscript>/;
+
+const generateNoscriptFallback = () => {
+  const indexPath = path.join(PUBLIC_DIR, 'index.html');
+  const html = fs.readFileSync(indexPath, 'utf8');
+  // Test for the marker rather than comparing before/after: a rerun that
+  // changes nothing is the normal case, not a failure.
+  if (!NOSCRIPT_BLOCK.test(html)) {
+    throw new Error('public/index.html: no <noscript> block found to replace');
+  }
+  fs.writeFileSync(indexPath, html.replace(NOSCRIPT_BLOCK, noscriptBlock()), 'utf8');
+  console.log('  ✓ public/index.html (noscript fallback)');
+};
+
 const main = () => {
   if (!fs.existsSync(PUBLIC_DIR)) {
     throw new Error(`public/ not found at ${PUBLIC_DIR}`);
@@ -59,7 +112,9 @@ const main = () => {
   console.log('Generating static SEO pages…');
   const paths = generatePages();
   generateSitemap();
-  console.log(`Done. ${paths.length} page(s) + sitemap.xml written.`);
+  generateTextSurfaces();
+  generateNoscriptFallback();
+  console.log(`Done. ${paths.length} page(s) + sitemap.xml + 7 text surfaces written.`);
 };
 
 try {

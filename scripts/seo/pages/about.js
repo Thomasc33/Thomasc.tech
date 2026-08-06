@@ -8,6 +8,7 @@
 
 const { SITE_URL, PERSON_ID, ORCID, PROFILE_URLS, KNOWS_ABOUT, personNode, organizationNodes } = require('../identity');
 const { esc, breadcrumb } = require('../layout');
+const { DISSERTATION, RESEARCH, EDUCATION, priorExperience, currentRole } = require('../bio');
 
 const PATH = '/about/';
 
@@ -75,39 +76,47 @@ const buildGraph = () => ({
   ],
 });
 
+const contributionsHtml = () =>
+  RESEARCH.contributions
+    .map((c) => `<li><strong>${esc(c.name)}</strong> &mdash; ${esc(c.text)}${c.venue ? ` ${esc(c.venue)}.` : ''}</li>`)
+    .join('\n');
+
+const educationHtml = () =>
+  EDUCATION.map((e) => `<li><strong>${esc(e.degree)}</strong> &mdash; ${esc(e.where)}, ${esc(e.years)}.${e.note ? ` ${esc(e.note)}` : ''}</li>`).join('\n');
+
+const priorHtml = () =>
+  priorExperience()
+    .map((p) => `<li><strong>${esc(p.title)}, ${esc(p.organization)}</strong> (${esc(p.timeframe)}) &mdash; ${esc(p.blurb)}</li>`)
+    .join('\n');
+
+const currentRoleHtml = () => {
+  const r = currentRole();
+  return `<p><strong>${esc(r.title)}, ${esc(r.organization)}</strong> (${esc(r.timeframe)}). ${esc(r.description)}</p>`;
+};
+
 const buildBody = () => `<p class="kicker">// about</p>
 <h1>Thomas Carr, Ph.D.</h1>
 <p class="lede">Lead AI &amp; Software Engineer at Incerta Intelligence &middot; Ph.D., University of North Carolina at Charlotte &middot; Charlotte, North Carolina</p>
 
 <h2>Research</h2>
-<p>Skeleton-based motion data &mdash; the stick-figure body tracking produced by VR headsets, depth cameras, and pose estimators &mdash; looks anonymous. It is not. Limb proportions encode who you are structurally; the way you move encodes it dynamically. Published results re-identify individuals from skeleton sequences alone at over 80% accuracy, and infer gender at over 87%.</p>
-<p>Thomas Carr&rsquo;s dissertation, <em>Preserving User Privacy on Skeleton-Based Motion Data</em>, builds both sides of that problem: the attacks that demonstrate the leak, and the defenses that close it while keeping the data useful for its intended purpose.</p>
+<p>${esc(RESEARCH.hook)}</p>
+<p>Thomas Carr&rsquo;s dissertation, <em>${esc(DISSERTATION.title)}</em>, builds both sides of that problem: the attacks that demonstrate the leak, and the defenses that close it while keeping the data useful for its intended purpose.</p>
 <ul>
-<li><strong>LAN (Linkage Attack Neural Network)</strong> &mdash; a Siamese classifier that re-identifies individuals across skeleton sequences. CIKM 2023.</li>
-<li><strong>PMR (Privacy-centric Deep Motion Retargeting)</strong> &mdash; adversarially trained retargeting that suppresses identity while preserving action. ICCV 2025.</li>
-<li><strong>Explanation-based anonymization</strong> &mdash; explainable-AI techniques that localize and mask the privacy-sensitive joints. PAKDD 2025.</li>
-<li><strong>DisentangledTMR</strong> &mdash; factorized-transformer retargeting with explicit identity/action disentanglement. ECCV 2026.</li>
-<li><strong>MIRAGE</strong> &mdash; causal, streaming anonymization at 262 FPS with no target skeleton required.</li>
-<li><strong>AEGIS</strong> &mdash; the first skeleton-motion anonymizer with a formal user-level (&epsilon;,&delta;)-differential privacy guarantee.</li>
+${contributionsHtml()}
 </ul>
 <p><a href="/publications/">Full publication list &rarr;</a></p>
 
 <h2>Current role</h2>
-<p><strong>Lead AI &amp; Software Engineer, Incerta Intelligence</strong> (July 2025 &ndash; present). Defense contracts focused on multimodal fusion for explainable and auditable decision support, building AI systems for mission-critical applications where transparency and accountability are requirements rather than features.</p>
+${currentRoleHtml()}
 
 <h2>Education</h2>
 <ul>
-<li><strong>Ph.D., Computing and Information Systems</strong> &mdash; UNC Charlotte, 2023 &ndash; May 2026.</li>
-<li><strong>M.S., Computer Science</strong> &mdash; UNC Charlotte, 2022.</li>
-<li><strong>B.S., Computer Science</strong> &mdash; UNC Charlotte, 2019 &ndash; 2021.</li>
+${educationHtml()}
 </ul>
 
 <h2>Prior experience</h2>
 <ul>
-<li><strong>Founding AI &amp; Software Engineer, ACR Technologies</strong> (Dec 2024 &ndash; Oct 2025) &mdash; AI-enhanced intraoperative neural-monitoring communications platform.</li>
-<li><strong>Graduate Research Assistant, UNC Charlotte</strong> (Jan 2023 &ndash; May 2025) &mdash; privacy-preserving motion analysis, bias and fairness in ML.</li>
-<li><strong>Full-Stack Developer / Systems Engineer, MDcentric Technologies</strong> (May 2021 &ndash; Dec 2022) &mdash; real-time asset tracking across 30,000+ devices.</li>
-<li><strong>Founder / Lead Developer, ViBot</strong> (Mar 2020 &ndash; Feb 2024) &mdash; engagement platform serving 125,000 daily users.</li>
+${priorHtml()}
 </ul>
 
 <h2>Areas of expertise</h2>

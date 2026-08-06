@@ -2,36 +2,30 @@
 
 Selected engineering and research projects.
 
-## ViBot — Discord Bot Platform (2020 – 2024)
+## ViBot — Discord Bot (Spring 2020 - Spring 2024)
 
-Comprehensive Discord bot for community organization and moderation in *Realm of the Mad God*, serving 125,000 daily users at peak. Includes user authentication, moderation, a REST API for external web-app interaction, a basic ML model for alt-account detection (98% accuracy), and NLP / web-scraping pipelines for dynamic data gathering. Stack: Node.js, Discord.js, MySQL, TensorFlow.js, Google Cloud, AWS, Express. [GitHub](https://github.com/thomasc33/vibot)
+ViBot is a comprehensive Discord bot for managing community organization and moderation in 'Realm of the Mad God'. Features include user authentication, moderation, and a REST API for external web app interaction. ViBot also includes a basic machine learning model for user account detection (alternate vs. main) and utilizes NLP and web scraping for dynamic data gathering. The project emphasizes skills in real-time analytics, cloud deployment, and backend integration with Google Cloud and AWS. Stack: Node.js, Discord.js, MySQL, Machine Learning, Tensorflow.js, Google Cloud, Web-Scraping, Express, REST API, AWS, Natural Language Processing (NLP), Real-time Analytics. [GitHub](https://github.com/thomasc33/vibot)
 
 ## ViBot.tech — Web App (Fall 2020)
 
-Web interface for the ViBot platform, with real-time server management and data visualization. Discord OAuth2 authentication, hosted on Google Firebase. Stack: React.js, SSL, Firebase, Discord OAuth2.
+A web-based interface for interacting with the ViBot project, showcasing data visualization and real-time server management. This web app integrates with Discord's OAuth2 for authentication and is hosted on Google Firebase. Built with a focus on responsive design, secure SSL implementation, and efficient API integration, ViBot.tech demonstrates strong skills in full-stack development and user authentication for web applications. Stack: React.js, SSL, Discord OAuth2, Google Firebase, Responsive Design, API Integration.
 
-## Recycling Classification — Computer Vision Web App (Spring 2021)
+## Recycling Classification — Webapp + Machine Learning Model (Spring 2021)
 
-Computer-vision application for recycling classification from image/video input, built with PyTorch and FastAI. Uses image processing and data augmentation to improve classification accuracy; React.js frontend on Firebase. Stack: Python, PyTorch, FastAI, React.js, Firebase. [GitHub](https://github.com/thomasc33/recycling-classification) · [Live](https://recycling-classification-6db68.web.app/)
+A computer vision application for recycling classification based on image/video input, built using PyTorch and FastAI. The project utilizes image processing and data augmentation techniques to improve classification accuracy. Hosted on Google Firebase with a frontend in React.js, it integrates deep learning and web app deployment, demonstrating proficiency in applied AI, sustainability tech, and image recognition solutions. Stack: Python, PyTorch, Computer Vision, Fast AI, Machine Learning, React.js, Google Firebase, Image Processing, Data Augmentation. [GitHub](https://github.com/thomasc33/recycling-classification) · [Link](https://recycling-classification-6db68.web.app/)
 
-## Blue Bounty — Collaborative Note-Taking App (Fall 2020)
+## Blue Bounty — Note Taking Webapp (Fall 2020)
 
-Group-project note-taking app built in React.js with a Node.js/Express backend added mid-project. Stack: React.js, Node.js, Express, MySQL. [GitHub](https://github.com/Ksolh/Blue-bounty) · [Live](https://bluebounty-uncc.firebaseapp.com/)
+Blue Bounty is a collaborative note-taking app designed in React.js and Node.js for group projects. Initially intended to be an HTML/CSS app, we expanded it to include an Express.js backend after gaining approval. The project highlights skills in team collaboration, Agile development, and full-stack web app deployment. It emphasizes efficient backend communication and user-friendly design. Stack: React.js, Node.js, Express, MySQL, Team Collaboration, Agile Development. [GitHub](https://github.com/Ksolh/Blue-bounty) · [Link](https://bluebounty-uncc.firebaseapp.com/)
 
-## Thomasc.tech — Personal Portfolio (Fall 2021 – present)
+## Thomasc.tech — Personal Portfolio Website (Fall 2021)
 
-This site. Single-page React 19 portfolio with MUI 7, Framer Motion, tsParticles, emerald + gold dark glass-morphism aesthetic. Hosted on Firebase. [GitHub](https://github.com/thomasc33/Thomasc.tech) · [Live](https://thomasc.tech)
+A personal portfolio website to showcase academic, professional, and personal projects. Built with React.js and designed with a focus on UI/UX and responsive design principles. Thomasc.tech demonstrates strengths in frontend development, web design, and creating user-centered experiences. It's a platform for both self-promotion and learning advanced React techniques. Stack: React.js, UI/UX Design, Responsive Design, Frontend Development. [GitHub](https://github.com/thomasc33/Thomasc.tech) · [Link](https://thomasc.tech)
 
-## Charlotte Research Connect — Research Data Visualization (Fall 2021)
+## Charlotte Research Connect — UNC Charlotte Research Webapp (Fall 2021)
 
-Web app visualizing research data for UNC Charlotte faculty. Stack: React.js, Node.js, Express, MySQL. [GitHub](https://github.com/JokkerBang/Charlotte-Research-Connect) · [Live](https://charlotte-research-connect.web.app/)
+Charlotte Research Connect is a web application that visualizes and organizes research data for UNC Charlotte's faculty. Developed using React.js, MySQL, and Express, it provides an accessible interface for exploring research projects. Emphasis on data visualization, REST API integration, and full-stack development, showcasing skills in database management and academic data presentation. Stack: React.js, MySQL, Express, Node.js, Data Visualization, REST API Integration. [GitHub](https://github.com/JokkerBang/Charlotte-Research-Connect) · [Link](https://charlotte-research-connect.web.app/)
 
-## C-Track — Enterprise Asset Tracking (Summer 2021 – Fall 2022)
+## C-Track — Asset Tracking Webapp (Summer 2021 - Fall 2022)
 
-Real-time asset-tracking system for internal use at MDCentric, tracking 30,000+ devices. React.js frontend, Express backend, MS SQL Server, Microsoft OAuth authentication, IIS hosting, user-permission management. [Frontend](https://github.com/thomasc33/Asset-Tracking-Frontend) · [Backend](https://github.com/thomasc33/Asset-Tracking-Backend)
-
-## Research Project Pages
-
-- **PMR — Privacy-centric Deep Motion Retargeting:** [pmr.thomasc.tech](https://pmr.thomasc.tech)
-- **DisentangledTMR — Factorized-Transformer Retargeting:** [tmr.thomasc.tech](https://tmr.thomasc.tech)
-- **MIRAGE — Streaming Autoregressive Anonymization:** [mirage.thomasc.tech](https://mirage.thomasc.tech)
+C-Track is a real-time asset tracking system designed for internal use at MDCentric. Built with React.js and Express, it uses MS SQL Server for data storage and Microsoft OAuth for authentication. Features include user permissions management, customizable attributes, and enterprise-level data security. This project highlights skills in enterprise application development, real-time data handling, and secure authentication solutions. Stack: React.js, Express, MS SQL Server, Node.js, Microsoft OAuth, IIS, Microsoft Graph API, Enterprise Solution, Permissions Management. [GitHub](https://github.com/thomasc33/Asset-Tracking-Frontend) · [GitHub](https://github.com/thomasc33/Asset-Tracking-Backend)
