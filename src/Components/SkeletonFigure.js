@@ -1,74 +1,10 @@
 import React, { useMemo } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Box } from '@mui/material';
+import { POSES, JOINT_KEYS, BONES } from './skeletonRig';
 
 const EMERALD = '#10b981';
 const GOLD = '#d4a853';
-
-const POSES = [
-  {
-    head: [100, 30], neck: [100, 56],
-    shoulderL: [78, 64], shoulderR: [122, 64],
-    elbowL: [66, 100], elbowR: [134, 100],
-    wristL: [58, 134], wristR: [142, 134],
-    pelvis: [100, 130],
-    hipL: [86, 148], hipR: [114, 148],
-    kneeL: [82, 198], kneeR: [118, 198],
-    ankleL: [78, 248], ankleR: [122, 248],
-  },
-  {
-    head: [98, 30], neck: [100, 56],
-    shoulderL: [78, 66], shoulderR: [122, 64],
-    elbowL: [58, 92], elbowR: [136, 78],
-    wristL: [42, 118], wristR: [142, 50],
-    pelvis: [100, 132],
-    hipL: [86, 148], hipR: [114, 148],
-    kneeL: [76, 196], kneeR: [126, 200],
-    ankleL: [60, 244], ankleR: [138, 246],
-  },
-  {
-    head: [102, 30], neck: [100, 56],
-    shoulderL: [80, 66], shoulderR: [124, 62],
-    elbowL: [70, 102], elbowR: [136, 96],
-    wristL: [80, 132], wristR: [148, 124],
-    pelvis: [100, 130],
-    hipL: [88, 148], hipR: [114, 148],
-    kneeL: [92, 196], kneeR: [108, 200],
-    ankleL: [98, 248], ankleR: [116, 248],
-  },
-  {
-    head: [100, 28], neck: [100, 56],
-    shoulderL: [76, 64], shoulderR: [124, 66],
-    elbowL: [62, 94], elbowR: [134, 102],
-    wristL: [50, 60], wristR: [152, 132],
-    pelvis: [100, 130],
-    hipL: [86, 148], hipR: [114, 148],
-    kneeL: [86, 200], kneeR: [120, 196],
-    ankleL: [98, 248], ankleR: [134, 244],
-  },
-];
-
-const JOINT_KEYS = [
-  'head', 'neck',
-  'shoulderL', 'shoulderR',
-  'elbowL', 'elbowR',
-  'wristL', 'wristR',
-  'pelvis',
-  'hipL', 'hipR',
-  'kneeL', 'kneeR',
-  'ankleL', 'ankleR',
-];
-
-const BONES = [
-  ['head', 'neck'],
-  ['neck', 'shoulderL'], ['neck', 'shoulderR'],
-  ['shoulderL', 'elbowL'], ['elbowL', 'wristL'],
-  ['shoulderR', 'elbowR'], ['elbowR', 'wristR'],
-  ['neck', 'pelvis'],
-  ['pelvis', 'hipL'], ['pelvis', 'hipR'],
-  ['hipL', 'kneeL'], ['kneeL', 'ankleL'],
-  ['hipR', 'kneeR'], ['kneeR', 'ankleR'],
-];
 
 const CYCLE_SECONDS = 14;
 

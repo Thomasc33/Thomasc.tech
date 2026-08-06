@@ -5,6 +5,8 @@ import useScrollSpy from './hooks/useScrollSpy';
 import useMouseGlow from './hooks/useMouseGlow';
 import DotNav from './Components/DotNav';
 import GrainOverlay from './Components/GrainOverlay';
+import MotionTrail from './Components/MotionTrail';
+import AnonymizationLoop from './Components/AnonymizationLoop';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Stats from './sections/Stats';
@@ -43,12 +45,19 @@ const Portfolio = () => {
       />
 
       <GrainOverlay opacity={0.05} />
+      <MotionTrail />
       <DotNav sections={sections} activeSection={activeSection} />
 
       <Box component="main" sx={{ position: 'relative', zIndex: 1 }}>
         <Hero />
         <About />
         <Stats />
+        {/* Fills the empty screen-height that sat between the stats row and
+            Projects, with the one thing the site could show but never did:
+            what the research actually does. */}
+        <Box sx={{ py: { xs: 6, md: 10 }, position: 'relative', zIndex: 1 }}>
+          <AnonymizationLoop />
+        </Box>
         <Projects />
         <Publications />
         <Contact />
