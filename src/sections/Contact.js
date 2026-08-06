@@ -18,7 +18,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import SvgIcon from '@mui/material/SvgIcon';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useForm, ValidationError } from '@formspree/react';
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import createDarkTheme from '../theme';
 import TextReveal from '../Components/TextReveal';
 import ScrollReveal from '../Components/ScrollReveal';
@@ -129,23 +129,38 @@ const DIRECT_LINKS = [
   },
 ];
 
+// reCAPTCHA site keys are public by design — they ship in the page and are
+// locked to their allowed domains. Kept overridable so a fork or a preview
+// deploy can point at its own key without editing source.
+const RECAPTCHA_SITE_KEY =
+  process.env.REACT_APP_RECAPTCHA_SITE_KEY || '6LfeKHAnAAAAAEMhaDCTuwgrIT4HvxG3Ur3AXnjs';
+
 const ContactForm = () => {
   const [formState, handleFormspreeSubmit] = useForm('xoqojdgv');
   const { executeRecaptcha } = useGoogleReCaptcha();
+  const [submitError, setSubmitError] = useState(null);
 
   const handleSubmit = useCallback(
     async (e) => {
       e.preventDefault();
+      setSubmitError(null);
 
+      // Returning quietly here is what hid a five-month outage: with no
+      // provider mounted, executeRecaptcha was undefined and every submit
+      // did nothing at all. Fail loudly and give the visitor a way through.
       if (!executeRecaptcha) {
+        setSubmitError('Spam protection did not load. Please email thomas@thomasc.tech directly.');
         return;
       }
 
-      const token = await executeRecaptcha('contact');
-      const formData = new FormData(e.target);
-      formData.append('g-recaptcha-response', token);
-
-      await handleFormspreeSubmit(formData);
+      try {
+        const token = await executeRecaptcha('contact');
+        const formData = new FormData(e.target);
+        formData.append('g-recaptcha-response', token);
+        await handleFormspreeSubmit(formData);
+      } catch {
+        setSubmitError('Something went wrong sending that. Please email thomas@thomasc.tech directly.');
+      }
     },
     [executeRecaptcha, handleFormspreeSubmit]
   );
@@ -198,6 +213,7 @@ const ContactForm = () => {
             'Send Message'
           )}
         </Button>
+        {submitError && <Alert severity="error">{submitError}</Alert>}
       </Stack>
     </Box>
   );
@@ -277,7 +293,12 @@ const Contact = () => {
                 transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
                 style={{ overflow: 'hidden' }}
               >
-                <ContactForm />
+                <GoogleReCaptchaProvider
+                  reCaptchaKey={RECAPTCHA_SITE_KEY}
+                  scriptProps={{ async: true, defer: true }}
+                >
+                  <ContactForm />
+                </GoogleReCaptchaProvider>
               </motion.div>
             )}
           </AnimatePresence>
