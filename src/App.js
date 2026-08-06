@@ -1,20 +1,21 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import ParticlesBackground from './Components/ParticlesFixed';
+import React, { Suspense, lazy } from 'react';
 import SEO from './Components/SEO';
 import Portfolio from './Portfolio';
 import './App.css';
 
-function App() {
-  const isUnccHosting = window.location.hostname === 'webpages.charlotte.edu';
-  const basename = isUnccHosting ? '/tcarr23' : '/';
+// Purely decorative, and the heaviest thing in the tree. Split it out so the
+// particle engine downloads after the page above the fold is already painted.
+const ParticlesBackground = lazy(() => import('./Components/ParticlesFixed'));
 
+function App() {
   return (
-    <BrowserRouter basename={basename}>
+    <>
       <SEO />
-      <ParticlesBackground />
+      <Suspense fallback={null}>
+        <ParticlesBackground />
+      </Suspense>
       <Portfolio />
-    </BrowserRouter>
+    </>
   );
 }
 

@@ -15,15 +15,12 @@
     "caniuse-lite": "^1.0.30001712",
     "firebase": "^11.6.0",
     "framer-motion": "^12.23.26",
-    "motion": "^12.35.0",
     "react": "^19.1.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^19.1.0",
     "react-google-recaptcha-v3": "^1.10.1",
     "react-helmet": "^6.1.0",
-    "react-router-dom": "^7.5.0",
-    "react-scripts": "^5.0.1",
-    "web-vitals": "^4.2.4"
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "prebuild": "node scripts/generate-seo-pages.js",

@@ -1,5 +1,5 @@
 import { memo, useCallback, useEffect, useRef } from 'react';
-import { animate } from 'motion/react';
+import { animate } from 'framer-motion';
 
 const GlowingEffect = memo(
   ({
