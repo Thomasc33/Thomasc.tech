@@ -1,5 +1,5 @@
 import { memo, useCallback, useEffect, useRef } from 'react';
-import { animate } from 'framer-motion';
+import { animate, useReducedMotion } from 'framer-motion';
 
 const GlowingEffect = memo(
   ({
@@ -16,6 +16,10 @@ const GlowingEffect = memo(
     const containerRef = useRef(null);
     const lastPosition = useRef({ x: 0, y: 0 });
     const animationFrameRef = useRef(0);
+    // Honour the preference through the switch the component already has,
+    // rather than adding a second code path.
+    const reduceMotion = useReducedMotion();
+    disabled = disabled || reduceMotion;
 
     const handleMove = useCallback(
       (e) => {

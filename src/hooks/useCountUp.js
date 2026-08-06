@@ -9,6 +9,13 @@ const useCountUp = ({ end, duration = 2000, startOnView = true }) => {
   useEffect(() => {
     if (!startOnView || !ref.current) return;
 
+    // Someone who has asked for less motion still needs the number, so land on
+    // the final value rather than counting toward it.
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+      setCount(end);
+      return;
+    }
+
     const animate = () => {
       if (hasAnimatedRef.current) return;
       hasAnimatedRef.current = true;

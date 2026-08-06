@@ -2,14 +2,21 @@ import React, { useEffect, useState, useMemo } from 'react';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import { isMobile } from 'react-device-detect';
+import { useReducedMotion } from 'framer-motion';
 
 const EMERALD = '#10b981';
 
 const ParticlesFixed = () => {
     const [mounted, setMounted] = useState(false);
     const [ready, setReady] = useState(false);
+    const reduceMotion = useReducedMotion();
 
     useEffect(() => {
+        // A full-viewport field of drifting, line-linking particles is the
+        // heaviest motion on the site. Never initialise the engine at all when
+        // reduced motion is requested — the page reads fine without it.
+        if (reduceMotion) return;
+
         setMounted(true);
 
         initParticlesEngine(async (engine) => {
@@ -17,7 +24,7 @@ const ParticlesFixed = () => {
         }).then(() => {
             setReady(true);
         });
-    }, []);
+    }, [reduceMotion]);
 
     const options = useMemo(() => ({
         background: {

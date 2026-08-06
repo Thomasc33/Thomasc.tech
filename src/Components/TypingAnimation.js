@@ -1,13 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
+import { useReducedMotion } from 'framer-motion';
 
 const TypingAnimation = ({ words, speed = 100, deleteSpeed = 50, pauseDuration = 2000 }) => {
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const [currentText, setCurrentText] = useState('');
     const [isDeleting, setIsDeleting] = useState(false);
     const [charIndex, setCharIndex] = useState(0);
+    const reduceMotion = useReducedMotion();
 
     useEffect(() => {
+        // A caret cycling through words forever is exactly the kind of motion
+        // the preference is asking us to stop. Show the first phrase in full
+        // and leave it there.
+        if (reduceMotion) {
+            setCurrentText(words[0]);
+            return undefined;
+        }
+
         const currentWord = words[currentWordIndex];
         
         const handleTyping = () => {
@@ -35,7 +45,7 @@ const TypingAnimation = ({ words, speed = 100, deleteSpeed = 50, pauseDuration =
 
         const timeout = setTimeout(handleTyping, isDeleting ? deleteSpeed : speed);
         return () => clearTimeout(timeout);
-    }, [charIndex, isDeleting, currentWordIndex, words, speed, deleteSpeed, pauseDuration]);
+    }, [charIndex, isDeleting, currentWordIndex, words, speed, deleteSpeed, pauseDuration, reduceMotion]);
 
     return (
         <Box sx={{ display: 'inline-block', position: 'relative' }}>

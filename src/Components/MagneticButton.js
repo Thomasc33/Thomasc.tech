@@ -1,12 +1,16 @@
 import React, { useRef, useState } from 'react';
 import { Box } from '@mui/material';
+import { useReducedMotion } from 'framer-motion';
 
 const MagneticButton = ({ children, strength = 0.3, maxOffset = 8 }) => {
   const ref = useRef(null);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const reduceMotion = useReducedMotion();
 
   const handleMouseMove = (e) => {
-    if (!ref.current) return;
+    // Motion triggered by interaction still counts (WCAG 2.3.3), so the button
+    // simply stops chasing the cursor.
+    if (!ref.current || reduceMotion) return;
     const rect = ref.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
