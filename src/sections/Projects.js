@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Container,
@@ -8,6 +8,7 @@ import {
   Chip,
   IconButton,
   Stack,
+  Tooltip,
 } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import { ThemeProvider } from '@mui/material/styles';
@@ -29,10 +30,52 @@ const monoFamily = '"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monos
 // Bento layout (md cols): 7 entries → varied spans for visual rhythm
 const BENTO_MD = [8, 4, 4, 4, 4, 4, 8];
 
-const truncateDescription = (text) =>
-  text.length > DESCRIPTION_LIMIT
-    ? `${text.slice(0, DESCRIPTION_LIMIT)}...`
-    : text;
+// Cut on a word boundary rather than mid-token — the old slice produced
+// "image proc..." and "we expan...", which reads as broken rather than trimmed.
+const shorten = (text) => {
+  if (text.length <= DESCRIPTION_LIMIT) return text;
+  const cut = text.slice(0, DESCRIPTION_LIMIT);
+  const lastSpace = cut.lastIndexOf(' ');
+  return `${cut.slice(0, lastSpace > 0 ? lastSpace : cut.length).replace(/[.,;:]$/, '')}…`;
+};
+
+/**
+ * The full description already ships to crawlers on /projects/ and in
+ * projects.md, so hiding it from visitors behind an unexpandable ellipsis meant
+ * the rendered site showed less than its own static mirror.
+ */
+const ProjectDescription = ({ text }) => {
+  const [expanded, setExpanded] = useState(false);
+  const needsToggle = text.length > DESCRIPTION_LIMIT;
+
+  return (
+    <Typography
+      sx={{ color: 'text.secondary', fontSize: '0.85rem', lineHeight: 1.6, mb: 2, flexGrow: 1 }}
+    >
+      {expanded || !needsToggle ? text : shorten(text)}
+      {needsToggle && (
+        <Box
+          component="button"
+          type="button"
+          onClick={() => setExpanded((open) => !open)}
+          aria-expanded={expanded}
+          sx={{
+            ml: 0.75,
+            p: 0,
+            border: 0,
+            background: 'none',
+            font: 'inherit',
+            color: 'primary.main',
+            cursor: 'pointer',
+            '&:hover': { textDecoration: 'underline' },
+          }}
+        >
+          {expanded ? 'less' : 'more'}
+        </Box>
+      )}
+    </Typography>
+  );
+};
 
 const goldBadgeSx = {
   backgroundColor: 'rgba(212,168,83,0.15)',
@@ -79,24 +122,31 @@ const featuredCardSx = {
 const getLinkIcon = (iconType) =>
   iconType === 'GitHub' ? <GitHub fontSize="small" /> : <Launch fontSize="small" />;
 
+// C-Track ships a frontend and a backend repo, so two identical GitHub marks sat
+// side by side with "GitHub" as both accessible names. `label` in projects.json
+// distinguishes them; the icon type is only a fallback.
 const LinkButtons = ({ links }) => {
   if (!links || links.length === 0) return null;
   return (
     <Stack direction="row" spacing={1}>
-      {links.map((link) => (
-        <IconButton
-          key={link.href}
-          component="a"
-          href={link.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          size="small"
-          aria-label={link.icon}
-          sx={linkIconSx}
-        >
-          {getLinkIcon(link.icon)}
-        </IconButton>
-      ))}
+      {links.map((link) => {
+        const label = link.label || link.icon;
+        return (
+          <Tooltip key={link.href} title={label} arrow>
+            <IconButton
+              component="a"
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              size="small"
+              aria-label={label}
+              sx={linkIconSx}
+            >
+              {getLinkIcon(link.icon)}
+            </IconButton>
+          </Tooltip>
+        );
+      })}
     </Stack>
   );
 };
@@ -148,17 +198,7 @@ const ProjectCard = ({ project, index, wide }) => (
           <Chip label={project.subtitle} size="small" sx={goldBadgeSx} />
         </Box>
 
-        <Typography
-          sx={{
-            color: 'text.secondary',
-            fontSize: '0.85rem',
-            lineHeight: 1.6,
-            mb: 2,
-            flexGrow: 1,
-          }}
-        >
-          {truncateDescription(project.description)}
-        </Typography>
+        <ProjectDescription text={project.description} />
 
         <Box sx={{ mt: 'auto' }}>
           <Box sx={{ mb: 2 }}>
@@ -191,7 +231,11 @@ const Projects = () => (
 
         {/* Bento grid */}
         <StaggerGrid stagger={0.1} direction="blur-up">
-          <Grid container spacing={{ xs: 2, md: 3 }}>
+          {/* alignItems keeps each card at its own content height. Stretched
+              rows left C-Track padded out to match its neighbour, and now that
+              descriptions expand in place, a stretched row would resize every
+              sibling on a single click. */}
+          <Grid container spacing={{ xs: 2, md: 3 }} alignItems="flex-start">
             {projectsData.map((project, idx) => {
               const md = BENTO_MD[idx] || 4;
               const wide = md >= 8;
