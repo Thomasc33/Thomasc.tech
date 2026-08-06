@@ -27,7 +27,7 @@ Thomas Carr’s dissertation, Preserving User Privacy on Skeleton-Based Motion D
 
 ## Selected Prior Experience
 
-- **Founding AI & Software Engineer, ACR Technologies** (Dec 2024 – Oct 2025) — AI-enhanced intraoperative neural-monitoring communications platform.
+- **Founding AI & Software Engineer, ACR Technologies** (Dec 2024 – Jun 2025) — AI-enhanced intraoperative neural-monitoring communications platform.
 - **Graduate Research Assistant, UNC Charlotte** (Jan 2023 – 2025) — privacy-preserving motion analysis, bias and fairness in ML.
 - **Full-Stack Developer / Systems Engineer, MDcentric Technology** (May 2021 – Dec 2022) — real-time asset tracking across 30,000+ devices.
 - **Founder / Lead Developer, ViBot** (Mar 2020 – Feb 2024) — engagement platform serving 125,000 daily users.
